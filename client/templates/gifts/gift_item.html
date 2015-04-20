@@ -1,6 +1,8 @@
 <template name="giftItem">
     <div class="grid-list__item">
-        <img class="grid-list__image" src="{{imageUrl}}" />
+        <a href="{{pathFor 'giftPage'}}">
+            <img class="grid-list__image" src="{{imageUrl}}" />
+        </a>
         <div class="grid-list__container">
             <a class="pointer">{{wantText}}</a>
             <p>{{wantCount}} people want this gift</p>
