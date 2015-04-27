@@ -1,6 +1,6 @@
 // Fixture data
 if (Gifts.find().count() === 0) {
-    var now = new Date.getTime();
+    var now = new Date().getTime();
 
     // create two users
     var janeId = Meteor.users.insert({
@@ -20,7 +20,7 @@ if (Gifts.find().count() === 0) {
         link: 'http://www.amazon.com/dp/B002TLT10S/ref=wl_it_dp_o_pd_nS_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=I3MZZGGEXFH3AM&psc=1',
         price: 199.99,
         age: 21,
-        submmited: new Date(now - 7 * 3600 * 1000)
+        submitted: new Date(now - 7 * 3600 * 1000)
     });
 
     Comments.insert({
