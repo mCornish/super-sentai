@@ -4,12 +4,5 @@ Template.giftItem.helpers({
     },
     wantText: function () {
         return 'Want';
-    },
-    commentsCount: function() {
-        var count = Comments.find({giftId: this._id}).count();
-
-        if (count > 0)
-            return count;
-        return 'So far, no '
     }
 });

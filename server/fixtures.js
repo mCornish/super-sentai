@@ -20,7 +20,8 @@ if (Gifts.find().count() === 0) {
         link: 'http://www.amazon.com/dp/B002TLT10S/ref=wl_it_dp_o_pd_nS_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=I3MZZGGEXFH3AM&psc=1',
         price: 199.99,
         age: 21,
-        submitted: new Date(now - 7 * 3600 * 1000)
+        submitted: new Date(now - 7 * 3600 * 1000),
+        commentsCount: 2
     });
 
     Comments.insert({
@@ -47,6 +48,7 @@ if (Gifts.find().count() === 0) {
         link: 'http://www.amazon.com/dp/B000XFW6OU/ref=wl_it_dp_o_pC_S_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=IDC1G4192VKCA&psc=1',
         price: 19.95,
         age: 33,
-        submmited: new Date(now - 14 * 3600 * 1000)
+        submmited: new Date(now - 14 * 3600 * 1000),
+        commentsCount: 'So, no'
     });
 }
