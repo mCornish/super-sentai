@@ -11,13 +11,13 @@ Template.giftEdit.events({
             // Use parse to convert string values to numbers
             price: parseFloat( $(e.target).find('[name=price]').val() ),
             age: parseInt( $(e.target).find('[name=age]').val() )
-        }
+        };
 
         Gifts.update(currentGiftId, {$set: giftProperties}, function(error) {
             if (error) {
                 alert(error.reason);
             } else {
-                Router.go('giftsPage', {_id: currentGiftId});
+                Router.go('giftPage', {_id: currentGiftId});
             }
         });
     },
