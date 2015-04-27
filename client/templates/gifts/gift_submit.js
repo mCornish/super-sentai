@@ -1,3 +1,15 @@
+Template.giftSubmit.onCreated(function() {
+    Session.set('giftSubmitErrors', {});
+});
+Template.giftSubmit.helpers({
+    errorMessage: function(field) {
+        return Session.get('giftSubmitErrors')[field];
+    },
+    errorClass: function(field) {
+        return !!Session.get('giftSubmitErrors')[field] ? 'has-error' : '';
+    }
+});
+
 Template.giftSubmit.events({
     'submit form': function(e) {
         e.preventDefault();
@@ -11,9 +23,13 @@ Template.giftSubmit.events({
             age: parseInt( $(e.target).find('[name=age]').val() )
         };
 
+        var errors = validateGift(gift);
+        if (errors.title || errors.image)
+            return Session.set('giftSubmitErrors', errors);
+
         Meteor.call('giftInsert', gift, function(error, result) {
             if (error)
-                return alert(error.reason);
+                return throwError(error.reason);
             Router.go('giftPage', {_id: result._id});
         });
     }

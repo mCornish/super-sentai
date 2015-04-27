@@ -153,3 +153,27 @@ body {
 .popup__close:hover {
     color: #f00;
 }
+
+@keyframes fadeOut {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeOut {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.alert {
+    -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+    animation: fadeOut 2700ms ease-in 0s 1 forwards;
+    width: 20em;
+    height: 5em;
+    position: fixed;
+    right: 5em;
+    z-index: 5;
+}

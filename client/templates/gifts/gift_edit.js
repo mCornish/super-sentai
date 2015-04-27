@@ -1,3 +1,15 @@
+Template.giftEdit.onCreated(function() {
+    Session.set('giftEditErrors', {});
+});
+Template.giftEdit.helpers({
+    errorMessage: function(field) {
+        return Session.get('giftEditErrors')[field];
+    },
+    errorClass: function(field) {
+        return !!Session.get('giftEditErrors')[field] ? 'has-error' : '';
+    }
+});
+
 Template.giftEdit.events({
     'submit form': function(e) {
         e.preventDefault();
@@ -13,9 +25,13 @@ Template.giftEdit.events({
             age: parseInt( $(e.target).find('[name=age]').val() )
         };
 
+        var errors = validateGift(gift);
+        if (errors.title || errors.image)
+            return Session.set('giftSubmitErrors', errors);
+
         Gifts.update(currentGiftId, {$set: giftProperties}, function(error) {
             if (error) {
-                alert(error.reason);
+                throwError(error.reason);
             } else {
                 Router.go('giftPage', {_id: currentGiftId});
             }
