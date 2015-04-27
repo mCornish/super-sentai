@@ -7,5 +7,8 @@
             <a class="pointer">{{wantText}}</a>
             <p>{{wantCount}} people want this gift</p>
         </div>
+        <p>
+            {{#if ownGift}}<a href="{{pathFor 'giftEdit'}}">Edit</a>{{/if}}
+        </p>
     </div>
 </template>
