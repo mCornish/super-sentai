@@ -49,6 +49,6 @@ if (Gifts.find().count() === 0) {
         price: 19.95,
         age: 33,
         submmited: new Date(now - 14 * 3600 * 1000),
-        commentsCount: 'So, no'
+        commentsCount: '0'
     });
 }

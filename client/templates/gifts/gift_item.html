@@ -5,8 +5,18 @@
         </a>
         <div class="grid-list__container">
             <a class="pointer">{{wantText}}</a>
-            <p>{{wantCount}} people want this gift</p>
-            <p>{{commentsCount}} comments</p>
+            <p>
+                {{#if wantCount}}
+                    <p>{{wantCount}} people want this gift</p>
+                {{/if}}
+            </p>
+            <p>
+                {{#if commentsCount}}
+                    {{commentsCount}} comments
+                {{else}}
+                    Be the first to comment on this gift
+                {{/if}}
+            </p>
         </div>
         <p>
             {{#if ownGift}}<a href="{{pathFor 'giftEdit'}}">Edit</a>{{/if}}
