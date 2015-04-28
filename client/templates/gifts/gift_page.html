@@ -1,9 +1,11 @@
 <template name="giftPage">
     <div class="gift-page page">
-        {{> giftItem}}
-        <p>
+        <h1>{{title}}</h1>
+        <h2>
             submitted by {{author}}
-        </p>
+        </h2>
+        {{> giftItem}}
+
         <ul class="comments">
             {{#each comments}}
                 {{> commentItem}}

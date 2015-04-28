@@ -48,7 +48,21 @@ if (Gifts.find().count() === 0) {
         link: 'http://www.amazon.com/dp/B000XFW6OU/ref=wl_it_dp_o_pC_S_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=IDC1G4192VKCA&psc=1',
         price: 19.95,
         age: 33,
-        submmited: new Date(now - 14 * 3600 * 1000),
+        submitted: new Date(now - 14 * 3600 * 1000),
         commentsCount: '0'
     });
+
+    for (var i = 0; i < 30; i++) {
+        Gifts.insert({
+            title: 'Test post #' + i,
+            userId: mike._id,
+            author: mike.profile.name,
+            image: 'http://popmusicexperience.co.uk/wp-content/uploads/2013/07/giftvoucherpic.gif',
+            link: 'http://google.com/?q=test-' + i,
+            price: 0,
+            age: 1,
+            submitted: new Date(now - 14 * 3600 * 1000),
+            commentsCount: '0'
+        });
+    }
 }
