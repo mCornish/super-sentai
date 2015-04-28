@@ -1,5 +1,10 @@
-Meteor.publish('gifts', function() {
-    return Gifts.find();
+Meteor.publish('gifts', function(options) {
+    check(options, {
+        sort: Object,
+        limit: Number
+    });
+
+    return Gifts.find({}, options);
 });
 
 Meteor.publish('comments', function(giftId) {
