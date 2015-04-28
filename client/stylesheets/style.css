@@ -5,6 +5,9 @@ body {
 .logout-button {
     cursor: pointer;
 }
+.sub-nav .active {
+    background-color: rgb(230,230,230);
+}
 .form-inline * + .form-group {
     margin-left: 1em;
 }

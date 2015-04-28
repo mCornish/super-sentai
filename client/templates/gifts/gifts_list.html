@@ -1,4 +1,14 @@
 <template name="giftsList">
+    <div class="collapse navbar-collapse">
+        <ul class="sub-nav nav navbar-nav">
+            <li class="{{activeRouteClass 'home' 'newGifts'}}">
+                <a href="{{pathFor 'newGifts'}}">New</a>
+            </li>
+            <li class="{{activeRouteClass 'home' 'bestGifts'}}">
+                <a href="{{pathFor 'bestGifts'}}">Best</a>
+            </li>
+        </ul>
+    </div>
     <div class="grid-list gifts">
         {{#each gifts}}
           {{> giftItem}}

@@ -44,7 +44,7 @@ Template.giftEdit.events({
         if (confirm("Delete this gift?")) {
             var currentGiftId = this._id;
             Gifts.remove(currentGiftId);
-            Router.go('giftsList');
+            Router.go('home');
         }
     }
 });

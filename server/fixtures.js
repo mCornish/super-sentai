@@ -21,7 +21,9 @@ if (Gifts.find().count() === 0) {
         price: 199.99,
         age: 21,
         submitted: new Date(now - 7 * 3600 * 1000),
-        commentsCount: 2
+        commentsCount: 2,
+        wanters: [],
+        wants: 0
     });
 
     Comments.insert({
@@ -49,7 +51,9 @@ if (Gifts.find().count() === 0) {
         price: 19.95,
         age: 33,
         submitted: new Date(now - 14 * 3600 * 1000),
-        commentsCount: '0'
+        commentsCount: '0',
+        wanters: [],
+        wants: 0
     });
 
     for (var i = 0; i < 30; i++) {
@@ -62,7 +66,9 @@ if (Gifts.find().count() === 0) {
             price: 0,
             age: 1,
             submitted: new Date(now - 14 * 3600 * 1000),
-            commentsCount: '0'
+            commentsCount: '0',
+            wanters: [],
+            wants: 0
         });
     }
 }

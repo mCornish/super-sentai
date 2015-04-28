@@ -4,10 +4,14 @@
             <img class="grid-list__image" src="{{image}}" />
         </a>
         <div class="grid-list__container">
-            <a class="pointer">{{wantText}}</a>
+            <a class="btn btn-default {{wantedClass}}" data-hook="want" href="#">Want ⬆</a>
             <p>
-                {{#if wantCount}}
-                    <p>{{wantCount}} people want this gift</p>
+                {{#if wants}}
+                    {{#if pluralWants}}
+                        <p>{{wants}} people want this gift</p>
+                    {{else}}
+                        <p>1 person wants this gift</p>
+                    {{/if}}
                 {{/if}}
             </p>
             <p>
