@@ -1,5 +1,5 @@
 <template name="giftItem">
-    <div class="grid-list__item">
+    <div class="grid-list__item gift">
         <a href="{{pathFor 'giftPage'}}">
             <img class="grid-list__image" src="{{image}}" />
         </a>
@@ -17,8 +17,6 @@
             <p>
                 {{#if commentsCount}}
                     {{commentsCount}} comments
-                {{else}}
-                    Be the first to comment on this gift
                 {{/if}}
             </p>
         </div>
