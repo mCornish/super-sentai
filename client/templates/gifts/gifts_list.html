@@ -3,5 +3,14 @@
         {{#each gifts}}
           {{> giftItem}}
         {{/each}}
+
     </div>
+    {{#if nextPath}}
+        <a class="btn btn-primary btn-lg btn-block" href="{{nextPath}}">Load more</a>
+    {{else}}
+        {{#unless ready}}
+            {{> spinner}}
+        {{/unless}}
+        <p>No more gifts to display.</p>
+    {{/if}}
 </template>

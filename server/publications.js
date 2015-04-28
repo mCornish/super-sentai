@@ -1,3 +1,4 @@
+// giftsList publication
 Meteor.publish('gifts', function(options) {
     check(options, {
         sort: Object,
@@ -5,6 +6,12 @@ Meteor.publish('gifts', function(options) {
     });
 
     return Gifts.find({}, options);
+});
+
+// giftPage publication
+Meteor.publish('singleGift', function(id) {
+    check(id, String);
+    return Gifts.find(id);
 });
 
 Meteor.publish('comments', function(giftId) {
