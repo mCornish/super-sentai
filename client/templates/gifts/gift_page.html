@@ -1,20 +1,32 @@
 <template name="giftPage">
-    <div class="gift-page page">
-        <h1>{{title}}</h1>
-        <h2>
-            submitted by {{author}}
-        </h2>
-        {{> giftItem}}
+    <div class="popup">
+        <h2>{{title}}</h2>
+        <p>Submitted <b>{{submittedMoment}}</b> by <b>{{author}}</b></p>
+        <img class="popup__image" src="{{image}}" />
+
+        <div>
+            <a class="btn btn-default {{wantedClass}}" data-hook="want" href="#">Want ⬆</a>
+            <p>
+                {{#if wants}}
+                    {{#if pluralWants}}
+                        <p>{{wants}} people want this gift</p>
+                    {{else}}
+                        <p>1 person wants this gift</p>
+                    {{/if}}
+                {{/if}}
+            </p>
+        </div>
+
+        {{#if currentUser}}
+            {{> commentSubmit}}
+        {{else}}
+            <p>Please log in to leave a comment.</p>
+        {{/if}}
 
         <ul class="comments">
             {{#each comments}}
                 {{> commentItem}}
             {{/each}}
         </ul>
-        {{#if currentUser}}
-            {{> commentSubmit}}
-        {{else}}
-            <p>Please log in to leave a comment.</p>
-        {{/if}}
     </div>
 </template>

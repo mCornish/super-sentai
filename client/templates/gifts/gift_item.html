@@ -1,7 +1,7 @@
 <template name="giftItem">
     <div class="grid-list__item gift">
-        <a href="{{pathFor 'giftPage'}}">
-            <img class="grid-list__image" src="{{image}}" />
+        <a href="#">
+            <img class="grid-list__image" src="{{image}}" data-hook="image" />
         </a>
         <div class="grid-list__container">
             <a class="btn btn-default {{wantedClass}}" data-hook="want" href="#">Want ⬆</a>
@@ -23,5 +23,10 @@
         <p>
             {{#if ownGift}}<a href="{{pathFor 'giftEdit'}}">Edit</a>{{/if}}
         </p>
+    </div>
+    <div class="{{displayClass}}">
+        <div class="popup__close" data-hook="close">X</div>
+        <div class="popup__shade" data-hook="shade"></div>
+        {{> giftPage}}
     </div>
 </template>
