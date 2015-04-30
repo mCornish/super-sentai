@@ -26,7 +26,9 @@ Template.giftItem.helpers({
 Template.giftItem.events({
     'click [data-hook="image"]': function(e) {
         e.preventDefault();
+        Meteor.subscribe('comments', this._id);
         Session.set('activeGift', this._id);
+        history.pushState({}, 'Gift', '/gifts/' + this._id);
     },
     'click [data-hook="shade"]': function(e) {
         e.preventDefault();

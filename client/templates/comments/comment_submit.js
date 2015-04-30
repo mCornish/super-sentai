@@ -1,12 +1,12 @@
-Template.giftEdit.onCreated(function() {
-    Session.get('giftEditErrors', {});
+Template.commentSubmit.onCreated(function() {
+    Session.set('commentSubmitErrors', {});
 });
 
 Template.commentSubmit.helpers({
     errorMessage: function(field) {
         return Session.get('commentSubmitErrors')[field];
     },
-    errorClass: function(field) {
+    errorClass: function (field) {
         return !!Session.get('commentSubmitErrors')[field] ? 'has-error' : '';
     }
 });

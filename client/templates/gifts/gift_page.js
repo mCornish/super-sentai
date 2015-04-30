@@ -16,5 +16,8 @@ Template.giftPage.helpers({
     },
     pluralWants: function() {
         return this.wants > 1;
+    },
+    popupClass: function() {
+        return Router.current().route.path(this) === '/find' ? 'popup' : '';
     }
 });

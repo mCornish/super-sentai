@@ -1,32 +1,38 @@
 <template name="giftPage">
-    <div class="popup">
-        <h2>{{title}}</h2>
-        <p>Submitted <b>{{submittedMoment}}</b> by <b>{{author}}</b></p>
-        <img class="popup__image" src="{{image}}" />
-
-        <div>
-            <a class="btn btn-default {{wantedClass}}" data-hook="want" href="#">Want ⬆</a>
-            <p>
-                {{#if wants}}
-                    {{#if pluralWants}}
-                        <p>{{wants}} people want this gift</p>
-                    {{else}}
-                        <p>1 person wants this gift</p>
+    <div class="{{popupClass}}">
+        <div class="popup__container">
+            <h2>{{title}}</h2>
+            <p>Submitted <b>{{submittedMoment}}</b> by <b>{{author}}</b></p>
+            <div class="popup__image-container">
+                <img class="popup__image" src="{{image}}" />
+            </div>
+            <p><b>Price:</b> ${{price}}</p>
+            <p><b>Recipient age:</b> {{age}}</p>
+            <div>
+                <a class="btn btn-default {{wantedClass}}" data-hook="want" href="#">Want ⬆</a>
+                <p>
+                    {{#if wants}}
+                        {{#if pluralWants}}
+                            <p>{{wants}} people want this gift</p>
+                        {{else}}
+                            <p>1 person wants this gift</p>
+                        {{/if}}
                     {{/if}}
-                {{/if}}
-            </p>
+                </p>
+            </div>
         </div>
+        <div class="popup__container">
+            {{#if currentUser}}
+                {{> commentSubmit}}
+            {{else}}
+                <p>Please log in to leave a comment.</p>
+            {{/if}}
 
-        {{#if currentUser}}
-            {{> commentSubmit}}
-        {{else}}
-            <p>Please log in to leave a comment.</p>
-        {{/if}}
-
-        <ul class="comments">
-            {{#each comments}}
-                {{> commentItem}}
-            {{/each}}
-        </ul>
+            <ul class="comments-container">
+                {{#each comments}}
+                    {{> commentItem}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </template>
