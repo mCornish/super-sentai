@@ -28,15 +28,18 @@ Template.giftItem.events({
         e.preventDefault();
         Meteor.subscribe('comments', this._id);
         Session.set('activeGift', this._id);
+        path = window.location.pathname;
         history.pushState({}, 'Gift', '/gifts/' + this._id);
     },
     'click [data-hook="shade"]': function(e) {
         e.preventDefault();
         Session.set('activeGift', '');
+        history.pushState({}, 'Find', path);
     },
     'click [data-hook="close"]': function(e) {
         e.preventDefault();
         Session.set('activeGift', '');
+        history.pushState({}, 'Find', path);
     },
     'click [data-hook="want"].wantable': function(e) {
         e.preventDefault();

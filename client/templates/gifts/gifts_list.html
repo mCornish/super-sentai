@@ -10,10 +10,30 @@
         </ul>
     </div>
 
+    <div class="form-group">
+        <select class="form-control" data-hook="age">
+            <option>Age</option>
+            <option>Newborn</option>
+            <option>1 - 5</option>
+            <option>11 - 15</option>
+            <option>16 - 20</option>
+            <option>21 - 30</option>
+            <option>31 - 40</option>
+            <option>41 - 50</option>
+            <option>50+</option>
+        </select>
+    </div>
+
     <div class="grid-list gifts" data-hook="gifts">
-        {{#each gifts}}
-          {{> giftItem}}
-        {{/each}}
+        {{#if filteredGifts}}
+            {{#each filteredGifts}}
+                {{> giftItem}}
+            {{/each}}
+        {{else}}
+            {{#each gifts}}
+              {{> giftItem}}
+            {{/each}}
+        {{/if}}
     </div>
 
     {{#if nextPath}}

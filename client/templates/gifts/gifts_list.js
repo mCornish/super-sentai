@@ -78,3 +78,40 @@ Template.giftsList.onRendered(function() {
         }
     }
 });
+
+Template.giftsList.helpers({
+    filteredGifts: function() {
+        //filter = Session.get('filter');
+        //if (filter) {
+        //    if (filter.minAge && filter.maxAge)
+        //        return Gifts.find({ $and: [ { age: {$gte: filter.minAge} }, { age: {$lte: filter.maxAge} } ] });
+        //}
+        //return;
+    }
+});
+
+Template.giftsList.events({
+    'change [data-hook="age"]': function(e) {
+        e.preventDefault();
+        var minAge, maxAge, hyphen;
+        var ageValue = $(e.target).val();
+
+        if (ageValue === 'Age') {
+            minAge = 0;
+            maxAge = 100;
+        } else if (ageValue === 'Newborn') {
+            minAge = 0;
+            maxAge = 1;
+        } else if (ageValue === '50+') {
+            minAge = 50;
+            maxAge = 100;
+        } else {
+            hyphen = ageValue.indexOf('-');
+            minAge = parseInt(ageValue.substr(0, hyphen));
+            maxAge = parseInt(ageValue.substr(hyphen + 1));
+        }
+
+        Router.go('/find?minAge=' + minAge + '&' + 'maxAge=' + maxAge);
+        Session.set('filter', {'minAge': minAge, 'maxAge': maxAge});
+    }
+});
