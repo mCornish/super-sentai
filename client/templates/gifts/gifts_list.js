@@ -76,18 +76,26 @@ Template.giftsList.onRendered(function() {
                 $(this).remove();
             });
         }
+    };
+
+    // Make sure select has correct value based on query string
+    var minAge = Router.current().params.query.minAge;
+    var maxAge = Router.current().params.query.maxAge;
+    var ageString = '';
+    if (minAge && maxAge) {
+        if (minAge == 0) {
+            ageString = 'Newborn';
+        } else if (minAge == 51) {
+            ageString = '50+';
+        } else {
+            ageString = minAge + ' - ' + maxAge;
+        }
+        $('[data-hook="age"]').val(ageString);
     }
 });
 
 Template.giftsList.helpers({
-    filteredGifts: function() {
-        //filter = Session.get('filter');
-        //if (filter) {
-        //    if (filter.minAge && filter.maxAge)
-        //        return Gifts.find({ $and: [ { age: {$gte: filter.minAge} }, { age: {$lte: filter.maxAge} } ] });
-        //}
-        //return;
-    }
+
 });
 
 Template.giftsList.events({
@@ -96,14 +104,11 @@ Template.giftsList.events({
         var minAge, maxAge, hyphen;
         var ageValue = $(e.target).val();
 
-        if (ageValue === 'Age') {
-            minAge = 0;
-            maxAge = 100;
-        } else if (ageValue === 'Newborn') {
+        if (ageValue === 'Newborn') {
             minAge = 0;
             maxAge = 1;
         } else if (ageValue === '50+') {
-            minAge = 50;
+            minAge = 51;
             maxAge = 100;
         } else {
             hyphen = ageValue.indexOf('-');
@@ -111,7 +116,29 @@ Template.giftsList.events({
             maxAge = parseInt(ageValue.substr(hyphen + 1));
         }
 
-        Router.go('/find?minAge=' + minAge + '&' + 'maxAge=' + maxAge);
+        //if ( isNaN(minAge) || isNaN(maxAge) ) {
+        //    Router.go('/find');
+        //} else {
+        //    Router.go('/find?minAge=' + minAge + '&' + 'maxAge=' + maxAge);
+        //}
+
         Session.set('filter', {'minAge': minAge, 'maxAge': maxAge});
+
+        filterGifts();
     }
 });
+
+filterGifts = function() {
+    filter = Session.get('filter');
+    if (filter) {
+        var queryString = '';
+        if ( !( isNaN(filter.minAge) || isNaN(filter.maxAge)) )
+            queryString += '&minAge=' + filter.minAge + '&maxAge=' + filter.maxAge;
+    }
+
+    if (queryString != '') {
+        Router.go('/find?' + queryString);
+    } else {
+        Router.go('/find');
+    }
+};

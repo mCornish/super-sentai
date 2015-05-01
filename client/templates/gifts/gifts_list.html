@@ -10,18 +10,37 @@
         </ul>
     </div>
 
-    <div class="form-group">
-        <select class="form-control" data-hook="age">
-            <option>Age</option>
-            <option>Newborn</option>
-            <option>1 - 5</option>
-            <option>11 - 15</option>
-            <option>16 - 20</option>
-            <option>21 - 30</option>
-            <option>31 - 40</option>
-            <option>41 - 50</option>
-            <option>50+</option>
-        </select>
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="age">Age</label>
+            <select class="form-control" id="age" data-hook="age">
+                <option>Any age</option>
+                <option>Newborn</option>
+                <option>1 - 5</option>
+                <option>11 - 15</option>
+                <option>16 - 20</option>
+                <option>21 - 30</option>
+                <option>31 - 40</option>
+                <option>41 - 50</option>
+                <option>50+</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Minimum Price</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input class="form-control" data-hook="price-min" placeholder="0.00" type="number" step="any" min="0">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Maximum Price</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input class="form-control" data-hook="price-max" placeholder="0.00" type="number" step="any" min="0">
+            </div>
+        </div>
     </div>
 
     <div class="grid-list gifts" data-hook="gifts">
