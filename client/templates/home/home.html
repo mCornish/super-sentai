@@ -25,11 +25,13 @@
             <h1>{{name}}</h1>
             <img class="user__image" src="{{avatar}}" />
             <!-- TODO level system -->
-            <h2>Level Here</h2>
+            <h2>{{getGenerosityLevel user.profile.generosity}}</h2>
 
-            <a class="button button--block home__button" href="{{pathFor 'find'}}">FIND A GIFT</a>
-            <a class="button button--block home__button" href="{{pathFor 'giftSubmit'}}">SUBMIT A GIFT</a>
-            <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+            <div class="home__buttons">
+                <a class="button button--block home__button" href="{{pathFor 'find'}}">FIND A GIFT</a>
+                <a class="button button--block home__button" href="{{pathFor 'giftSubmit'}}">SUBMIT A GIFT</a>
+                <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+            </div>
 
             <h1>You Recommend</h1>
             <div class="user__gifts">

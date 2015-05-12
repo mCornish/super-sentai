@@ -410,6 +410,9 @@ body {
 .home__find {
     text-align: center;
 }
+.home__buttons {
+    margin: 3em auto;
+}
 .home__button + .home__button {
     margin-top: 2em;
 }

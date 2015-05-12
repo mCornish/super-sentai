@@ -16,3 +16,15 @@ Template.registerHelper('activeRouteClass', function(/* route names */) {
 
     return active && 'active';
 });
+
+Template.registerHelper('getGenerosityLevel', function(generosity) {
+    var generosity = parseInt(generosity);
+
+    if (generosity < 100) {
+        return 'Gift Guppie';
+    } else if (generosity >= 100 && generosity < 250) {
+        return 'Thoughtful'
+    } else if (generosity >= 100 && geneosity < 500) {
+        return 'Giver'
+    }
+});

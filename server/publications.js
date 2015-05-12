@@ -1,17 +1,4 @@
-Meteor.publish('gifts', function(options, queries) {
-    queries = typeof queries !== 'undefined' ? queries : {};
-
-    if (options) {
-        check(options, {
-            sort: Object,
-            limit: Number
-        });
-    }
-
-    return Gifts.find(queries, options);
-});
-
-Meteor.publish('giftsByWanter', function(queries, options) {
+Meteor.publish('gifts', function(queries, options) {
     queries = typeof queries !== 'undefined' ? queries : {};
 
     if (options) {

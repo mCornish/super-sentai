@@ -12,9 +12,6 @@ Template.login.helpers({
     },
     errorClass: function(field) {
         return !!Session.get('userSubmitErrors')[field] ? 'has-error' : '';
-    },
-    name: function() {
-        return Meteor.user().username || Meteor.user().profile.name;
     }
 });
 
@@ -35,7 +32,7 @@ Template.login.events({
                 profile: {
                     image: 'http://thesocietypages.org/socimages/files/2009/05/vimeo.jpg',
                     created: new Date(),
-                    xp: 0
+                    generosity: 0
                 }
             };
 
