@@ -63,7 +63,7 @@ if (Gifts.find().count() === 0) {
             author: mike.profile.name,
             image: 'http://popmusicexperience.co.uk/wp-content/uploads/2013/07/giftvoucherpic.gif',
             link: 'http://google.com/?q=test-' + i,
-            price: generateRandFloat(5, 1000, 2),
+            price: parseFloat(generateRandFloat(5, 1000, 2)),
             age: generateRandInt(1, 100),
             submitted: new Date(now - 14 * 3600 * 1000),
             commentsCount: '0',

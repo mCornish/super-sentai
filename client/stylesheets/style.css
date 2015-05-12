@@ -1,5 +1,10 @@
+html {
+    font-size: 18px;
+}
+
 body {
     background: #fff;
+    font-size: 1em;
 }
 
 .main {
@@ -8,6 +13,169 @@ body {
 
 .page {
     position: absolute;
+}
+
+.logo {
+    font-size: 5em;
+    margin: 1em auto;
+    text-align: center;
+    position: relative;
+}
+.logo__back {
+    position: absolute;
+    top: 0;
+    left: .1em;
+    color: rgb(80,80,80);
+    transition: .2s ease all;
+    width: 1em;
+}
+.logo__back:hover {
+    color: rgb(80,80,80);
+    text-decoration: none;
+    left: 0;
+}
+
+/* -------------------- */
+/* --- COMPONENTS */
+/* -------------------- */
+
+/* -------------------- */
+/* --- BUTTON */
+/* -------------------- */
+.button {
+    background-color: rgb(200,200,200);
+    color: rgb(30,30,30);
+    font-size: 1.5em;
+    padding: 1em;
+    min-width: 4em;
+    text-align: center;
+    display: inline;
+    border: none;
+    border-bottom: 5px solid rgb(80,80,80);
+    border-radius: .2em;
+    top: 0;
+    transition: .2s ease all;
+    position: relative;
+}
+.button:hover, .button:focus {
+    text-decoration: none;
+    color: rgb(30,30,30);
+    border-bottom-width: 10px;
+    top: -5px;
+}
+.button:active {
+    background-color: rgb(140,140,140);
+    border-bottom-width: 0;
+    top: 5px;
+}
+/* disabled button */
+   .button.disabled {
+       cursor: default;
+       background-color: rgb(50, 135, 65);
+       color: rgb(100, 165, 105);
+   }
+.button.disabled:hover, .button.disabled:focus {
+    border-bottom-width: 5px;
+    top: 0;
+}
+.button.disabled:active {
+    border-bottom-width: 5px;
+    top: 0
+}
+.button--block {
+    display: block;
+    width: 100%;
+}
+
+/* -------------------- */
+/* --- DIVIDER */
+/* -------------------- */
+.divider {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 3em 0;
+}
+.divider__bar {
+    border-bottom: 1px solid rgb(230,230,230);
+}
+.divider__bar--left {
+    display: inline-block;
+    width: 45%;
+}
+.divider__bar--right {
+    display: inline-block;
+    width: 45%;
+}
+.divider__text {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 8%;
+    font-size: 3em;
+    top: .3em;
+}
+
+/* -------------------- */
+/* --- INPUT GROUP */
+/* -------------------- */
+.input-group {
+    position: relative;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-group__input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgb(240,240,240);
+    color: rgb(240,240,240);
+    background-color: transparent;
+    padding: .25em;
+    padding-left: .1em;
+    width: 10em;
+}
+.input-group__input:focus {
+    outline: none;
+}
+/* input label */
+   .input-group__label {
+       font-weight: normal;
+       position: absolute;
+       pointer-events: none;
+       left: 5px;
+       top: 10px;
+       transition: .2s ease all;
+   }
+.input-group__input:focus ~ label,
+.input-group__input:valid ~ label {
+    top: -20px;
+}
+/* input bar */
+   .input-group__bar {
+       position: relative;
+       display: block;
+       width: 100%;
+   }
+.input-group__bar:before,
+.input-group__bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgb(17, 183, 51);
+    transition: .2s ease all;
+}
+.input-group__bar:before {
+    left: 50%;
+}
+.input-group__bar:after {
+    right: 50%;
+}
+.input-group__input:focus ~ .input-group__bar:before,
+.input-group__input:focus ~ .input-group__bar:after {
+    width: 50%;
 }
 
 .login-button,
@@ -52,9 +220,9 @@ body {
 }
 @media screen and (min-width: 1110px) {
     .grid-list {
-        -webkit-column-count: 5;
-        -moz-column-count: 5;
-        column-count: 5;
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
     }
 }
 .grid-list__item {
@@ -201,6 +369,10 @@ body {
     z-index: 5;
 }
 
+.gifts {
+    padding: 3em;
+}
+
 .gift {
     position: relative;
 }
@@ -227,3 +399,49 @@ body {
     color: rgb(150,150,150);
     font-weight: normal;
 }
+
+/* -------------------- */
+/* --- HOME */
+/* -------------------- */
+.home__find {
+    text-align: center;
+}
+.home__button + .home__button {
+    margin-top: 2em;
+}
+.gender-button + .gender-button {
+    margin-left: 2em;
+}
+.gender-button--male {
+
+}
+.gender-button--female {
+
+}
+
+/* -------------------- */
+/* --- FIND */
+/* -------------------- */
+.find__text {
+    font-size: 1em;
+    position: relative;
+}
+.find__blank {
+    border-bottom: 1px solid rgb(80,80,80);
+    width: 10em;
+    display: inline-block;
+    margin: 0 1em;
+}
+.find__buttons {
+    margin-top: 3em;
+}
+
+/* -------------------- */
+/* --- FIND */
+/* -------------------- */
+.login__instead {
+    display: block;
+    text-align: center;
+    margin-bottom: 2em;
+}
+

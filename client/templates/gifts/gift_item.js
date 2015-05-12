@@ -3,7 +3,6 @@ Template.giftItem.helpers({
         return this.userId === Meteor.userId();
     },
     displayClass: function() {
-        console.log(Session.get('activeGift') + ' ' + this._id);
         if (Session.get('activeGift') === this._id) {
             return ''
         } else {

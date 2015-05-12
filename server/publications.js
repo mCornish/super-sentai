@@ -1,22 +1,14 @@
-// giftsList publication
 Meteor.publish('gifts', function(options, queries) {
     queries = typeof queries !== 'undefined' ? queries : {};
 
-    check(options, {
-        sort: Object,
-        limit: Number
-    });
+    if (options) {
+        check(options, {
+            sort: Object,
+            limit: Number
+        });
+    }
 
     return Gifts.find(queries, options);
-});
-
-Meteor.publish('giftsAge', function(minAge, maxAge) {
-    check(minAge, Number);
-    check(maxAge, Number);
-
-    console.log(minAge + ' ' + maxAge);
-
-    return Gifts.find({ $and: [ { age: {$gte: minAge} }, { age: {$lte: maxAge} } ] });
 });
 
 // giftPage publication

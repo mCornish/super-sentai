@@ -30,7 +30,7 @@
             <label for="price">Minimum Price</label>
             <div class="input-group">
                 <div class="input-group-addon">$</div>
-                <input class="form-control" data-hook="price-min" placeholder="0.00" type="number" step="any" min="0">
+                <input class="form-control" data-hook="min-price" placeholder="0.00" type="number" step="any" min="0">
             </div>
         </div>
 
@@ -38,8 +38,19 @@
             <label for="price">Maximum Price</label>
             <div class="input-group">
                 <div class="input-group-addon">$</div>
-                <input class="form-control" data-hook="price-max" placeholder="0.00" type="number" step="any" min="0">
+                <input class="form-control" data-hook="max-price" placeholder="0.00" type="number" step="any" min="0">
             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="submitted">Submitted</label>
+            <select class="form-control" id="submitted" data-hook="submitted">
+                <option>Today</option>
+                <option>This week</option>
+                <option>This month</option>
+                <option>This year</option>
+                <option>All time</option>
+            </select>
         </div>
     </div>
 

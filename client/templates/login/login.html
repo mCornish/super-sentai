@@ -1,0 +1,44 @@
+<template name="login">
+    <div class="logo">
+        <a class="logo__back" href="/">&#10094;</a>
+        YGMYG
+    </div>
+
+  {{#unless currentUser}}
+      <div class="login">
+          <div class="login__instead">
+              {{#unless creatingUser}}
+                  <a href="#" class="" data-hook="switch-state">Sign Up Instead</a>
+              {{else}}
+                  <a href="#" class="" data-hook="switch-state">Log In Instead</a>
+              {{/unless}}
+          </div>
+          <form class="login__form" data-hook="signup">
+              <div class="input-group {{errorClass 'username'}}">
+                  <input class="input-group__input" name="username" data-hook="username" type="text" placeholder="Username">
+                  <span class="input-group__bar"></span>
+                  <span class="help-block">{{errorMessage 'username'}}</span>
+              </div>
+              <div class="input-group {{errorClass 'password'}}">
+                  <input class="input-group__input" name="password" data-hook="password" type="password" placeholder="Password">
+                  <span class="input-group__bar"></span>
+                  <span class="help-block">{{errorMessage 'password'}}</span>
+              </div>
+            {{#if creatingUser}}
+                <div class="input-group {{errorClass 'passwordAgain'}}">
+                    <input class="input-group__input" name="password-again" data-hook="password-again" type="password" placeholder="Password (again)">
+                    <span class="input-group__bar"></span>
+                    <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
+                </div>
+            {{/if}}
+            {{#unless creatingUser}}
+                <input type="submit" value="Log In" class="button button--block" />
+            {{else}}
+                <input type="submit" value="Sign Up" class="button button--block" />
+            {{/unless}}
+          </form>
+      </div>
+  {{else}}
+      <p>You are logged in!</p>
+  {{/unless}}
+</template>

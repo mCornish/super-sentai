@@ -99,6 +99,13 @@ Template.giftsList.helpers({
 });
 
 Template.giftsList.events({
+    'change [data-hook="submitted"]': function(e) {
+        e.preventDefault();
+        var submitted = $(e.target).val();
+
+        filter.submitted = submitted;
+        filterGifts();
+    },
     'change [data-hook="age"]': function(e) {
         e.preventDefault();
         var minAge, maxAge, hyphen;
@@ -116,25 +123,41 @@ Template.giftsList.events({
             maxAge = parseInt(ageValue.substr(hyphen + 1));
         }
 
-        //if ( isNaN(minAge) || isNaN(maxAge) ) {
-        //    Router.go('/find');
-        //} else {
-        //    Router.go('/find?minAge=' + minAge + '&' + 'maxAge=' + maxAge);
-        //}
+        filter.minAge = minAge;
+        filter.maxAge = maxAge;
+        filterGifts();
+    },
+    'change [data-hook="min-price"]': function(e) {
+        e.preventDefault();
+        var minPrice = parseFloat($(e.target).val());
 
-        Session.set('filter', {'minAge': minAge, 'maxAge': maxAge});
+        filter.minPrice = minPrice;
+        filterGifts();
+    },
+    'change [data-hook="max-price"]': function(e) {
+        e.preventDefault();
+        var maxPrice = parseFloat($(e.target).val());
 
+        filter.maxPrice = maxPrice;
         filterGifts();
     }
 });
 
+filter = {};
+
 filterGifts = function() {
-    filter = Session.get('filter');
-    if (filter) {
-        var queryString = '';
-        if ( !( isNaN(filter.minAge) || isNaN(filter.maxAge)) )
-            queryString += '&minAge=' + filter.minAge + '&maxAge=' + filter.maxAge;
-    }
+    var minAge = filter.minAge;
+    var maxAge = filter.maxAge;
+    var minPrice = filter.minPrice;
+    var maxPrice = filter.maxPrice;
+    var queryString = '';
+
+    if ( !( isNaN(minAge) || isNaN(maxAge)) )
+        queryString += '&minAge=' + minAge + '&maxAge=' + maxAge;
+    if ( ! isNaN(minPrice) )
+        queryString += '&minPrice=' + minPrice;
+    if ( ! isNaN(maxPrice) )
+        queryString += '&maxPrice=' + maxPrice;
 
     if (queryString != '') {
         Router.go('/find?' + queryString);

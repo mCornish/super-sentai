@@ -1,0 +1,19 @@
+<template name="home">
+    <div class="logo">YGMYG</div>
+    <div class="home__find">
+        <p class="find__text">
+            I want a gift for a <span class="find__blank"></span>
+        </p>
+        <div class="find__buttons">
+            <a class="button gender-button gender-button--male" href="{{pathFor 'find' gender='male'}}">MALE</a>
+            <a class="button gender-button gender-button--female" href="{{pathFor 'find' gender='female'}}">FEMALE</a>
+        </div>
+    </div>
+    <div class="divider">
+        <div class="divider__bar divider__bar--left"></div>
+        <div class="divider__text">OR</div>
+        <div class="divider__bar divider__bar--right"></div>
+    </div>
+    <a class="button button--block home__button" href="{{pathFor 'login'}}">LOG IN / SIGN UP</a>
+    <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+</template>
