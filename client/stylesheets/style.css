@@ -34,6 +34,10 @@ body {
     text-decoration: none;
     left: 0;
 }
+.logo--small {
+    margin: .5em auto;
+    font-size: 2em;
+}
 
 /* -------------------- */
 /* --- COMPONENTS */
@@ -419,6 +423,21 @@ body {
 
 }
 
+.home__user {
+    text-align: center;
+}
+.user__image {
+    border-radius: .5em;
+    max-width: 50%;
+}
+.user__gifts {
+    width: 30em;
+    margin: 3em auto;
+}
+.user__gift {
+    width: calc((100% / 3) - 6px);
+}
+
 /* -------------------- */
 /* --- FIND */
 /* -------------------- */
@@ -433,11 +452,30 @@ body {
     margin: 0 1em;
 }
 .find__buttons {
-    margin-top: 3em;
+    margin: 1em auto 0;
+    width: 30em;
+}
+.find__button {
+    display: inline-block;
+    width: calc((100% / 3) - 8px);
+    margin-top: 1em;
+}
+.find__button[type="radio"] {
+    display: none;
+    /*-webkit-appearance: inherit;*/
+    /*padding: 1em;*/
+}
+.find__button[type="radio"]:checked + label {
+    background-color: rgb(140,140,140);
+    border-bottom-width: 0;
+    top: 5px;
+}
+.find__buttons + .find__text {
+    margin-top: 5em;
 }
 
 /* -------------------- */
-/* --- FIND */
+/* --- LOGIN */
 /* -------------------- */
 .login__instead {
     display: block;
@@ -445,3 +483,10 @@ body {
     margin-bottom: 2em;
 }
 
+
+/* -------------------- */
+/* --- CAPITALIZE */
+/* -------------------- */
+.capitalize {
+    text-transform: capitalize !important;
+}

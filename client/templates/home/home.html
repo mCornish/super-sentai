@@ -1,19 +1,53 @@
 <template name="home">
-    <div class="logo">YGMYG</div>
-    <div class="home__find">
-        <p class="find__text">
-            I want a gift for a <span class="find__blank"></span>
-        </p>
-        <div class="find__buttons">
-            <a class="button gender-button gender-button--male" href="{{pathFor 'find' gender='male'}}">MALE</a>
-            <a class="button gender-button gender-button--female" href="{{pathFor 'find' gender='female'}}">FEMALE</a>
+    {{#unless currentUser}}
+        <div class="logo">YGMYG</div>
+        <div class="home__find">
+            <p class="find__text">
+                I want a gift for a <span class="find__blank"></span>
+            </p>
+            <div class="find__buttons">
+                <a class="button find__button gender-button gender-button--male" href="{{pathFor 'find' gender='male'}}">MALE</a>
+                <a class="button find__button gender-button gender-button--female" href="{{pathFor 'find' gender='female'}}">FEMALE</a>
+            </div>
         </div>
-    </div>
-    <div class="divider">
-        <div class="divider__bar divider__bar--left"></div>
-        <div class="divider__text">OR</div>
-        <div class="divider__bar divider__bar--right"></div>
-    </div>
-    <a class="button button--block home__button" href="{{pathFor 'login'}}">LOG IN / SIGN UP</a>
-    <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+        <div class="divider">
+            <div class="divider__bar divider__bar--left"></div>
+            <div class="divider__text">OR</div>
+            <div class="divider__bar divider__bar--right"></div>
+        </div>
+        <a class="button button--block home__button" href="{{pathFor 'login'}}">LOG IN / SIGN UP</a>
+        <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+    {{else}}
+        <div class="logo logo--small">
+            YGMYG
+        </div>
+        <div class="home__user">
+            <h1>{{name}}</h1>
+            <img class="user__image" src="{{avatar}}" />
+            <!-- TODO level system -->
+            <h2>Level Here</h2>
+
+            <a class="button button--block home__button" href="{{pathFor 'find'}}">FIND A GIFT</a>
+            <a class="button button--block home__button" href="{{pathFor 'giftSubmit'}}">SUBMIT A GIFT</a>
+            <a class="button button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
+
+            <h1>You Recommend</h1>
+            <div class="user__gifts">
+                {{#each gifts}}
+                    <a href="{{pathFor 'giftPage'}}">
+                        <img class="user__gift" src="{{image}}" />
+                    </a>
+                {{/each}}
+            </div>
+            <h1>You Want</h1>
+            <div class="user__gifts">
+                {{#each wants}}
+                    <a href="{{pathFor 'giftPage'}}">
+                        <img class="user__gift" src="{{image}}" />
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+        <a href="#" data-hook="log-out">Logout</a>
+    {{/unless}}
 </template>

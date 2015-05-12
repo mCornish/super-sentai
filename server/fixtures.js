@@ -55,7 +55,16 @@ if (Gifts.find().count() === 0) {
         wanters: [],
         wants: 0
     });
-
+    Recipients.insert({
+        name: 'mom',
+        gender: 'female',
+        giftCount: 0
+    });
+    Recipients.insert({
+        name: 'dad',
+        gender: 'male',
+        giftCount: 1
+    });
     for (var i = 0; i < 30; i++) {
         Gifts.insert({
             title: 'Test post #' + i,
@@ -70,5 +79,22 @@ if (Gifts.find().count() === 0) {
             wanters: [],
             wants: 0
         });
+        Recipients.insert({
+            name: 'male#' + i,
+            gender: 'male',
+            giftCount: Math.floor(Math.random() * 10 * i)
+        });
+        Recipients.insert({
+            name: 'female#' + i,
+            gender: 'female',
+            giftCount: Math.floor(Math.random() * 10 * i)
+        });
+        Recipients.insert({
+            name: 'neutral#' + i,
+            gender: 'neutral',
+            giftCount: Math.floor(Math.random() * 10 * i)
+        });
     }
+
+
 }

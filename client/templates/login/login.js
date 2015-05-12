@@ -12,6 +12,9 @@ Template.login.helpers({
     },
     errorClass: function(field) {
         return !!Session.get('userSubmitErrors')[field] ? 'has-error' : '';
+    },
+    name: function() {
+        return Meteor.user().username || Meteor.user().profile.name;
     }
 });
 
@@ -30,6 +33,7 @@ Template.login.events({
                 password: password,
                 passwordAgain: passwordAgain,
                 profile: {
+                    image: 'http://thesocietypages.org/socimages/files/2009/05/vimeo.jpg',
                     created: new Date(),
                     xp: 0
                 }
@@ -76,6 +80,20 @@ Template.login.events({
         e.preventDefault();
         var currentState = Session.get('creatingUser');
         Session.set('creatingUser', !currentState);
+    },
+    'click [data-hook=facebook]': function(e) {
+        e.preventDefault();
+
+        Meteor.loginWithFacebook(function(error) {
+            if (error) {
+                // clear errors
+                Session.set('userSubmitErrors', {});
+                // throw login error
+                return throwError(error.reason);
+            } else {
+                Router.go('/');
+            }
+        });
     }
 });
 

@@ -11,6 +11,19 @@ Meteor.publish('gifts', function(options, queries) {
     return Gifts.find(queries, options);
 });
 
+Meteor.publish('giftsByWanter', function(queries, options) {
+    queries = typeof queries !== 'undefined' ? queries : {};
+
+    if (options) {
+        check(options, {
+            sort: Object,
+            limit: Number
+        });
+    }
+
+    return Gifts.find(queries, options);
+});
+
 // giftPage publication
 Meteor.publish('singleGift', function(id) {
     check(id, String);
@@ -24,4 +37,12 @@ Meteor.publish('comments', function(giftId) {
 
 Meteor.publish('notifications', function() {
     return Notifications.find({userId: this.userId, read: false});
+});
+
+Meteor.publish('recipients', function() {
+    return Recipients.find();
+});
+
+Meteor.publish('recipientsByGender', function(gender) {
+    return Recipients.find( {$or: [ {gender: gender}, {gender: 'neutral'} ] });
 });

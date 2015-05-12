@@ -1,11 +1,12 @@
 <template name="login">
     <div class="logo">
-        <a class="logo__back" href="/">&#10094;</a>
         YGMYG
+        <a class="logo__back" href="/">&#10094;</a>
     </div>
 
   {{#unless currentUser}}
       <div class="login">
+          <a class="button button--block" href="#" data-hook="facebook">Facebook</a>
           <div class="login__instead">
               {{#unless creatingUser}}
                   <a href="#" class="" data-hook="switch-state">Sign Up Instead</a>
@@ -39,6 +40,6 @@
           </form>
       </div>
   {{else}}
-      <p>You are logged in!</p>
+      <p>You are logged in as {{name}}!</p>
   {{/unless}}
 </template>
