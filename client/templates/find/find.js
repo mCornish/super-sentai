@@ -5,7 +5,7 @@ Template.find.onRendered(function() {
 });
 
 Template.find.helpers({
-    recipients: function() {
+    updatedRecipients: function() {
         if (Session.get('gender')) {
             return Recipients.find(
                 {$or: [ {gender: Session.get('gender')}, {gender: 'neutral'} ] },

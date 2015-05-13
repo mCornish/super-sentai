@@ -55,7 +55,7 @@ body {
     text-align: center;
     display: inline;
     border: none;
-    border-bottom: 5px solid rgb(80,80,80);
+    border-bottom: 3px solid rgb(80,80,80);
     border-radius: .2em;
     top: 0;
     transition: .2s ease all;
@@ -63,12 +63,13 @@ body {
 }
 .button:hover, .button:focus {
     text-decoration: none;
+    outline: none;
     color: rgb(30,30,30);
     border-bottom-width: 10px;
     top: -5px;
 }
 .button:active {
-    background-color: rgb(140,140,140);
+    background-color: rgb(160,160,160);
     border-bottom-width: 0;
     top: 5px;
 }
@@ -89,6 +90,26 @@ body {
 .button--block {
     display: block;
     width: 100%;
+}
+/* -------------------- */
+/* --- BUTTON--RAISED */
+/* -------------------- */
+.button--raised {
+    border: 0;
+    box-shadow: 0 2px 3px 0 rgb(125,125,125);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
+    transition: .2s cubic-bezier(.4,0,.2,1) all;
+}
+.button--raised:hover,
+.button--raised:focus {
+    top: 0;
+}
+.button--raised:focus {
+    background-color: rgb(225,225,225);
+}
+.button--raised:active {
+    box-shadow: 0 5px 15px 0 rgb(125,125,125);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
 }
 
 /* -------------------- */
@@ -449,6 +470,8 @@ body {
 .user__image {
     border-radius: .5em;
     max-width: 50%;
+    box-shadow: 0 2px 3px 0 rgb(125,125,125);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
 }
 .user__gifts {
     width: 30em;
@@ -456,13 +479,16 @@ body {
 }
 .user__gift {
     width: calc((100% / 3) - 6px);
+    border-radius: .3em;
+    box-shadow: 0 1px 5px 0 rgb(125,125,125);
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
 }
 
 /* -------------------- */
 /* --- FIND */
 /* -------------------- */
 .find__text {
-    font-size: 1em;
+    font-size: 2em;
     position: relative;
 }
 .find__blank {
@@ -482,8 +508,6 @@ body {
 }
 .find__button[type="radio"] {
     display: none;
-    /*-webkit-appearance: inherit;*/
-    /*padding: 1em;*/
 }
 .find__button[type="radio"]:checked + label {
     background-color: rgb(140,140,140);

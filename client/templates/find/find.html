@@ -11,21 +11,28 @@
                         I want a gift for a <span class="find__blank"></span>
                     </p>
                     <div class="find__buttons">
-                        <input class="button find__button" type="radio" id="female" name="gender" value="female" data-hook="gender" />
-                        <label class="button find__button" for="female">FEMALE</label>
-                        <input class="button find__button" type="radio" id="male" name="gender" value="male" data-hook="gender" />
-                        <label class="button find__button" for="male">MALE</label>
+                        <input class="button button--raised find__button" type="radio" id="female" name="gender" value="female" data-hook="gender" />
+                        <label class="button button--raised find__button" for="female">FEMALE</label>
+                        <input class="button button--raised find__button" type="radio" id="male" name="gender" value="male" data-hook="gender" />
+                        <label class="button button--raised find__button" for="male">MALE</label>
                     </div>
                 {{/unless}}
                 <div class="find__text">I'm getting it for my <span class="find__blank"></span></div>
                 <div class="find__buttons">
-                    {{#each recipients}}
-                        <input class="button find__button" type="radio" id="{{name}}" name="recipient" value="{{name}}" data-hook="recipient" />
-                        <label class="button find__button" for="{{name}}">{{name}}</label>
-                    {{/each}}
+                    {{#unless updatedRecipients}}
+                        {{#each recipients}}
+                            <input class="button find__button button--raised" type="radio" id="{{name}}" name="recipient" value="{{name}}" data-hook="recipient" />
+                            <label class="button find__button button--raised" for="{{name}}">{{name}}</label>
+                        {{/each}}
+                        {{else}}
+                        {{#each updatedRecipients}}
+                            <input class="button find__button button--raised" type="radio" id="{{name}}" name="recipient" value="{{name}}" data-hook="recipient" />
+                            <label class="button find__button button--raised" for="{{name}}">{{name}}</label>
+                        {{/each}}
+                    {{/unless}}
                     <!-- TODO add select or something with the rest of the options -->
-                    <input class="button find__button" type="radio" id="other" name="recipient" value="other" data-hook="recipient" />
-                    <label class="button find__button" for="other">other</label>
+                    <input class="button find__button button--raised" type="radio" id="other" name="recipient" value="other" data-hook="recipient" />
+                    <label class="button find__button button--raised" for="other">other</label>
                 </div>
 
                 <div class="find__text"><span class="capitalize">{{genderPossesive}}</span> age is <span class="find__blank"></span></div>

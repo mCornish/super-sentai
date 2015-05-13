@@ -6,7 +6,7 @@
 
   {{#unless currentUser}}
       <div class="login">
-          <a class="button button--block" href="#" data-hook="facebook">Facebook</a>
+          <a class="button button--raised button--block" href="#" data-hook="facebook">Facebook</a>
           <div class="login__instead">
               {{#unless creatingUser}}
                   <a href="#" class="" data-hook="switch-state">Sign Up Instead</a>
@@ -33,9 +33,9 @@
                 </div>
             {{/if}}
             {{#unless creatingUser}}
-                <input type="submit" value="Log In" class="button button--block" />
+                <input type="submit" value="Log In" class="button button--raised button--block" />
             {{else}}
-                <input type="submit" value="Sign Up" class="button button--block" />
+                <input type="submit" value="Sign Up" class="button button--raised button--block" />
             {{/unless}}
           </form>
       </div>
