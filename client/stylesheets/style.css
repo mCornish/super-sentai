@@ -128,32 +128,37 @@ body {
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
+    min-width: 50%;
 }
 .input-group__input {
     display: block;
     border: none;
     border-bottom: 1px solid rgb(240,240,240);
-    color: rgb(240,240,240);
+    color: rgb(80,80,80);
     background-color: transparent;
     padding: .25em;
     padding-left: .1em;
-    width: 10em;
+    width: 100%;
 }
 .input-group__input:focus {
     outline: none;
 }
 /* input label */
-   .input-group__label {
-       font-weight: normal;
-       position: absolute;
-       pointer-events: none;
-       left: 5px;
-       top: 10px;
-       transition: .2s ease all;
-   }
+.input-group__label {
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    color: rgb(180,180,180);
+    left: 5px;
+    top: 10px;
+    transition: .2s ease all;
+}
 .input-group__input:focus ~ label,
 .input-group__input:valid ~ label {
     top: -20px;
+    color: rgb(80,80,80);
+    font-size: .8em;
+    font-weight: bold;
 }
 /* input bar */
    .input-group__bar {
@@ -180,6 +185,18 @@ body {
 .input-group__input:focus ~ .input-group__bar:before,
 .input-group__input:focus ~ .input-group__bar:after {
     width: 50%;
+}
+.input-group__addon {
+    position: absolute;
+    opacity: 0;
+    color: rgb(80,80,80);
+    top: 5px;
+    left: -12px;
+    transition: .2s ease all;
+}
+.input-group__input:focus ~ .input-group__addon,
+.input-group__input:valid ~ .input-group__addon {
+    opacity: 1;
 }
 
 .login-button,

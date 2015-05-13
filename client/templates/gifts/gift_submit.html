@@ -1,41 +1,40 @@
 <template name="giftSubmit">
-    <form class="main form page">
-        <div class="form-group {{errorClass 'title'}}">
-            <label class="control-label" for="title">TItle</label>
-            <div class="controls">
-                <input name="title" id="title" type="text" value="" placeholder="What is the gift?" class="form-control" />
-                <span class="help-block">{{errorMessage 'title'}}</span>
-            </div>
+    <div class="logo logo--small">
+        YGMYG
+        <a class="logo__back" href="/">&#10094;</a>
+    </div>
+
+    <form class="main form">
+        <div class="input-group {{errorClass 'title'}}">
+            <input class="input-group__input" name="title" id="title" type="text" value="" required />
+            <label class="input-group__label" for="title">What is the gift?</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'title'}}</span>
         </div>
-        <div class="form-group {{errorClass 'image'}}">
-            <label class="control-label" for="image">Image</label>
-            <div class="controls">
-                <input name="image" id="image" type="url" value="" placeholder="Image URL" class="form-control" />
-                <span class="help-block">{{errorMessage 'image'}}</span>
-            </div>
+        <div class="input-group {{errorClass 'image'}}">
+            <input class="input-group__input" name="image" id="image" type="url" value="" required />
+            <label class="input-group__label" for="image">Image URL</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'image'}}</span>
         </div>
-        <div class="form-group {{errorClass 'link'}}">
-            <label class="control-label" for="link">Link</label>
-            <div class="controls">
-                <input name="link" id="link" type="url" value="" placeholder="Where can someone buy the gift online?" class="form-control" />
-                <span class="help-block">{{errorMessage 'link'}}</span>
-            </div>
+        <div class="input-group {{errorClass 'link'}}">
+            <input class="input-group__input" name="link" id="link" type="url" value="" required />
+            <label class="input-group__label" for="link">Where can someone buy the gift online?</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'link'}}</span>
         </div>
-        <div class="form-group {{errorClass 'price'}}">
-            <label class="control-label" for="price">Gift Price</label>
-            <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <div class="controls">
-                    <input name="price" id="price" type="number" step="any" min="0" value="" placeholder="How much did the gift cost?" class="form-control" />
-                </div>
-            </div>
+        <div class="input-group {{errorClass 'price'}}">
+            <input class="input-group__input input-group__input--addon" name="price" id="price" type="number" step="any" min="0" value="" required />
+            <div class="input-group__addon">$</div>
+            <label class="input-group__label" for="price">How much did the gift cost?</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'price'}}</span>
         </div>
-        <div class="form-group {{errorClass 'age'}}">
-            <label class="control-label" for="age">Recipient Age</label>
-            <div class="controls">
-                <input name="age" id="age" type="number" value="" placeholder="How old is that lucky person?" class="form-control" />
-                <span class="help-block">{{errorMessage 'age'}}</span>
-            </div>
+        <div class="input-group {{errorClass 'age'}}">
+            <input class="input-group__input"  name="age" id="age" type="number" value="" required />
+            <label class="input-group__label" for="age">How old is that lucky person?</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'age'}}</span>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary" />
     </form>
