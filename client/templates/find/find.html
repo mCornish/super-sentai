@@ -6,25 +6,25 @@
         </div>
         <div class="find__step">
             {{#if stepOne}}
-                {{#unless gender}}
+                {{#unless routeGender}}
                     <p class="find__text">
-                        I want a gift for a <span class="find__blank"></span>
+                        I want a gift for a <span class="find__blank">{{gender}}</span>
                     </p>
-                    <div class="find__buttons">
+                    <div class="find__inputs">
                         <input class="button button--raised find__button" type="radio" id="female" name="gender" value="female" data-hook="gender" />
                         <label class="button button--raised find__button" for="female">FEMALE</label>
                         <input class="button button--raised find__button" type="radio" id="male" name="gender" value="male" data-hook="gender" />
                         <label class="button button--raised find__button" for="male">MALE</label>
                     </div>
                 {{/unless}}
-                <div class="find__text">I'm getting it for my <span class="find__blank"></span></div>
-                <div class="find__buttons">
+                <div class="find__text">I'm getting it for my <span class="find__blank">{{recipient}}</span></div>
+                <div class="find__inputs">
                     {{#unless updatedRecipients}}
                         {{#each recipients}}
                             <input class="button find__button button--raised" type="radio" id="{{name}}" name="recipient" value="{{name}}" data-hook="recipient" />
                             <label class="button find__button button--raised" for="{{name}}">{{name}}</label>
                         {{/each}}
-                        {{else}}
+                    {{else}}
                         {{#each updatedRecipients}}
                             <input class="button find__button button--raised" type="radio" id="{{name}}" name="recipient" value="{{name}}" data-hook="recipient" />
                             <label class="button find__button button--raised" for="{{name}}">{{name}}</label>
@@ -35,22 +35,44 @@
                     <label class="button find__button button--raised" for="other">other</label>
                 </div>
 
-                <div class="find__text"><span class="capitalize">{{genderPossesive}}</span> age is <span class="find__blank"></span></div>
-                <!-- TODO Figure out better way to display this select -->
-                <select data-hook="age">
-                    <option>Select age</option>
-                    <option>Newborn</option>
-                    <option>1 - 5</option>
-                    <option>11 - 15</option>
-                    <option>16 - 20</option>
-                    <option>21 - 30</option>
-                    <option>31 - 40</option>
-                    <option>41 - 50</option>
-                    <option>50+</option>
-                </select>
             {{/if}}
+        </div>
+        <div class="find__step">
             {{#if stepTwo}}
-                <p>step two</p>
+                <div class="find__text"><span class="capitalize">{{genderPossessive}}</span> age is <span class="find__blank">{{age}}</span></div>
+                <!-- TODO Figure out better way to display this select -->
+                <div class="find__inputs">
+                    <select data-hook="age">
+                        <option>Select age</option>
+                        <option>Newborn</option>
+                        <option>1 - 5</option>
+                        <option>11 - 15</option>
+                        <option>16 - 20</option>
+                        <option>21 - 30</option>
+                        <option>31 - 40</option>
+                        <option>41 - 50</option>
+                        <option>50+</option>
+                    </select>
+                </div>
+            {{/if}}
+        </div>
+        <div class="find__step">
+            {{#if stepThree}}
+                <div class="find__text">I want to spend between $<span class="find__blank">{{minPrice}}</span> and $<span class="find__blank">{{maxPrice}}</span></div>
+                <div class="find__inputs">
+                    <div class="input-group">
+                        <input class="input-group__input input-group__input--addon" data-hook="min-price" name="min-price" id="min-price" type="number" step="any" min="0" value="" required />
+                        <div class="input-group__addon">$</div>
+                        <label class="input-group__label" for="min-price">Minimum price</label>
+                        <span class="input-group__bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <input class="input-group__input input-group__input--addon" data-hook="max-price" name="max-price" id="max-price" type="number" step="any" min="0" value="" required />
+                        <div class="input-group__addon">$</div>
+                        <label class="input-group__label" for="max-price">Maximum price</label>
+                        <span class="input-group__bar"></span>
+                    </div>
+                </div>
             {{/if}}
         </div>
     </div>

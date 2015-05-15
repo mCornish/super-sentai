@@ -6,7 +6,9 @@
 
   {{#unless currentUser}}
       <div class="login">
-          <a class="button button--raised button--block" href="#" data-hook="facebook">Facebook</a>
+          <div class="login__services">
+            <a class="login__facebook button button--raised button--block" href="#" data-hook="facebook">Facebook</a>
+          </div>
           <div class="login__instead">
               {{#unless creatingUser}}
                   <a href="#" class="" data-hook="switch-state">Sign Up Instead</a>

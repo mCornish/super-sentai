@@ -7,6 +7,18 @@ body {
     font-size: 1em;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
 .main {
     position: relative;
 }
@@ -48,7 +60,7 @@ body {
 /* -------------------- */
 .button {
     background-color: rgb(200,200,200);
-    color: rgb(30,30,30);
+    color: rgb(80,80,80);
     font-size: 1.5em;
     padding: 1em;
     min-width: 4em;
@@ -64,9 +76,9 @@ body {
 .button:hover, .button:focus {
     text-decoration: none;
     outline: none;
-    color: rgb(30,30,30);
     border-bottom-width: 10px;
     top: -5px;
+    color: rgb(80,80,80);
 }
 .button:active {
     background-color: rgb(160,160,160);
@@ -76,8 +88,8 @@ body {
 /* disabled button */
    .button.disabled {
        cursor: default;
-       background-color: rgb(50, 135, 65);
-       color: rgb(100, 165, 105);
+       background-color: rgb(150,150,150);
+       color: rgb(100,100,100);
    }
 .button.disabled:hover, .button.disabled:focus {
     border-bottom-width: 5px;
@@ -89,7 +101,8 @@ body {
 }
 .button--block {
     display: block;
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
 }
 /* -------------------- */
 /* --- BUTTON--RAISED */
@@ -149,7 +162,11 @@ body {
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
-    min-width: 50%;
+    width: 50%;
+}
+.input-group--block {
+    display: block;
+    width: 100%;
 }
 .input-group__input {
     display: block;
@@ -175,11 +192,20 @@ body {
     transition: .2s ease all;
 }
 .input-group__input:focus ~ label,
-.input-group__input:valid ~ label {
+.input-group__input:valid ~ label,
+.input-group__label--active {
     top: -20px;
     color: rgb(80,80,80);
     font-size: .8em;
     font-weight: bold;
+}
+.input-group__label--radio-slider {
+    top: -4em;
+    color: rgb(80,80,80);
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
 }
 /* input bar */
    .input-group__bar {
@@ -241,6 +267,10 @@ body {
     width: 100%;
     border-radius: 1em;
 }
+
+/* -------------------- */
+/* --- GRID LIST */
+/* -------------------- */
 .grid-list {
     -moz-column-count: 3;
     -moz-column-gap: 10px;
@@ -272,9 +302,10 @@ body {
     -webkit-column-break-inside: avoid;
     column-break-inside: avoid;
     display: inline-block;
-    margin: 0 2px 15px;
-    border: 1px solid #e6e6e6;
-    border-radius: 1em;
+    margin: 1em .5em;
+    box-shadow: 0 1px 3px 0 rgb(125,125,125);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    border-radius: .3em;
     background: #fefefe;
     position: relative;
 }
@@ -288,6 +319,69 @@ body {
 .grid-list__container {
     padding: 1em;
 }
+
+
+/* -------------------- */
+/* --- RADIO SLIDER */
+/* -------------------- */
+.radio-slider {
+    position: relative;
+    background: rgba(255,255,255,.1);
+    margin: 5em auto 0;
+    border-radius: .3em;
+    position: relative;
+    width: 50em;
+    height: .5em;
+    background-color: rgb(80,80,80);
+    box-shadow: inset 0 1px 8px 1px rgb(125,125,125);
+    box-shadow: inset 0 1px 8px 1px rgba(0,0,0,.5);
+    display: block;
+}
+.radio-slider input {
+    width: 30px;
+    height: 2em;
+    margin: 0 calc((80px - 30px) / 2);
+    -webkit-appearance: inherit;
+    position: relative;
+}
+.radio-slider input:checked {
+    width: 30px;
+    height: 2em;
+    margin: 0 25px;
+    top: -.75em;
+    border-radius: .3em;
+    background-color: rgb(200,200,200);
+    box-shadow: 0 1px 5px 1px rgb(125,125,125);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    outline: none;
+}
+.radio-slider__labels {
+    position: absolute;
+    top: -2em;
+}
+.radio-slider label {
+    font-size: .8em;
+    font-weight: normal;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+}
+.radio-slider__bar {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+
 .edit-button {
     display: none;
     margin: 0 1em;
@@ -443,6 +537,17 @@ body {
 }
 
 /* -------------------- */
+/* --- BROWSE */
+/* -------------------- */
+.browse__filter {
+    margin-top: 3em;
+}
+.browse__filter .input-group {
+    width: 8em;
+    margin-left: 3em;
+}
+
+/* -------------------- */
 /* --- HOME */
 /* -------------------- */
 .home__find {
@@ -487,8 +592,11 @@ body {
 /* -------------------- */
 /* --- FIND */
 /* -------------------- */
+.find__step + .find__step {
+    margin-top: 6em;
+}
 .find__text {
-    font-size: 2em;
+    font-size: 1.5em;
     position: relative;
 }
 .find__blank {
@@ -496,10 +604,14 @@ body {
     width: 10em;
     display: inline-block;
     margin: 0 1em;
+    text-align: center;
 }
-.find__buttons {
-    margin: 1em auto 0;
+.find__inputs {
+    margin: 2em auto 0;
     width: 30em;
+}
+.find__inputs .input-group {
+    width: 10em;
 }
 .find__button {
     display: inline-block;
@@ -521,15 +633,26 @@ body {
 /* -------------------- */
 /* --- LOGIN */
 /* -------------------- */
+.login__services {
+}
 .login__instead {
     display: block;
     text-align: center;
-    margin-bottom: 2em;
+    margin: 2em 0;
+}
+.login__form .input-group {
+    width: 15em;
 }
 
+/* -------------------- */
+/* --- BROWSE */
+/* -------------------- */
+.gift__want {
+    font-size: .8em;
+}
 
 /* -------------------- */
-/* --- CAPITALIZE */
+/* --- HELPERS */
 /* -------------------- */
 .capitalize {
     text-transform: capitalize !important;

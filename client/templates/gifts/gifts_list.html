@@ -10,60 +10,70 @@
         </ul>
     </div>
 
-    <div class="form-inline">
-        <div class="form-group">
-            <label for="age">Age</label>
-            <select class="form-control" id="age" data-hook="age">
-                <option>Any age</option>
-                <option>Newborn</option>
-                <option>1 - 5</option>
-                <option>11 - 15</option>
-                <option>16 - 20</option>
-                <option>21 - 30</option>
-                <option>31 - 40</option>
-                <option>41 - 50</option>
-                <option>50+</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="price">Minimum Price</label>
-            <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <input class="form-control" data-hook="min-price" placeholder="0.00" type="number" step="any" min="0">
+    <div class="input-group input-group--block">
+        <div class="radio-slider">
+            <div class="radio-slider__labels">
+                <label for="age-0">Any</label>
+                <label for="age-1">Newborn</label>
+                <label for="age-2">1 - 5</label>
+                <label for="age-3">11 - 15</label>
+                <label for="age-4">16 - 20</label>
+                <label for="age-5">21 - 30</label>
+                <label for="age-6">31 - 40</label>
+                <label for="age-7">41 - 50</label>
+                <label for="age-8">50+</label>
             </div>
+            <!-- TODO Make the session age the default checked age (if it is set) -->
+            <input class="radio-slider__option" value="any" type="radio" name="age" id="age-0" data-hook="age" checked />
+            <input class="radio-slider__option" value="newborn" type="radio" name="age" id="age-1" data-hook="age" />
+            <input class="radio-slider__option" value="1 - 5" type="radio" name="age" id="age-2" data-hook="age" />
+            <input class="radio-slider__option" value="11 - 15" type="radio" name="age" id="age-3" data-hook="age" />
+            <input class="radio-slider__option" value="16 - 20" type="radio" name="age" id="age-4" data-hook="age" />
+            <input class="radio-slider__option" value="21 - 30" type="radio" name="age" id="age-5" data-hook="age" />
+            <input class="radio-slider__option" value="31 - 40" type="radio" name="age" id="age-6" data-hook="age" />
+            <input class="radio-slider__option" value="41 - 50" type="radio" name="age" id="age-7" data-hook="age" />
+            <input class="radio-slider__option" value="50+" type="radio" name="age" id="age-8" data-hook="age" />
+
+            <div class="radio-slider__bar"></div>
+        </div>
+        <label class="input-group__label input-group__label--radio-slider" for="age">Age</label>
+    </div>
+    <div class="browse__filter form-inline">
+        <div class="input-group">
+            <input class="input-group__input input-group__input--addon" data-hook="min-price" name="min-price" id="min-price" placeholder="0.00" type="number" step="any" min="0" value="" required />
+            <div class="input-group__addon">$</div>
+            <label class="input-group__label input-group__label--active" for="min-price">Minimum price</label>
+            <span class="input-group__bar"></span>
+        </div>
+        <div class="input-group">
+            <input class="input-group__input input-group__input--addon" data-hook="max-price" name="max-price" id="max-price" placeholder="0.00" type="number" step="any" min="0" value="" required />
+            <div class="input-group__addon">$</div>
+            <label class="input-group__label input-group__label--active" for="max-price">Maximum price</label>
+            <span class="input-group__bar"></span>
         </div>
 
-        <div class="form-group">
-            <label for="price">Maximum Price</label>
-            <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <input class="form-control" data-hook="max-price" placeholder="0.00" type="number" step="any" min="0">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="submitted">Submitted</label>
-            <select class="form-control" id="submitted" data-hook="submitted">
+        <div class="input-group">
+            <select class="input-group__select" id="submitted" data-hook="submitted">
                 <option>Today</option>
                 <option>This week</option>
                 <option>This month</option>
                 <option>This year</option>
                 <option>All time</option>
             </select>
+            <label class="input-group__label input-group__label--active" for="submitted">Submitted</label>
         </div>
     </div>
 
     <div class="grid-list gifts" data-hook="gifts">
-        {{#if filteredGifts}}
-            {{#each filteredGifts}}
-                {{> giftItem}}
-            {{/each}}
-        {{else}}
-            {{#each gifts}}
-              {{> giftItem}}
-            {{/each}}
-        {{/if}}
+            {{#if filteredGifts}}
+                {{#each filteredGifts}}
+                    {{> giftItem}}
+                {{/each}}
+            {{else}}
+                {{#each gifts}}
+                    {{> giftItem}}
+                {{/each}}
+            {{/if}}
     </div>
 
     {{#if nextPath}}
