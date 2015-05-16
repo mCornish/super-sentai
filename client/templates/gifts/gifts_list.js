@@ -78,57 +78,68 @@ Template.giftsList.onRendered(function() {
         }
     };
 
-    Session.set('minAge', null);
-    Session.set('maxAge', null);
-    Session.set('minPrice', null);
-    Session.set('maxPrice', null);
+    var startOfDay = new Date().setHours(0,0,0,0);
+
+    Session.setDefault('minAge', 0);
+    Session.setDefault('maxAge', 500);
+    Session.setDefault('minPrice', 0);
+    Session.setDefault('maxPrice', 100000);
+    Session.set('submitted', startOfDay);
 });
 
 Template.giftsList.helpers({
     filteredGifts: function() {
-        var ageQuery, priceQuery;
-        var minAge = Session.get('minAge') || 0;
-        var maxAge = Session.get('maxAge') || 500;
-        var minPrice = Session.get('minPrice') || 0;
-        var maxPrice = Session.get('maxPrice') || 100000;
+        var ageQuery = {},
+            priceQuery = {},
+            submittedQuery = {},
+            minAge = Session.get('minAge'),
+            maxAge = Session.get('maxAge'),
+            minPrice = Session.get('minPrice'),
+            maxPrice = Session.get('maxPrice'),
+            submitted = Session.get('submitted');
 
-        if (! isNaN(minAge) && ! isNaN(maxAge))
+        if ( (! isNaN(minAge) && ! isNaN(maxAge)) && (minAge >= 0 && maxAge >= 1) ) {
             ageQuery = { $and: [ { age: { $gte: minAge } }, { age: { $lte: maxAge } } ] };
-        if (! isNaN(minPrice) && ! isNaN(maxPrice))
+        }
+        if (! isNaN(minPrice) && ! isNaN(maxPrice)) {
             priceQuery = { $and: [ { price: { $gte: minPrice } }, { price: { $lte: maxPrice } } ] };
+        }
+        if (submitted) {
+            submittedQuery = { submitted: { $gte: new Date(submitted) } };
+        }
 
-        if (ageQuery || priceQuery)
-            return Gifts.find( { $and: [ ageQuery, priceQuery ] } );
+        if (ageQuery || priceQuery || submittedQuery) {
+            return Gifts.find( { $and: [ ageQuery, priceQuery, submittedQuery ] } );
+        }
     }
 });
 
 Template.giftsList.events({
-    'change [data-hook="submitted"]': function(e) {
-        e.preventDefault();
-        var submitted = $(e.target).val();
-
-        filter.submitted = submitted;
-        filterGifts();
-    },
     'change [data-hook="age"]': function(e) {
         e.preventDefault();
-        var minAge, maxAge, hyphen;
+        var minAge = null,
+            maxAge = null,
+            hyphen = null;
         var ageValue = $(e.target).val().toLowerCase();
 
-        if (ageValue === 'any') {
-            minAge = null;
-            maxAge = null;
-        }
-        else if (ageValue === 'newborn') {
-            minAge = 0;
-            maxAge = 1;
-        } else if (ageValue === '50+') {
-            minAge = 51;
-            maxAge = 100;
-        } else {
-            hyphen = ageValue.indexOf('-');
-            minAge = parseInt(ageValue.substr(0, hyphen));
-            maxAge = parseInt(ageValue.substr(hyphen + 1));
+        switch (ageValue) {
+            case 'any':
+                minAge = null;
+                maxAge = null;
+                break;
+            case 'newborn':
+                minAge = 0;
+                maxAge = 1;
+                break;
+            case '50+':
+                minAge = 51;
+                maxAge = 100;
+                break;
+            default:
+                hyphen = ageValue.indexOf('-');
+                minAge = parseInt(ageValue.substr(0, hyphen));
+                maxAge = parseInt(ageValue.substr(hyphen + 1));
+                break;
         }
 
         Session.set('minAge', minAge);
@@ -145,5 +156,29 @@ Template.giftsList.events({
         var maxPrice = parseFloat($(e.target).val());
 
         Session.set('maxPrice', maxPrice);
+    },
+    'change [data-hook=submitted]': function(e) {
+        e.preventDefault();
+        var submitted = null,
+            submittedValue = $(e.target).val().toLowerCase(),
+            now = new Date();
+
+        switch (submittedValue) {
+            case 'today':
+                // beginning of day
+                submitted = moment().subtract('days', 1).toDate();
+                break;
+            case 'this week':
+                submitted = moment().subtract('weeks', 1).toDate();
+                break;
+            case 'this month':
+                submitted = moment().subtract('months', 1).toDate();
+                break;
+            case 'this year':
+                submitted = moment().subtract('years', 1).toDate();
+                break;
+        }
+
+        Session.set('submitted', submitted);
     }
 });
