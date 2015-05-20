@@ -22,6 +22,7 @@
             YGMYG
         </div>
         <div class="home__user">
+            <!-- TODO add account settings -->
             <h1>{{name}}</h1>
             <img class="user__image" src="{{avatar}}" />
             <!-- TODO level system -->
@@ -50,6 +51,10 @@
                 {{/each}}
             </div>
         </div>
-        <a href="#" data-hook="log-out">Logout</a>
+
+        <div class="home__buttons">
+            <a class="button button--raised button--block home__button" href="{{pathFor 'account'}}">ACCOUNT SETTINGS</a>
+            <a class="button button--raised button--block home__button" href="#" data-hook="log-out">LOGOUT</a>
+        </div>
     {{/unless}}
 </template>

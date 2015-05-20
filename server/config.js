@@ -10,20 +10,23 @@ ServiceConfiguration.configurations.upsert(
 );
 
 Accounts.onCreateUser(function(options, user) {
-    console.log(user);
-
+    user.emails = [];
     if (user.services.facebook) {
         var facebook = user.services.facebook;
-        options.profile.email = facebook.email;
+        user.emails.push(facebook.email);
+        options.profile.name = facebook.name;
         options.profile.gender = facebook.gender;
         options.profile.locale = facebook.locale;
+    } else {
+        user.emails.push(user.username);
+        user.username = user.username.substr(0, user.username.indexOf('@'));
     }
 
-    options.createdAt = new Date();
-    options.profile.generosity = 0;
-    console.log(user);
-    if (options.profile)
+    user.generosity = 0;
+    if (options.profile) {
         user.profile = options.profile;
+    }
 
+    console.log(user);
     return user;
 });
