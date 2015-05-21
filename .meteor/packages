@@ -14,3 +14,6 @@ accounts-password
 momentjs:moment
 accounts-facebook
 service-configuration
+tomi:upload-server
+tomi:upload-jquery
+email

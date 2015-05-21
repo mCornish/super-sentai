@@ -17,6 +17,8 @@
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'image'}}</span>
         </div>
+        <!-- TODO Configure image upload -->
+        {{> upload_bootstrap}}
         <div class="input-group {{errorClass 'link'}}">
             <input class="input-group__input" name="link" id="link" type="url" value="" required />
             <label class="input-group__label" for="link">Where can someone buy the gift online?</label>

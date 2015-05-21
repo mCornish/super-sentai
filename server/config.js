@@ -14,12 +14,17 @@ Accounts.onCreateUser(function(options, user) {
     if (user.services.facebook) {
         var facebook = user.services.facebook;
         user.emails.push(facebook.email);
+        // remove spaces from Facebook name and store as username
+        options.profile.username = facebook.name.replace(/\s+/g, '');
+        options.profile.email = facebook.email;
         options.profile.name = facebook.name;
         options.profile.gender = facebook.gender;
         options.profile.locale = facebook.locale;
     } else {
         user.emails.push(user.username);
-        user.username = user.username.substr(0, user.username.indexOf('@'));
+        user.profile.email = user.username;
+        // convert email to username
+        user.profile.username = user.username.substr(0, user.username.indexOf('@'));
     }
 
     user.generosity = 0;
@@ -27,6 +32,5 @@ Accounts.onCreateUser(function(options, user) {
         user.profile = options.profile;
     }
 
-    console.log(user);
     return user;
 });

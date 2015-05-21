@@ -4,5 +4,41 @@
         <a class="logo__back" href="/">&#10094;</a>
     </div>
 
-    <a href="#" data-hook="reset-password">Reset Password</a>
+    <form class="account__form" data-hook="account-form">
+        <div class="input-group {{errorClass 'username'}}">
+            <input class="input-group__input" name="username" value="{{profile.username}}" data-hook="username" type="text" id="username" required>
+            <label class="input-group__label" for="username">Username</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'username'}}</span>
+        </div>
+        <div class="input-group {{errorClass 'email'}}">
+            <input class="input-group__input" name="email" value="{{profile.email}}" data-hook="email" type="email" id="email" required>
+            <label class="input-group__label" for="email">Email</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'email'}}</span>
+        </div>
+        <div class="input-group {{errorClass 'name'}}">
+            <input class="input-group__input" name="name" value="{{profile.name}}" data-hook="name" type="text" id="name">
+            <label class="input-group__label" for="name">Name</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'name'}}</span>
+        </div>
+        <div class="input-group {{errorClass 'password'}}">
+            <input class="input-group__input" name="password" data-hook="password" type="password" id="password">
+            <label class="input-group__label" for="password">Password</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'password'}}</span>
+        </div>
+        {{#if passwordChange}}
+            <div class="input-group {{errorClass 'passwordAgain'}}">
+                <input class="input-group__input" name="password-again" data-hook="password-again" type="password" id="password-again" required>
+                <label class="input-group__label" for="password-again">Password (again)</label>
+                <span class="input-group__bar"></span>
+                <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
+            </div>
+        {{/if}}
+
+        <input type="submit" value="Update" class="button button--raised button--block" />
+
+    </form>
 </template>

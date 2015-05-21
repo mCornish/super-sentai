@@ -160,22 +160,21 @@ Template.giftsList.events({
     'change [data-hook=submitted]': function(e) {
         e.preventDefault();
         var submitted = null,
-            submittedValue = $(e.target).val().toLowerCase(),
-            now = new Date();
+            submittedValue = $(e.target).val().toLowerCase();
 
         switch (submittedValue) {
             case 'today':
                 // beginning of day
-                submitted = moment().subtract('days', 1).toDate();
+                submitted = moment().subtract(1, 'days').toDate();
                 break;
             case 'this week':
-                submitted = moment().subtract('weeks', 1).toDate();
+                submitted = moment().subtract(1, 'weeks').toDate();
                 break;
             case 'this month':
-                submitted = moment().subtract('months', 1).toDate();
+                submitted = moment().subtract(1, 'months').toDate();
                 break;
             case 'this year':
-                submitted = moment().subtract('years', 1).toDate();
+                submitted = moment().subtract(1, 'years').toDate();
                 break;
         }
 

@@ -1,19 +1,86 @@
-Template.account.helpers({
+Template.account.onRendered( function() {
+    Session.set('userSubmitErrors', {});
+    Session.set('passwordChange', false);
+});
 
+Template.account.helpers({
+    errorMessage: function(field) {
+        return Session.get('userSubmitErrors')[field];
+    },
+    errorClass: function(field) {
+        return !!Session.get('userSubmitErrors')[field] ? 'has-error' : '';
+    },
+    passwordChange: function() {
+        return Session.get('passwordChange');
+    }
 });
 
 Template.account.events({
-    'click [data-hook=reset-password]': function() {
-        var confirm = window.confirm('Are you sure you want to reset your password?');
+    'submit form': function(e) {
+        e.preventDefault();
 
-        if (confirm === true) {
-            Accounts.forgotPassword({email: Meteor.user().emails[0]}, function(error) {
-                if (error) {
-                    alert(error.reason);
-                } else {
-                    alert('email sent');
-                }
-            });
+        var name = $(e.target).find('[name=name]').val(),
+            username = $(e.target).find('[name=username]').val(),
+            email = $(e.target).find('[name=email]').val(),
+            password = $(e.target).find('[name=password]').val(),
+            passwordAgain = $(e.target).find('[name=passwordAgain]').val();
+
+        var userProperties = {
+            username: username,
+            email: email,
+            password: password,
+            passwordAgain: passwordAgain
+        };
+
+        var errors = validateUser(userProperties);
+        if (errors.username || errors.email || errors.password || errors.passwordAgain) {
+            return Session.set('userSubmitErrors', errors);
+        }
+
+        // create user object with profile data for update
+        var user = {
+            profile: {
+                name: name,
+                username: username,
+                email: email
+            }
+        };
+
+        Meteor.users.update(Meteor.userId(), {$set: user});
+    },
+    // show password-again field when password has a value
+    'keypress [data-hook=password]': function() {
+        if (Session.equals('passwordChange', false)) {
+            Session.set('passwordChange', true);
+        }
+    },
+    // hide password-again field when password blurs with no value
+    'blur [data-hook=password]': function(e) {
+        console.log($(e.target).val());
+        if ( $(e.target).val() === '' ) {
+            Session.set('passwordChange', false);
         }
     }
 });
+
+var validateUser = function(user) {
+    var errors = {};
+    if (!user.username) {
+        errors.username = 'Please enter a username';
+    }
+    if (!user.email) {
+        errors.email = 'Please enter an email';
+    }
+    if (Session.get('passwordChange')) {
+        if (!user.password) {
+            errors.password = 'Please enter a password';
+        }
+        if (!user.passwordAgain) {
+            errors.passwordAgain = 'Please re-enter password';
+        }
+        if (user.password !== user.passwordAgain) {
+            errors.passwordAgain = 'Passwords do not match';
+        }
+    }
+    return errors;
+};

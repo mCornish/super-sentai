@@ -33,3 +33,7 @@ Meteor.publish('recipients', function() {
 Meteor.publish('recipientsByGender', function(gender) {
     return Recipients.find( {$or: [ {gender: gender}, {gender: 'neutral'} ] });
 });
+
+Meteor.publish('users', function() {
+    return Meteor.users.find();
+});

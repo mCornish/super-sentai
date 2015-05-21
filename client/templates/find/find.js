@@ -106,10 +106,26 @@ Template.find.events({
         if (Session.get('maxPrice'))
             Session.set('stepThree', true);
     },
+    'change [data-hook=min-price]': function(e) {
+        e.preventDefault();
+        var minPrice = $(e.target).val();
+
+        Session.set('minPrice', minPrice);
+
+        if (Session.get('maxPrice'))
+            Session.set('stepThree', true);
+    },
     'keypress [data-hook=max-price]': function(e) {
         var character = String.fromCharCode(e.which);
-        var minPrice = $(e.target).val() + character;
+        var maxPrice = $(e.target).val() + character;
 
+        Session.set('maxPrice', maxPrice);
+
+        if (Session.get('minPrice'))
+            Session.set('stepThree', true);
+    },
+    'change [data-hook=max-price]': function(e) {
+        e.preventDefault();
         var maxPrice = $(e.target).val();
 
         Session.set('maxPrice', maxPrice);
