@@ -4,6 +4,14 @@ Template.home.helpers({
     },
     avatar: function() {
         return Meteor.user().profile.image || 'http://thesocietypages.org/socimages/files/2009/05/vimeo.jpg';
+    },
+    haveRecommendations: function() {
+        var gifts = Router.current().data().gifts;
+        return gifts.count() > 0;
+    },
+    haveWants: function() {
+        var gifts = Router.current().data().wants;
+        return gifts.count() > 0;
     }
 });
 

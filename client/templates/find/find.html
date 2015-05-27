@@ -31,8 +31,12 @@
                         {{/each}}
                     {{/unless}}
                     <!-- TODO add select or something with the rest of the options -->
-                    <input class="button find__button button--raised" type="radio" id="other" name="recipient" value="other" data-hook="recipient" />
-                    <label class="button find__button button--raised" for="other">other</label>
+                    <select class="button find__button button--raised button--select" id="other" name="recipient" value="other" data-hook="recipient">
+                        <option>Other</option>
+                        {{#each remainingRecipients}}
+                            <option>{{name}}</option>
+                        {{/each}}
+                    </select>
                 </div>
 
             {{/if}}
@@ -41,18 +45,32 @@
             {{#if stepTwo}}
                 <div class="find__text"><span class="capitalize">{{genderPossessive}}</span> age is <span class="find__blank">{{age}}</span></div>
                 <!-- TODO Figure out better way to display this select -->
-                <div class="find__inputs">
-                    <select data-hook="age">
-                        <option>Select age</option>
-                        <option>Newborn</option>
-                        <option>1 - 5</option>
-                        <option>11 - 15</option>
-                        <option>16 - 20</option>
-                        <option>21 - 30</option>
-                        <option>31 - 40</option>
-                        <option>41 - 50</option>
-                        <option>50+</option>
-                    </select>
+                <div class="input-group input-group--block">
+                    <div class="radio-slider">
+                        <div class="radio-slider__labels">
+                            <label for="age-0">Any</label>
+                            <label for="age-1">Newborn</label>
+                            <label for="age-2">1 - 5</label>
+                            <label for="age-3">11 - 15</label>
+                            <label for="age-4">16 - 20</label>
+                            <label for="age-5">21 - 30</label>
+                            <label for="age-6">31 - 40</label>
+                            <label for="age-7">41 - 50</label>
+                            <label for="age-8">50+</label>
+                        </div>
+                        <!--TODO Make the session age the default checked age (if it is set)-->
+                        <input class="radio-slider__option" value="any" type="radio" name="age" id="age-0" data-hook="age" checked />
+                        <input class="radio-slider__option" value="newborn" type="radio" name="age" id="age-1" data-hook="age" />
+                        <input class="radio-slider__option" value="1 - 5" type="radio" name="age" id="age-2" data-hook="age" />
+                        <input class="radio-slider__option" value="11 - 15" type="radio" name="age" id="age-3" data-hook="age" />
+                        <input class="radio-slider__option" value="16 - 20" type="radio" name="age" id="age-4" data-hook="age" />
+                        <input class="radio-slider__option" value="21 - 30" type="radio" name="age" id="age-5" data-hook="age" />
+                        <input class="radio-slider__option" value="31 - 40" type="radio" name="age" id="age-6" data-hook="age" />
+                        <input class="radio-slider__option" value="41 - 50" type="radio" name="age" id="age-7" data-hook="age" />
+                        <input class="radio-slider__option" value="50+" type="radio" name="age" id="age-8" data-hook="age" />
+
+                        <div class="radio-slider__bar"></div>
+                    </div>
                 </div>
             {{/if}}
         </div>

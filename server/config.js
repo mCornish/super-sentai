@@ -22,12 +22,12 @@ Accounts.onCreateUser(function(options, user) {
         options.profile.locale = facebook.locale;
     } else {
         user.emails.push(user.username);
-        user.profile.email = user.username;
+        options.profile.email = user.username;
         // convert email to username
-        user.profile.username = user.username.substr(0, user.username.indexOf('@'));
+        options.profile.username = user.username.substr(0, user.username.indexOf('@'));
     }
 
-    user.generosity = 0;
+    options.profile.generosity = 0;
     if (options.profile) {
         user.profile = options.profile;
     }

@@ -16,10 +16,16 @@ Template.find.helpers({
     updatedRecipients: function() {
         if (Session.get('gender')) {
             return Recipients.find(
-                {$or: [ {gender: Session.get('gender')}, {gender: 'neutral'} ] },
-                {limit: 11, sort: {giftCount: -1}}
+                { $or: [ {gender: Session.get('gender')}, {gender: 'neutral'} ] },
+                { limit: 11, sort: {giftCount: -1} }
             )
         }
+    },
+    remainingRecipients: function() {
+        return Recipients.find(
+            { $or: [ {gender: Session.get('gender')}, {gender: 'neutral'} ] },
+            { sort: { giftCount: -1 } }
+        )
     },
     stepOne: function() {
         return Session.get('stepOne');
@@ -117,7 +123,15 @@ Template.find.events({
     },
     'keypress [data-hook=max-price]': function(e) {
         var character = String.fromCharCode(e.which);
-        var maxPrice = $(e.target).val() + character;
+        var maxPrice = $(e.target).val();
+
+        console.log(e.keyCode);
+        if (e.keyCode == 8) {
+            console.log('test');
+            maxPrice = maxPrice.slice(0, -1);
+        } else {
+            maxPrice += character;
+        }
 
         Session.set('maxPrice', maxPrice);
 

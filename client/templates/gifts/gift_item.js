@@ -3,8 +3,8 @@ Template.giftItem.helpers({
         return this.userId === Meteor.userId();
     },
     displayClass: function() {
-        if (Session.get('activeGift') === this._id) {
-            return ''
+        if (Session.equals('activeGift', this._id)) {
+            return 'active'
         } else {
             return 'hidden'
         }
@@ -28,17 +28,18 @@ Template.giftItem.events({
         e.preventDefault();
         Meteor.subscribe('comments', this._id);
         Session.set('activeGift', this._id);
+        console.log(Session.get('activeGift') + ' ' + this._id);
         path = window.location.pathname;
         history.pushState({}, 'Gift', '/gifts/' + this._id);
     },
     'click [data-hook="shade"]': function(e) {
         e.preventDefault();
-        Session.set('activeGift', '');
+        Session.set('activeGift', null);
         history.pushState({}, 'Find', path);
     },
     'click [data-hook="close"]': function(e) {
         e.preventDefault();
-        Session.set('activeGift', '');
+        Session.set('activeGift', null);
         history.pushState({}, 'Find', path);
     },
     'click [data-hook="want"].wantable': function(e) {

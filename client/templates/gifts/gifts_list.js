@@ -85,6 +85,7 @@ Template.giftsList.onRendered(function() {
     Session.setDefault('minPrice', 0);
     Session.setDefault('maxPrice', 100000);
     Session.set('submitted', startOfDay);
+    Session.set('activeGift', null);
 });
 
 Template.giftsList.helpers({

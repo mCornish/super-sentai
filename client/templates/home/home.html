@@ -1,6 +1,6 @@
 <template name="home">
     {{#unless currentUser}}
-        <div class="logo">YGMYG</div>
+        <div class="logo">BowBase</div>
         <div class="home__find">
             <p class="find__text">
                 I want a gift for a <span class="find__blank"></span>
@@ -19,12 +19,14 @@
         <a class="button button--raised button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
     {{else}}
         <div class="logo logo--small">
-            YGMYG
+            BowBase
         </div>
         <div class="home__user">
             <!-- TODO add account settings -->
-            <h1>{{name}}</h1>
-            <img class="user__image" src="{{avatar}}" />
+            <a href="{{pathFor 'account'}}">
+                <h1>{{name}}</h1>
+                <img class="user__image" src="{{avatar}}" />
+            </a>
             <!-- TODO level system -->
             <h2>{{getGenerosityLevel user.profile.generosity}}</h2>
 
@@ -36,19 +38,27 @@
 
             <h1>You Recommend</h1>
             <div class="user__gifts">
-                {{#each gifts}}
-                    <a href="{{pathFor 'giftPage'}}">
-                        <img class="user__gift" src="{{image}}" />
-                    </a>
-                {{/each}}
+                {{#if haveRecommendations}}
+                    {{#each gifts}}
+                        <a href="{{pathFor 'giftPage'}}">
+                            <img class="user__gift" src="{{image}}" />
+                        </a>
+                    {{/each}}
+                {{else}}
+                    No recommendations yet. <a href="{{pathFor 'giftSubmit'}}">Submit a gift.</a>
+                {{/if}}
             </div>
             <h1>You Want</h1>
             <div class="user__gifts">
-                {{#each wants}}
-                    <a href="{{pathFor 'giftPage'}}">
-                        <img class="user__gift" src="{{image}}" />
-                    </a>
-                {{/each}}
+                {{#if haveWants}}
+                    {{#each wants}}
+                        <a href="{{pathFor 'giftPage'}}">
+                            <img class="user__gift" src="{{image}}" />
+                        </a>
+                    {{/each}}
+                {{else}}
+                    No wants yet. <a href="{{pathFor 'browse'}}">Browse gifts.</a>
+                {{/if}}
             </div>
         </div>
 

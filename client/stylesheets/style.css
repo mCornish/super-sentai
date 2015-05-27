@@ -62,6 +62,7 @@ p {
     background-color: rgb(200,200,200);
     color: rgb(80,80,80);
     font-size: 1.5em;
+    font-weight: bold;
     padding: 1em;
     min-width: 4em;
     text-align: center;
@@ -103,6 +104,9 @@ p {
     display: block;
     width: 50%;
     margin: 0 auto;
+}
+.button--select {
+    -webkit-appearance: inherit;
 }
 /* -------------------- */
 /* --- BUTTON--RAISED */
@@ -603,7 +607,7 @@ p {
     border-bottom: 1px solid rgb(80,80,80);
     width: 10em;
     display: inline-block;
-    margin: 0 1em;
+    margin-right: 1em;
     text-align: center;
 }
 .find__inputs {
