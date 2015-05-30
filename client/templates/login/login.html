@@ -1,9 +1,4 @@
 <template name="login">
-    <div class="logo">
-        YGMYG
-        <a class="logo__back" href="/">&#10094;</a>
-    </div>
-
   {{#unless currentUser}}
       <div class="login">
           <div class="login__services">
@@ -11,7 +6,7 @@
           </div>
           <div class="login__instead">
               {{#unless creatingUser}}
-                  <a href="#" class="" data-hook="switch-state">Sign Up Instead</a>
+                  <a href="#" class="" data-hook="switch-state">Register Instead</a>
               {{else}}
                   <a href="#" class="" data-hook="switch-state">Log In Instead</a>
               {{/unless}}
@@ -37,7 +32,7 @@
             {{#unless creatingUser}}
                 <input type="submit" value="Log In" class="button button--raised button--block" />
             {{else}}
-                <input type="submit" value="Sign Up" class="button button--raised button--block" />
+                <input type="submit" value="Register" class="button button--raised button--block" />
             {{/unless}}
           </form>
       </div>

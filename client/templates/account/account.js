@@ -1,17 +1,21 @@
-Template.account.onRendered( function() {
-    Session.set('userSubmitErrors', {});
+Template.account.onCreated( function() {
+    Session.set('profileSubmitErrors', {});
     Session.set('passwordChange', false);
+    Session.set('successMessage', null);
 });
 
 Template.account.helpers({
     errorMessage: function(field) {
-        return Session.get('userSubmitErrors')[field];
+        return Session.get('profileSubmitErrors')[field];
     },
     errorClass: function(field) {
-        return !!Session.get('userSubmitErrors')[field] ? 'has-error' : '';
+        return !!Session.get('profileSubmitErrors')[field] ? 'has-error' : '';
     },
     passwordChange: function() {
         return Session.get('passwordChange');
+    },
+    successMessage: function() {
+        return Session.get('successMessage');
     }
 });
 
@@ -34,7 +38,7 @@ Template.account.events({
 
         var errors = validateUser(userProperties);
         if (errors.username || errors.email || errors.password || errors.passwordAgain) {
-            return Session.set('userSubmitErrors', errors);
+            return Session.set('profileSubmitErrors', errors);
         }
 
         // create user object with profile data for update
@@ -46,7 +50,13 @@ Template.account.events({
             }
         };
 
-        Meteor.users.update(Meteor.userId(), {$set: user});
+        Meteor.users.update(Meteor.userId(), {$set: user}, function(error) {
+            if (error) {
+                alert(error.reason);
+            } else {
+                Session.set('successMessage', 'Profile updated');
+            }
+        });
     },
     // show password-again field when password has a value
     'keypress [data-hook=password]': function() {

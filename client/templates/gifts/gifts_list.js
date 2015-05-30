@@ -80,10 +80,10 @@ Template.giftsList.onRendered(function() {
 
     var startOfDay = new Date().setHours(0,0,0,0);
 
-    Session.setDefault('minAge', 0);
-    Session.setDefault('maxAge', 500);
-    Session.setDefault('minPrice', 0);
-    Session.setDefault('maxPrice', 100000);
+    Session.set('minAge', 0);
+    Session.set('maxAge', 500);
+    Session.set('minPrice', 0);
+    Session.set('maxPrice', 100000);
     Session.set('submitted', startOfDay);
     Session.set('activeGift', null);
 });

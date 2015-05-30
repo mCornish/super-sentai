@@ -103,10 +103,18 @@ Template.find.events({
 
         Session.set('stepThree', true);
     },
-    'keypress [data-hook=min-price]': function(e) {
+    // TODO figure out why decimal renders as 3/4
+    'keydown [data-hook=min-price]': function(e) {
         var character = String.fromCharCode(e.which);
-        var minPrice = $(e.target).val() + character;
+        var minPrice = $(e.target).val();
 
+        if (e.keyCode == 8) {
+            minPrice = minPrice.slice(0, -1);
+        } else {
+            minPrice += character;
+        }
+
+        minPrice = parseFloat(minPrice).toFixed(2);
         Session.set('minPrice', minPrice);
 
         if (Session.get('maxPrice'))
@@ -115,24 +123,24 @@ Template.find.events({
     'change [data-hook=min-price]': function(e) {
         e.preventDefault();
         var minPrice = $(e.target).val();
+        minPrice = parseFloat(minPrice).toFixed(2);
 
         Session.set('minPrice', minPrice);
 
         if (Session.get('maxPrice'))
             Session.set('stepThree', true);
     },
-    'keypress [data-hook=max-price]': function(e) {
+    'keydown [data-hook=max-price]': function(e) {
         var character = String.fromCharCode(e.which);
         var maxPrice = $(e.target).val();
 
-        console.log(e.keyCode);
         if (e.keyCode == 8) {
-            console.log('test');
             maxPrice = maxPrice.slice(0, -1);
         } else {
             maxPrice += character;
         }
 
+        maxPrice = parseFloat(maxPrice).toFixed(2);
         Session.set('maxPrice', maxPrice);
 
         if (Session.get('minPrice'))
@@ -141,6 +149,7 @@ Template.find.events({
     'change [data-hook=max-price]': function(e) {
         e.preventDefault();
         var maxPrice = $(e.target).val();
+        maxPrice = parseFloat(maxPrice).toFixed(2);
 
         Session.set('maxPrice', maxPrice);
 

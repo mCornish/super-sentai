@@ -1,6 +1,5 @@
 <template name="home">
     {{#unless currentUser}}
-        <div class="logo">BowBase</div>
         <div class="home__find">
             <p class="find__text">
                 I want a gift for a <span class="find__blank"></span>
@@ -15,7 +14,7 @@
             <div class="divider__text">OR</div>
             <div class="divider__bar divider__bar--right"></div>
         </div>
-        <a class="button button--raised button--block home__button" href="{{pathFor 'login'}}">LOG IN / SIGN UP</a>
+        <a class="button button--raised button--block home__button" href="{{pathFor 'login'}}">LOG IN / REGISTER</a>
         <a class="button button--raised button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
     {{else}}
         <div class="logo logo--small">
@@ -31,7 +30,7 @@
             <h2>{{getGenerosityLevel user.profile.generosity}}</h2>
 
             <div class="home__buttons">
-                <a class="button button--raised button--block home__button" href="{{pathFor 'find'}}">FIND A GIFT</a>
+                <a class="button button--raised button--block home__button" href="{{pathFor 'find'}}" data-hook="button">FIND A GIFT</a>
                 <a class="button button--raised button--block home__button" href="{{pathFor 'giftSubmit'}}">SUBMIT A GIFT</a>
                 <a class="button button--raised button--block home__button" href="{{pathFor 'browse'}}">BROWSE</a>
             </div>
