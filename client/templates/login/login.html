@@ -1,42 +1,47 @@
 <template name="login">
-  {{#unless currentUser}}
-      <div class="login">
-          <div class="login__services">
-            <a class="login__facebook button button--raised button--block" href="#" data-hook="facebook">Facebook</a>
-          </div>
-          <div class="login__instead">
-              {{#unless creatingUser}}
-                  <a href="#" class="" data-hook="switch-state">Register Instead</a>
-              {{else}}
-                  <a href="#" class="" data-hook="switch-state">Log In Instead</a>
-              {{/unless}}
-          </div>
-          <form class="login__form" data-hook="signup">
-              <div class="input-group {{errorClass 'username'}}">
-                  <input class="input-group__input" name="username" data-hook="username" type="email" placeholder="Email">
-                  <span class="input-group__bar"></span>
-                  <span class="help-block">{{errorMessage 'username'}}</span>
-              </div>
-              <div class="input-group {{errorClass 'password'}}">
-                  <input class="input-group__input" name="password" data-hook="password" type="password" placeholder="Password">
-                  <span class="input-group__bar"></span>
-                  <span class="help-block">{{errorMessage 'password'}}</span>
-              </div>
-            {{#if creatingUser}}
-                <div class="input-group {{errorClass 'passwordAgain'}}">
-                    <input class="input-group__input" name="password-again" data-hook="password-again" type="password" placeholder="Password (again)">
-                    <span class="input-group__bar"></span>
-                    <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
-                </div>
-            {{/if}}
+    {{#unless currentUser}}
+        <div class="login">
+            <div class="login__services">
+                <a class="login__facebook button button--raised button--block" href="#"
+                   data-hook="facebook">Facebook</a>
+            </div>
             {{#unless creatingUser}}
-                <input type="submit" value="Log In" class="button button--raised button--block" />
+                <a href="#" class="login__link" data-hook="switch-state">Register Instead</a>
             {{else}}
-                <input type="submit" value="Register" class="button button--raised button--block" />
+                <a href="#" class="login__link" data-hook="switch-state">Log In Instead</a>
             {{/unless}}
-          </form>
-      </div>
-  {{else}}
-      <p>You are logged in as {{name}}!</p>
-  {{/unless}}
+            <form class="login__form" data-hook="signup">
+                <div class="input-group {{errorClass 'username'}}">
+                    <input class="input-group__input" name="username" data-hook="username" type="email"
+                           placeholder="Email">
+                    <span class="input-group__bar"></span>
+                    <span class="help-block">{{errorMessage 'username'}}</span>
+                </div>
+                <div class="input-group {{errorClass 'password'}}">
+                    <input class="input-group__input" name="password" data-hook="password" type="password"
+                           placeholder="Password">
+                    <span class="input-group__bar"></span>
+                    <span class="help-block">{{errorMessage 'password'}}</span>
+                </div>
+                {{#if creatingUser}}
+                    <div class="input-group {{errorClass 'passwordAgain'}}">
+                        <input class="input-group__input" name="password-again" data-hook="password-again"
+                               type="password" placeholder="Password (again)">
+                        <span class="input-group__bar"></span>
+                        <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
+                    </div>
+                {{/if}}
+                {{#unless creatingUser}}
+                    <a href="#" class="login__link" data-hook="forgotten-password">Forgot Password</a>
+                {{/unless}}
+                {{#unless creatingUser}}
+                    <input type="submit" value="Log In" class="button button--raised button--block"/>
+                {{else}}
+                    <input type="submit" value="Register" class="button button--raised button--block"/>
+                {{/unless}}
+            </form>
+        </div>
+    {{else}}
+        <p>You are logged in as {{name}}!</p>
+    {{/unless}}
 </template>

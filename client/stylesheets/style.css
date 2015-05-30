@@ -7,12 +7,18 @@ body {
     font-size: 1em;
 }
 
+h1, h2, h2, a, p {
+    font-family: 'Lato', sans-serif;
+}
+
 h1 {
     font-size: 3rem;
+    font-weight: 900;
 }
 
 h2 {
     font-size: 1.5rem;
+    font-weight: 300;
 }
 
 p {
@@ -723,7 +729,7 @@ a:hover, a:focus {
 /* -------------------- */
 .login__services {
 }
-.login__instead {
+.login__link {
     display: block;
     text-align: center;
     margin: 2em 0;
