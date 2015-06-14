@@ -45,6 +45,13 @@ a:hover, a:focus {
     margin: 1em auto;
     text-align: center;
     position: relative;
+    color: rgb(80,80,80);
+    display: block;
+    cursor: default;
+}
+.logo:hover,
+.logo:focus {
+    color: rgb(80,80,80);
 }
 .logo__back {
     position: absolute;
@@ -60,8 +67,17 @@ a:hover, a:focus {
     left: 0;
 }
 .logo--small {
+    margin: .5em auto 1em;
+    cursor: pointer;
+    font-size: 3em;
+}
+.logo--small .logo__header {
     margin: .5em auto;
-    font-size: 2em;
+    font-size: .5em;
+    font-weight: 100;
+}
+.logo--small .logo__subheader {
+    display: none;
 }
 
 /* -------------------- */
@@ -250,7 +266,8 @@ a:hover, a:focus {
     transition: .2s ease all;
 }
 .input-group__input:focus ~ label,
-.input-group__input:valid ~ label,
+.input-group__input[required]:valid ~ label,
+.input-group__input[optional] ~ label,
 .input-group__label--active {
     top: -20px;
     color: rgb(80,80,80);
@@ -638,6 +655,9 @@ a:hover, a:focus {
     width: 8em;
     margin-left: 3em;
 }
+.gift__want {
+    font-size: .8em;
+}
 
 /* -------------------- */
 /* --- HOME */
@@ -739,10 +759,11 @@ a:hover, a:focus {
 }
 
 /* -------------------- */
-/* --- BROWSE */
+/* --- SUBMIT */
 /* -------------------- */
-.gift__want {
-    font-size: .8em;
+.submit__intro {
+    text-align: center;
+    margin-bottom: 3em;
 }
 
 /* -------------------- */

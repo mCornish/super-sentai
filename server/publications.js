@@ -6,6 +6,8 @@ Meteor.publish('gifts', function(queries, options) {
             sort: Object,
             limit: Number
         });
+    } else {
+        options = {};
     }
 
     return Gifts.find(queries, options);
@@ -31,6 +33,7 @@ Meteor.publish('recipients', function() {
 });
 
 Meteor.publish('recipientsByGender', function(gender) {
+    gender = typeof gender !== 'undefined' ? gender : 'neutral';
     return Recipients.find( {$or: [ {gender: gender}, {gender: 'neutral'} ] });
 });
 

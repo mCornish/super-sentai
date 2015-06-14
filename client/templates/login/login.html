@@ -6,38 +6,55 @@
                    data-hook="facebook">Facebook</a>
             </div>
             {{#unless creatingUser}}
-                <a href="#" class="login__link" data-hook="switch-state">Register Instead</a>
+                <a class="login__link" data-hook="switch-state">Register Instead</a>
             {{else}}
-                <a href="#" class="login__link" data-hook="switch-state">Log In Instead</a>
+                <a  class="login__link" data-hook="switch-state">Log In Instead</a>
             {{/unless}}
             <form class="login__form" data-hook="signup">
-                <div class="input-group {{errorClass 'username'}}">
-                    <input class="input-group__input" name="username" data-hook="username" type="email"
-                           placeholder="Email">
-                    <span class="input-group__bar"></span>
-                    <span class="help-block">{{errorMessage 'username'}}</span>
-                </div>
-                <div class="input-group {{errorClass 'password'}}">
-                    <input class="input-group__input" name="password" data-hook="password" type="password"
-                           placeholder="Password">
-                    <span class="input-group__bar"></span>
-                    <span class="help-block">{{errorMessage 'password'}}</span>
-                </div>
-                {{#if creatingUser}}
-                    <div class="input-group {{errorClass 'passwordAgain'}}">
-                        <input class="input-group__input" name="password-again" data-hook="password-again"
-                               type="password" placeholder="Password (again)">
+                {{#unless forgottenPassword}}
+                    <div class="input-group {{errorClass 'username'}}">
+                        <input class="input-group__input" name="username" data-hook="username" type="email"
+                               placeholder="Email">
                         <span class="input-group__bar"></span>
-                        <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
+                        <span class="help-block">{{errorMessage 'username'}}</span>
                     </div>
-                {{/if}}
-                {{#unless creatingUser}}
-                    <a href="#" class="login__link" data-hook="forgotten-password">Forgot Password</a>
-                {{/unless}}
-                {{#unless creatingUser}}
-                    <input type="submit" value="Log In" class="button button--raised button--block"/>
+                    <div class="input-group {{errorClass 'password'}}">
+                        <input class="input-group__input" name="password" data-hook="password" type="password"
+                               placeholder="Password">
+                        <span class="input-group__bar"></span>
+                        <span class="help-block">{{errorMessage 'password'}}</span>
+                    </div>
+                    {{#if creatingUser}}
+                        <div class="input-group {{errorClass 'passwordAgain'}}">
+                            <input class="input-group__input" name="password-again" data-hook="password-again"
+                                   type="password" placeholder="Password (again)">
+                            <span class="input-group__bar"></span>
+                            <span class="help-block">{{errorMessage 'passwordAgain'}}</span>
+                        </div>
+                    {{/if}}
                 {{else}}
-                    <input type="submit" value="Register" class="button button--raised button--block"/>
+                    <div class="input-group {{errorClass 'email'}}">
+                        <input class="input-group__input" name="email" data-hook="email" type="email"
+                               placeholder="Email">
+                        <span class="input-group__bar"></span>
+                        <span class="help-block">{{errorMessage 'email'}}</span>
+                    </div>
+                {{/unless}}
+                <!-- TODO Hook up forgotten password -->
+                {{#unless creatingUser}}
+                    {{#unless forgottenPassword}}
+                        <a class="login__link" data-hook="forgotten-password">Forgot Password</a>
+                    {{/unless}}
+                {{/unless}}
+                <!-- TODO Add Cancel button -->
+                {{#unless forgottenPassword}}
+                    {{#unless creatingUser}}
+                        <input type="submit" value="Log In" class="button button--raised button--block"/>
+                    {{else}}
+                        <input type="submit" value="Register" class="button button--raised button--block"/>
+                    {{/unless}}
+                {{else}}
+                    <input type="submit" value="Email Me" class="button button--raised button--block"/>
                 {{/unless}}
             </form>
         </div>

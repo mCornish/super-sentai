@@ -24,7 +24,7 @@ Accounts.onCreateUser(function(options, user) {
         user.emails.push(user.username);
         options.profile.email = user.username;
         // convert email to username
-        options.profile.username = user.username.substr(0, user.username.indexOf('@'));
+        user.username = user.username.substr(0, user.username.indexOf('@'));
     }
 
     options.profile.generosity = 0;

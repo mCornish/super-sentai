@@ -1,23 +1,21 @@
 <template name="giftSubmit">
-    <div class="logo logo--small">
-        YGMYG
-        <a class="logo__back" href="/">&#10094;</a>
-    </div>
+    <p class="submit__intro">Sharing is caring: The more you describe the gift, the more helpful it will be to other gift-givers!</p>
 
     <form class="main form">
         <div class="input-group {{errorClass 'title'}}">
-            <input class="input-group__input" name="title" id="title" type="text" value="" required />
-            <label class="input-group__label" for="title">What is the gift?</label>
+            <input class="input-group__input" name="title" id="title" type="text" maxlength="50" value="" required />
+            <label class="input-group__label" for="title">What is the name of gift?</label>
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'title'}}</span>
         </div>
+        <!-- TODO make sure you can both upload and use a URL -->
+        <!-- TODO Configure image upload -->
         <div class="input-group {{errorClass 'image'}}">
             <input class="input-group__input" name="image" id="image" type="url" value="" required />
-            <label class="input-group__label" for="image">Image URL</label>
+            <label class="input-group__label" for="image">Upload an image of the gift</label>
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'image'}}</span>
         </div>
-        <!-- TODO Configure image upload -->
         {{> upload_bootstrap}}
         <div class="input-group {{errorClass 'link'}}">
             <input class="input-group__input" name="link" id="link" type="url" value="" required />
@@ -38,6 +36,14 @@
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'age'}}</span>
         </div>
+        <div class="input-group {{errorClass 'description'}}">
+            <textarea class="input-group__textarea" name="description" id="description" type="text" rows="5" maxlength="1000" value="">
+            </textarea>
+            <label class="input-group__label input-group__label--active" for="description">Tell us about the gift</label>
+            <span class="input-group__bar"></span>
+            <span class="help-block">{{errorMessage 'description'}}</span>
+        </div>
         <input type="submit" value="Submit" class="btn btn-primary" />
+        <a class="btn btn-primary" data-hook="submit-cancel">Cancel</a>
     </form>
 </template>

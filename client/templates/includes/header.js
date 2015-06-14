@@ -3,9 +3,9 @@ Template.layout.onRendered(function() {
 });
 
 Template.header.helpers({
-    hasLogo: function() {
+    logoSize: function() {
         var routeName = Router.current().route.getName();
 
-        return (routeName === 'home' || routeName === 'login') && !Meteor.userId();
+        return (routeName === 'home' || routeName === 'login') && !Meteor.userId() ? '' : 'logo--small';
     }
 });

@@ -1,9 +1,4 @@
 <template name="account">
-    <div class="logo logo--small">
-        YGMYG
-        <a class="logo__back" href="/">&#10094;</a>
-    </div>
-
     <form class="account__form" data-hook="account-form">
         <div class="input-group {{errorClass 'username'}}">
             <input class="input-group__input" name="username" value="{{profile.username}}" data-hook="username" type="text" id="username" required>

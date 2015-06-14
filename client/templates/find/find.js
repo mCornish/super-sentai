@@ -1,12 +1,14 @@
 Template.find.onRendered(function() {
     Session.set('gender', null);
     Session.set('recipient', null);
-    Session.set('age', null);
+    Session.set('minAge', null);
+    Session.set('maxAge', null);
     Session.set('minPrice', null);
     Session.set('maxPrice', null);
     Session.set('stepOne', true);
     Session.set('stepTwo', false);
     Session.set('stepThree', false);
+    Session.set('gifts', null);
 
     // check whether we got a gender from the route
     Session.set('hasGender', Router.current().data().routeGender != null);
@@ -67,6 +69,31 @@ Template.find.helpers({
 
         // if we don't know gender, return default text
         return 'Her/His';
+    },
+    gifts: function() {
+        var minAge = parseInt( Session.get('minAge')),
+            maxAge = parseInt( Session.get('maxAge')),
+            minPrice = parseFloat( Session.get('minPrice')),
+            maxPrice = parseFloat( Session.get('maxPrice')),
+            ageQuery = {},
+            priceQuery = {};
+        if ( ! ( isNaN(minAge) || isNaN(maxAge) ) ) {
+            ageQuery = { $and: [
+                { age: { $gt: minAge } },
+                { age: { $lt: maxAge } }
+            ]}
+        }
+        if ( ! ( isNaN(minPrice) || isNaN(maxPrice) ) ) {
+            priceQuery = { $and: [
+                { price: { $gt: minPrice } },
+                { price: { $lt: maxPrice } }
+            ]}
+        }
+        return Gifts.find({ $and: [
+            { recipient: Session.get('recipient') },
+            ageQuery,
+            priceQuery
+        ]});
     }
 });
 
@@ -97,9 +124,33 @@ Template.find.events({
     'change [data-hook=age]': function(e) {
         e.preventDefault();
 
-        var age = $(e.target).val();
+        var minAge = null,
+            maxAge = null,
+            hyphen = null,
+            ageValue = $(e.target).val().toLowerCase();
 
-        Session.set('age', age);
+        switch (ageValue) {
+            case 'any':
+                minAge = null;
+                maxAge = null;
+                break;
+            case 'newborn':
+                minAge = 0;
+                maxAge = 1;
+                break;
+            case '50+':
+                minAge = 51;
+                maxAge = 100;
+                break;
+            default:
+                hyphen = ageValue.indexOf('-');
+                minAge = parseInt(ageValue.substr(0, hyphen));
+                maxAge = parseInt(ageValue.substr(hyphen + 1));
+                break;
+        }
+
+        Session.set('minAge', minAge);
+        Session.set('maxAge', maxAge);
 
         Session.set('stepThree', true);
     },

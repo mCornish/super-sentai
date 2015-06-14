@@ -32,5 +32,14 @@ Template.giftSubmit.events({
                 return throwError(error.reason);
             Router.go('giftPage', {_id: result._id});
         });
+    },
+    'click [data-hook=submit-cancel]': function(e) {
+        e.preventDefault();
+
+        var isCanceled = window.confirm('Are you sure you want to cancel your submission?');
+
+        if (isCanceled) {
+            window.location = '/';
+        }
     }
 });
