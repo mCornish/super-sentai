@@ -320,6 +320,28 @@ a:hover, a:focus {
 .input-group__input:valid ~ .input-group__addon {
     opacity: 1;
 }
+/* SELECT */
+/*.input-group--select select {*/
+    /*font-size: 1em;*/
+    /*padding: 1em;*/
+    /*-webkit-appearance: inherit;*/
+    /*border-top-right-radius: 0;*/
+    /*border-bottom-right-radius: 0;*/
+/*}*/
+.input-group--select label {
+    display: block;
+}
+/*.input-group--select::after {*/
+    /*content: '\25BC';*/
+    /*background-color: rgb(248,248,248);*/
+    /*border: 1px solid rgb(166,166,166);*/
+    /*border-left: 0;*/
+    /*padding: 1em;*/
+    /*font-size: 1em;*/
+    /*line-height: inherit;*/
+    /*border-top-right-radius: 5px;*/
+    /*border-bottom-right-radius: 5px;*/
+/*}*/
 
 .login-button,
 .logout-button {
@@ -729,6 +751,7 @@ a:hover, a:focus {
     display: inline-block;
     width: calc((100% / 3) - 8px);
     margin-top: 1em;
+    font-size: 1em;
 }
 .find__button[type="radio"] {
     display: none;

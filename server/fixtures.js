@@ -14,11 +14,13 @@ if (Gifts.find().count() === 0) {
 
     var headphonesId = Gifts.insert({
         title: 'Perfect Movie Headphones',
+        description: 'These Seinheisser headphones will absolutely rattle your brain in the best way.',
         userId: mike._id,
         author: mike.profile.name,
         image: 'http://ecx.images-amazon.com/images/I/41encHjQnhL._SY450_.jpg',
         link: 'http://www.amazon.com/dp/B002TLT10S/ref=wl_it_dp_o_pd_nS_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=I3MZZGGEXFH3AM&psc=1',
         recipient: 'mom',
+        occasion: 'Wedding',
         price: 199.99,
         age: 21,
         submitted: new Date(now - 7 * 3600 * 1000),
@@ -45,11 +47,13 @@ if (Gifts.find().count() === 0) {
 
     Gifts.insert({
         title: 'The husband loves these',
+        description: 'You can\'t image a better pair of socks. That\'s what he told me anyway. I\'m a little jealous, actually.',
         userId: jane._id,
         author: jane.profile.name,
         image: 'http://ecx.images-amazon.com/images/I/51sfxlEd1AL._SX425_.jpg',
         link: 'http://www.amazon.com/dp/B000XFW6OU/ref=wl_it_dp_o_pC_S_ttl?_encoding=UTF8&colid=3OUL68SBBBXSI&coliid=IDC1G4192VKCA&psc=1',
         recipient: 'dad',
+        occasion: 'Christmas',
         price: 19.95,
         age: 33,
         submitted: new Date(now - 14 * 3600 * 1000),
@@ -67,14 +71,24 @@ if (Gifts.find().count() === 0) {
         gender: 'male',
         giftCount: 1
     });
+    Occasions.insert({
+        name: 'Christmas',
+        giftCount: '0'
+    });
+    Occasions.insert({
+        name: 'Wedding',
+        giftCount: '5'
+    });
     for (var i = 0; i < 30; i++) {
         Gifts.insert({
             title: 'Test post #' + i,
+            description: 'This is a test post for a gift. I am test gift #' + i + '.',
             userId: mike._id,
             author: mike.profile.name,
             image: 'http://popmusicexperience.co.uk/wp-content/uploads/2013/07/giftvoucherpic.gif',
             link: 'http://google.com/?q=test-' + i,
             recipient: 'male#' + i,
+            occasion: 'occasion#' + i,
             price: parseFloat(generateRandFloat(5, 1000, 2)),
             age: generateRandInt(1, 100),
             submitted: new Date(now - 14 * 3600 * 1000),
@@ -95,6 +109,10 @@ if (Gifts.find().count() === 0) {
         Recipients.insert({
             name: 'neutral#' + i,
             gender: 'neutral',
+            giftCount: Math.floor(Math.random() * 10 * i)
+        });
+        Occasions.insert({
+            name: 'occasion#' + i,
             giftCount: Math.floor(Math.random() * 10 * i)
         });
     }

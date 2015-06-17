@@ -11,12 +11,9 @@
         <!-- TODO make sure you can both upload and use a URL -->
         <!-- TODO Configure image upload -->
         <div class="input-group {{errorClass 'image'}}">
-            <input class="input-group__input" name="image" id="image" type="url" value="" required />
-            <label class="input-group__label" for="image">Upload an image of the gift</label>
-            <span class="input-group__bar"></span>
-            <span class="help-block">{{errorMessage 'image'}}</span>
+            <label class="image__label" for="image">Upload an image of the gift</label>
+            {{> upload_bootstrap}}
         </div>
-        {{> upload_bootstrap}}
         <div class="input-group {{errorClass 'link'}}">
             <input class="input-group__input" name="link" id="link" type="url" value="" required />
             <label class="input-group__label" for="link">Where can someone buy the gift online?</label>
@@ -30,11 +27,29 @@
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'price'}}</span>
         </div>
+        <div class="input-group input-group--select {{errorClass 'recipient'}}">
+            <label for="recipient">Who is the gift for?</label>
+            <select class="select" id="recipient" name="recipient" value="recipient" data-hook="recipient">
+                <option>Recipient</option>
+                {{#each recipients}}
+                    <option>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
         <div class="input-group {{errorClass 'age'}}">
             <input class="input-group__input"  name="age" id="age" type="number" value="" required />
             <label class="input-group__label" for="age">How old is that lucky person?</label>
             <span class="input-group__bar"></span>
             <span class="help-block">{{errorMessage 'age'}}</span>
+        </div>
+        <div class="input-group input-group--select {{errorClass 'occasion'}}">
+            <label for="occasion">Why did you get the gift?</label>
+            <select class="select" id="occasion" name="occasion" value="occasion" data-hook="occasion">
+                <option>Occasion</option>
+                {{#each occasions}}
+                    <option>{{name}}</option>
+                {{/each}}
+            </select>
         </div>
         <div class="input-group {{errorClass 'description'}}">
             <textarea class="input-group__textarea" name="description" id="description" type="text" rows="5" maxlength="1000" value="">

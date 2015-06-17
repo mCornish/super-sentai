@@ -31,10 +31,13 @@ Meteor.publish('notifications', function() {
 Meteor.publish('recipients', function() {
     return Recipients.find();
 });
-
 Meteor.publish('recipientsByGender', function(gender) {
     gender = typeof gender !== 'undefined' ? gender : 'neutral';
     return Recipients.find( {$or: [ {gender: gender}, {gender: 'neutral'} ] });
+});
+
+Meteor.publish('occasions', function() {
+    return Occasions.find();
 });
 
 Meteor.publish('users', function() {

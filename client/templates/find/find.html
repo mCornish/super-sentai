@@ -38,12 +38,15 @@
         </div>
         <div class="find__step">
             {{#if stepTwo}}
-                <div class="find__text"><span class="capitalize">{{genderPossessive}}</span> age is <span class="find__blank">{{age}}</span></div>
+                <div class="find__text"><span class="capitalize">{{genderPossessive}}</span> age is <span class="find__blank">{{minAge}} - {{maxAge}}</span></div>
                 <!-- TODO Figure out better way to display this select -->
                 <div class="input-group input-group--block">
                     <div class="radio-slider">
                         <div class="radio-slider__labels">
                             <label for="age-0">Any</label>
+
+
+
                             <label for="age-1">Newborn</label>
                             <label for="age-2">1 - 5</label>
                             <label for="age-3">11 - 15</label>
@@ -88,11 +91,34 @@
                 </div>
             {{/if}}
         </div>
-        <div class="find__results">
-            {{#if gifts}}
-                {{#each gifts}}
-                    <p>{{title}}</p>
-                {{/each}}
+        <div class="find__step">
+            {{#if stepFour}}
+                <div class="find__text">The reason I'm getting a gift is <span class="find__blank">{{occasion}}</span></div>
+                <div class="find__inputs">
+                    {{#if occasions}}
+                        {{#each occasions}}
+                            <input class="button find__button button--raised" type="radio" id="{{name}}" name="occasion" value="{{name}}" data-hook="occasion" />
+                            <label class="button find__button button--raised" for="{{name}}">{{name}}</label>
+                        {{/each}}
+                    {{/if}}
+                    <!-- TODO add select or something with the rest of the options -->
+                    <select class="button find__button button--raised button--select" id="other" name="occasion" value="other" data-hook="recipient">
+                        <option>Other</option>
+                        {{#each remainingOccasions}}
+                            <option>{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            {{/if}}
+        </div>
+        <div class="find__step">
+            {{#if results}}
+                <div class="find__text">These gifts might be perfect for your {{recipient}}</div>
+                <div class="grid-list gifts">
+                        {{#each gifts}}
+                            {{> giftItem}}
+                        {{/each}}
+                </div>
             {{/if}}
         </div>
     </div>

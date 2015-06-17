@@ -17,10 +17,13 @@ Template.giftSubmit.events({
         var gift = {
             title: $(e.target).find('[name=title]').val(),
             image: $(e.target).find('[name=image]').val(),
+            description: $(e.target).find('[name=description]').val(),
             link: $(e.target).find('[name=link]').val(),
             // Use parse to convert strings to numbers
             price: parseFloat( $(e.target).find('[name=price]').val() ),
-            age: parseInt( $(e.target).find('[name=age]').val() )
+            recipient: $(e.target).find('[name=recipient]').val(),
+            age: parseInt( $(e.target).find('[name=age]').val() ),
+            occasion: $(e.target).find('[name=occasion]').val()
         };
 
         var errors = validateGift(gift);

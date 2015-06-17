@@ -5,9 +5,12 @@ Template.find.onRendered(function() {
     Session.set('maxAge', null);
     Session.set('minPrice', null);
     Session.set('maxPrice', null);
+    Session.set('occasion', null);
     Session.set('stepOne', true);
     Session.set('stepTwo', false);
     Session.set('stepThree', false);
+    Session.set('stepFour', false);
+    Session.set('results', false)
     Session.set('gifts', null);
 
     // check whether we got a gender from the route
@@ -23,9 +26,16 @@ Template.find.helpers({
             )
         }
     },
+    // TODO get remaining recipients/occasions, excluding the ones already available
     remainingRecipients: function() {
         return Recipients.find(
             { $or: [ {gender: Session.get('gender')}, {gender: 'neutral'} ] },
+            { sort: { giftCount: -1 } }
+        )
+    },
+    remainingOccasions: function() {
+        return Occasions.find(
+            {},
             { sort: { giftCount: -1 } }
         )
     },
@@ -38,20 +48,32 @@ Template.find.helpers({
     stepThree: function() {
         return Session.get('stepThree');
     },
+    stepFour: function() {
+        return Session.get('stepFour');
+    },
+    results: function() {
+        return Session.get('results');
+    },
     gender: function() {
         return Session.get('gender') || Router.current().data().routeGender;
     },
     recipient: function() {
         return Session.get('recipient');
     },
-    age: function() {
-        return Session.get('age');
+    minAge: function() {
+        return Session.get('minAge');
+    },
+    maxAge: function() {
+        return Session.get('maxAge');
     },
     minPrice: function() {
         return Session.get('minPrice');
     },
     maxPrice: function() {
         return Session.get('maxPrice');
+    },
+    occasion: function() {
+        return Session.get('occasion');
     },
     genderPossessive: function() {
         // try to get text from Router
@@ -75,8 +97,10 @@ Template.find.helpers({
             maxAge = parseInt( Session.get('maxAge')),
             minPrice = parseFloat( Session.get('minPrice')),
             maxPrice = parseFloat( Session.get('maxPrice')),
+            occasion = Session.get('occasion'),
             ageQuery = {},
-            priceQuery = {};
+            priceQuery = {},
+            occasionQuery = {};
         if ( ! ( isNaN(minAge) || isNaN(maxAge) ) ) {
             ageQuery = { $and: [
                 { age: { $gt: minAge } },
@@ -89,10 +113,16 @@ Template.find.helpers({
                 { price: { $lt: maxPrice } }
             ]}
         }
+        if ( occasion ) {
+            occasionQuery = {
+                occasion: occasion
+            }
+        }
         return Gifts.find({ $and: [
             { recipient: Session.get('recipient') },
             ageQuery,
-            priceQuery
+            priceQuery,
+            occasionQuery
         ]});
     }
 });
@@ -167,9 +197,6 @@ Template.find.events({
 
         minPrice = parseFloat(minPrice).toFixed(2);
         Session.set('minPrice', minPrice);
-
-        if (Session.get('maxPrice'))
-            Session.set('stepThree', true);
     },
     'change [data-hook=min-price]': function(e) {
         e.preventDefault();
@@ -179,7 +206,7 @@ Template.find.events({
         Session.set('minPrice', minPrice);
 
         if (Session.get('maxPrice'))
-            Session.set('stepThree', true);
+            Session.set('stepFour', true);
     },
     'keydown [data-hook=max-price]': function(e) {
         var character = String.fromCharCode(e.which);
@@ -193,9 +220,6 @@ Template.find.events({
 
         maxPrice = parseFloat(maxPrice).toFixed(2);
         Session.set('maxPrice', maxPrice);
-
-        if (Session.get('minPrice'))
-            Session.set('stepThree', true);
     },
     'change [data-hook=max-price]': function(e) {
         e.preventDefault();
@@ -205,6 +229,15 @@ Template.find.events({
         Session.set('maxPrice', maxPrice);
 
         if (Session.get('minPrice'))
-            Session.set('stepThree', true);
+            Session.set('stepFour', true);
+    },
+    'change [data-hook=occasion]': function(e) {
+        e.preventDefault();
+
+        var occasion = $(e.target).val();
+
+        Session.set('occasion', occasion);
+
+        Session.set('results', true);
     }
 });
