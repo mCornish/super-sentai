@@ -1,3 +1,3 @@
-/**
- * Created by mikecornish on 7/8/15.
- */
+Template.options.events({
+ 
+});
