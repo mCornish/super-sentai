@@ -636,158 +636,70 @@ a:hover, a:focus {
     z-index: 5;
 }
 
-.gifts {
-    padding: 3em;
-}
 
-.gift {
-    position: relative;
-}
-
-.gift.animate {
-    -webkit-transition: all 300ms 0ms ease-in;
-    transition: all 300ms 0ms ease-in;
-}
-
-.comments-container {
-    padding: 3em 0;
-}
-.comment {
+/* -------------------- */
+/* --- ACTOR */
+/* -------------------- */
+.actor {
     display: block;
-    padding: 1em;
-}
-.comment:nth-child(even) {
-    background-color: rgb(245,245,250);
-}
-.comment__author {
-    font-weight: bold;
-}
-.comment__submitted {
-    color: rgb(150,150,150);
-    font-weight: normal;
+    background-color: rgb(100,100,100);
+    width: 5em;
+    height: 5em;
+    border-radius: 100%;
+    cursor: pointer;
 }
 
-/* -------------------- */
-/* --- BROWSE */
-/* -------------------- */
-.browse__filter {
-    margin-top: 3em;
-}
-.browse__filter .input-group {
-    width: 8em;
-    margin-left: 3em;
-}
-.gift__want {
-    font-size: .8em;
-}
 
 /* -------------------- */
-/* --- HOME */
+/* --- MENU */
 /* -------------------- */
-.home__find {
+.menu {
+    display: block;
     text-align: center;
 }
-.home__buttons {
-    margin: 3em auto;
-}
-.home__button + .home__button {
-    margin-top: 2em;
-}
-.gender-button + .gender-button {
-    margin-left: 2em;
-}
-.gender-button--male {
-
-}
-.gender-button--female {
-
-}
-
-.home__user {
-    text-align: center;
-}
-.user__image {
-    border-radius: .5em;
-    max-width: 50%;
-    box-shadow: 0 2px 3px 0 rgb(125,125,125);
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
-}
-.user__gifts {
-    width: 30em;
-    margin: 3em auto;
-}
-.user__gift {
-    width: calc((100% / 3) - 6px);
+.menu__button {
+    display: block;
+    font-size: 2em;
+    border: 3px solid rgb(30,30,30);
     border-radius: .3em;
-    box-shadow: 0 1px 5px 0 rgb(125,125,125);
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
+    width: 30%;
+    margin: 0 auto;
+    cursor: pointer;
 }
-
-/* -------------------- */
-/* --- FIND */
-/* -------------------- */
-.find__step + .find__step {
-    margin-top: 6em;
+.menu__button:hover {
+    background-color: rgb(230,150,150);
 }
-.find__text {
-    font-size: 1.5em;
-    position: relative;
-}
-.find__blank {
-    border-bottom: 1px solid rgb(80,80,80);
-    width: 10em;
-    display: inline-block;
-    margin-right: 1em;
-    text-align: center;
-}
-.find__inputs {
-    margin: 2em auto 0;
-    width: 30em;
-}
-.find__inputs .input-group {
-    width: 10em;
-}
-.find__button {
-    display: inline-block;
-    width: calc((100% / 3) - 8px);
+.menu__button + .menu__button {
     margin-top: 1em;
-    font-size: 1em;
-}
-.find__button[type="radio"] {
-    display: none;
-}
-.find__button[type="radio"]:checked + label {
-    color: rgb(20,120,20);
-    background-color: rgb(130,230,130);
-    box-shadow: 0 5px 7px 0 rgb(125,125,125);
-    box-shadow: 0 5px 7px 0 rgba(0,0,0,.5);
-    -webkit-animation: none;
-}
-.find__buttons + .find__text {
-    margin-top: 5em;
 }
 
-/* -------------------- */
-/* --- LOGIN */
-/* -------------------- */
-.login__services {
-}
-.login__link {
-    display: block;
-    text-align: center;
-    margin: 2em 0;
-}
-.login__form .input-group {
-    width: 15em;
-}
 
 /* -------------------- */
-/* --- SUBMIT */
+/* --- TALK BOX */
 /* -------------------- */
-.submit__intro {
-    text-align: center;
-    margin-bottom: 3em;
+.talk-box {
+    position: relative;
+    top: 70vh;
+
+    border: 3px solid rgb(30,30,30);
+    padding: 2em;
+    width: 90%;
+    height: 20vh;
+    margin: 0 auto;
 }
+.talk-box__choices {
+    margin-top: 1em;
+}
+.talk-box__choice {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    cursor: pointer;
+}
+.talk-box__choice:hover {
+    background-color: rgb(200,200,200);
+}
+
 
 /* -------------------- */
 /* --- HELPERS */

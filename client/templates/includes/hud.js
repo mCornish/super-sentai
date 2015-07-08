@@ -1,8 +1,4 @@
-Template.layout.onRendered(function() {
-
-});
-
-Template.header.helpers({
+Template.hud.helpers({
     logoSize: function() {
         var routeName = Router.current().route.getName();
 

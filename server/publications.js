@@ -13,16 +13,23 @@ Meteor.publish('gifts', function(queries, options) {
     return Gifts.find(queries, options);
 });
 
-// giftPage publication
-Meteor.publish('singleGift', function(id) {
-    check(id, String);
-    return Gifts.find(id);
+
+//publish all Actors
+Meteor.publish('actors', function() {
+    return Actors.find();
 });
 
-Meteor.publish('comments', function(giftId) {
-    check(giftId, String);
-    return Comments.find({giftId: giftId});
+//publish single Actor
+Meteor.publish('singleActor', function(id) {
+    return Actors.find(id);
 });
+
+
+//public single Convo
+Meteor.publish('singleConvo', function(actorId) {
+    return Convos.find({actor: actorId});
+});
+
 
 Meteor.publish('notifications', function() {
     return Notifications.find({userId: this.userId, read: false});
