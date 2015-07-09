@@ -1,5 +1,15 @@
 <template name="stage">
-    {{#each actors}}
-      {{> actor}}
-    {{/each}}
+    <div class="cutscene">
+        <h1 class="cutscene__placeholder">THIS IS AN INTRO PLACEHOLDER</h1>
+        <div class="cutscene__skip" data-hook="skip">SKIP</div>
+        <video class="cutscene__video" autoplay data-hook="intro-video">
+            <source src="videos/glass-stock.mp4" type="video/mp4">
+            Your browser does not support this video.
+        </video>
+    </div>
+    <div class="stage">
+        {{#each actors}}
+          {{> actor}}
+        {{/each}}
+    </div>
 </template>

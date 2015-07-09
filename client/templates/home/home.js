@@ -7,8 +7,5 @@ Template.home.helpers({
 Template.home.events({
     'click [data-hook="start"]': function(e) {
 
-    },
-    'click [data-hook="options"]': function(e) {
-        e.preventDefault();
     }
 });
