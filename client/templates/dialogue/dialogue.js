@@ -44,6 +44,12 @@ Template.dialogue.events({
     },
     'click [data-hook="back"]': function(e) {
         var turns = Session.get('turns');
-        Session.set('turns', --turns);
+
+        if (turns - 1 === 0) {
+            e.preventDefault();
+            Router.go('end');
+        } else {
+            Session.set('turns', turns - 1);
+        }
     }
 });

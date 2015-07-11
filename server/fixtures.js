@@ -55,7 +55,12 @@ if (Players.find().count() === 0) {
                 response: {
                     text: 'Did you not hear me? Or are you simply stupid?',
                     choices: [
-
+                        {
+                            text: 'I don\'t know',
+                            response: {
+                                text: 'Then I do. Simpleton.'
+                            }
+                        }
                     ]
                 }
             }

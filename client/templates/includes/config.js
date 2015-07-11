@@ -1,4 +1,4 @@
-Template.home.onRendered( function() {
+Template.stage.onRendered( function() {
     Session.setDefault('turns', 5);
     Session.setDefault('score', 0);
 });

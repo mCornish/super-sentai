@@ -1,5 +1,7 @@
 <template name="layout">
-    {{> hud}}
+    {{#if showHud}}
+        {{> hud}}
+    {{/if}}
     <div class="main" data-hook="main">
             {{> yield}}
     </div>
