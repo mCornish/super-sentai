@@ -3,6 +3,7 @@ Template.dialogue.onRendered( function() {
     console.log(convo);
     Session.set('response', convo.greeting);
     Session.set('choices', convo.choices);
+    Session.set('showBack', false);
 });
 
 Template.dialogue.helpers({
@@ -11,6 +12,9 @@ Template.dialogue.helpers({
     },
     choices: function() {
         return Session.get('choices');
+    },
+    showBack: function() {
+        return Session.get('showBack');
     }
 });
 
@@ -21,13 +25,19 @@ Template.dialogue.events({
         var choice = $.grep(choices, function(e) {
             return e.text === text;
         })[0];
-        var response = choice.response;
 
-        if (response) {
-            Session.set('response', response.text);
-            Session.set('choices', response.choices);
-        } else {
-            alert('Response not found');
+        //check whether a choice exists
+        if (choice) {
+            var response = choice.response;
+
+            if (response) {
+                Session.set('response', response.text);
+                Session.set('choices', response.choices);
+            } else {
+                alert('Response not found');
+            }
+        } else {  // otherwise show the back button
+            Session.set('showBack', true);
         }
     }
 });

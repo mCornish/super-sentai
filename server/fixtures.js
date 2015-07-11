@@ -18,7 +18,7 @@ if (Players.find().count() === 0) {
         morale: 0
     });
 
-    Actors.insert({
+    var sassyId = Actors.insert({
         name: 'Sassy',
         morale: 0
     });
@@ -33,7 +33,54 @@ if (Players.find().count() === 0) {
                 response: {
                     text: 'I asked you a question.',
                     choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                text: 'What?',
+                response: {
+                    text: 'Did you not hear me? Or are you simply stupid?',
+                    choices: [
 
+                    ]
+                }
+            }
+        ]
+    });
+
+    Convos.insert({
+        actor: sassyId,
+        greeting: 'Have you seen the sky today?',
+        choices: [
+            {
+                text: 'Hi',
+                response: {
+                    text: 'I asked you a question.',
+                    choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
                     ]
                 }
             },
