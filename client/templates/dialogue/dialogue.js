@@ -32,12 +32,14 @@ Template.dialogue.events({
 
             if (response) {
                 Session.set('response', response.text);
-                Session.set('choices', response.choices);
-            } else {
-                alert('Response not found');
+
+                // check whether there are more choices
+                if (response.choices) {
+                    Session.set('choices', response.choices);
+                } else {  // if not, show the back button
+                    Session.set('showBack', true);
+                }
             }
-        } else {  // otherwise show the back button
-            Session.set('showBack', true);
         }
     }
 });

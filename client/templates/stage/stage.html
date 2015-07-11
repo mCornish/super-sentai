@@ -1,4 +1,5 @@
 <template name="stage">
+    {{#if showIntro}}
     <div class="cutscene">
         <h1 class="cutscene__placeholder">THIS IS AN INTRO PLACEHOLDER</h1>
         <div class="cutscene__skip" data-hook="skip">SKIP</div>
@@ -7,6 +8,7 @@
             Your browser does not support this video.
         </video>
     </div>
+    {{/if}}
     <div class="stage">
         {{#each actors}}
           {{> actor}}
