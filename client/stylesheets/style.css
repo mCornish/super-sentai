@@ -175,7 +175,10 @@ a:hover, a:focus {
 .talk-box__choice:hover {
     background-color: rgb(200,200,200);
 }
-
+.talk-box__choice--back {
+    width: 100%;
+    font-size: 1.5em;
+}
 
 /* -------------------- */
 /* --- CUTSCENE */

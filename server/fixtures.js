@@ -4,11 +4,13 @@ if (Players.find().count() === 0) {
 
     // create two players
     Players.insert({
-        score: 0
+        score: 0,
+        turns: 5
     });
 
     Players.insert({
-        score: 0
+        score: 0,
+        turns: 5
     });
 
 

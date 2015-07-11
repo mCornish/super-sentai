@@ -41,5 +41,9 @@ Template.dialogue.events({
                 }
             }
         }
+    },
+    'click [data-hook="back"]': function(e) {
+        var turns = Session.get('turns');
+        Session.set('turns', --turns);
     }
 });
