@@ -14,6 +14,7 @@ Meteor.publish('singleConvo', function(actorId) {
     return Convos.find({actor: actorId});
 });
 
+
 //publish all Notifications
 Meteor.publish('notifications', function() {
     return Notifications.find({userId: this.userId, read: false});

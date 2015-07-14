@@ -1,0 +1,14 @@
+<template name="characters">
+    {{> logo}}
+    <div class="container">
+        <h1>The Team</h1>
+        {{#each characters}}
+            <div class="character">
+                    {{position}}: {{name}}
+            </div>
+        {{/each}}
+        <label for="name">Head:</label>
+        <input class="input" name="name" id="name" type="text" placeholder="What is your name?" />
+        <a class="button" href="{{pathFor 'stage'}}">Start</a>
+    </div>
+</template>

@@ -15,13 +15,27 @@ if (Players.find().count() === 0) {
 
 
     // create two actors
+    var kaiId = Actors.insert({
+        name: 'Kai',
+        position: 'Left Arm',
+        morale: 0
+    });
+
     var psychoId = Actors.insert({
-        name: 'Psycho',
+        name: 'Dimitri',
+        position: 'Right Arm',
+        morale: 0
+    });
+
+    var marcelId = Actors.insert({
+        name: 'Marcel',
+        position: 'Left Leg',
         morale: 0
     });
 
     var sassyId = Actors.insert({
-        name: 'Sassy',
+        name: 'Giselle',
+        position: 'Right Leg',
         morale: 0
     });
 

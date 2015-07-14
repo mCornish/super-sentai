@@ -1,7 +1,7 @@
 <template name="home">
-    <div class="logo">Super Sentai</div>
+    {{> logo}}
     <div class="menu">
-        <a class="menu__button" href="{{pathFor 'stage'}}" data-hook="start">Start Game</a>
+        <a class="menu__button" href="{{pathFor 'characters'}}" data-hook="start">Start Game</a>
         <a class="menu__button" href="{{pathFor 'options'}}">Options</a>
     </div>
 </template>
