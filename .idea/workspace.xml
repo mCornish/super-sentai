@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e354be-eeb0-4d81-a7dd-4dd03f90cf81" name="Default" comment="Added description, recipient, and occasion to submit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/characters/characters.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/characters/characters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/logo/logo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/fixtures.js" afterPath="$PROJECT_DIR$/server/fixtures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/home/home.html" afterPath="$PROJECT_DIR$/client/templates/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/publications.js" afterPath="$PROJECT_DIR$/server/publications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheets/style.css" afterPath="$PROJECT_DIR$/client/stylesheets/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/characters/characters.html" afterPath="$PROJECT_DIR$/client/templates/characters/characters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/characters/characters.js" afterPath="$PROJECT_DIR$/client/templates/characters/characters.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ygmyg.iws" />
@@ -54,8 +48,28 @@
       <file leaf-file-name="characters.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05357143">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.10714286">
+              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="characters.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="end.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/end/end.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -71,31 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="characters.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fixtures.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/fixtures.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -166,13 +160,13 @@
         <option value="$PROJECT_DIR$/client/templates/stage/stage.js" />
         <option value="$PROJECT_DIR$/client/templates/end/end.js" />
         <option value="$PROJECT_DIR$/client/templates/end/end.html" />
-        <option value="$PROJECT_DIR$/client/templates/characters/characters.js" />
         <option value="$PROJECT_DIR$/server/publications.js" />
         <option value="$PROJECT_DIR$/lib/router.js" />
         <option value="$PROJECT_DIR$/server/fixtures.js" />
         <option value="$PROJECT_DIR$/client/templates/logo/logo.html" />
         <option value="$PROJECT_DIR$/client/templates/home/home.html" />
         <option value="$PROJECT_DIR$/client/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/client/templates/characters/characters.js" />
         <option value="$PROJECT_DIR$/client/templates/characters/characters.html" />
       </list>
     </option>
@@ -1361,14 +1355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/end/end.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1736111">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1395,7 +1381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/fixtures.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.6770833">
           <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding />
         </state>
@@ -1409,14 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/logo/logo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
@@ -1425,10 +1403,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/end/end.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05357143">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.10714286">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
           <folding />
         </state>
       </provider>
