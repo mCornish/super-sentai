@@ -24,7 +24,9 @@ Template.dialogue.helpers({
         return Session.get('actorName');
     },
     actorMood: function() {
-        return Session.get('actorMood');
+        var actor = Router.current().data().actor;
+        var actorName = actor.name.toLowerCase();
+        return Session.get(actorName + 'Mood');
     }
 });
 
@@ -36,8 +38,6 @@ Template.dialogue.events({
         var choice = $.grep(choices, function(e) {
             return e.text === text;
         })[0];
-
-        Session.set('actorMood', mood);
 
         //check whether a choice exists
         if (choice) {
@@ -53,6 +53,13 @@ Template.dialogue.events({
                     Session.set('showBack', true);
                 }
             }
+        }
+
+        if (mood) {
+            //update the session actor
+            var actor = Router.current().data().actor;
+            var actorName = actor.name.toLowerCase();
+            Session.set(actorName + 'Mood', mood);
         }
     },
     'click [data-hook="back"]': function(e) {
