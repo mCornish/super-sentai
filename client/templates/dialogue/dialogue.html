@@ -1,10 +1,11 @@
 <template name="dialogue">
+    <div class="actor actor--{{actorName}} actor--large is{{actorMood}}"></div>
     <div class="talk-box">
         <div class="talk-box__text">{{response}}</div>
         {{#unless showBack}}
             <div class="talk-box__choices">
                 {{#each choices}}
-                    <div class="talk-box__choice" data-hook="choice">{{text}}</div>
+                    <div class="talk-box__choice" data-hook="choice" data-mood="{{mood}}">{{text}}</div>
                 {{/each}}
             </div>
         {{else}}

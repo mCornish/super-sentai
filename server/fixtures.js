@@ -18,36 +18,41 @@ if (Players.find().count() === 0) {
     var kaiId = Actors.insert({
         name: 'Kai',
         position: 'Left Arm',
+        mood: 'neutral',
         morale: 0
     });
 
     var psychoId = Actors.insert({
         name: 'Dimitri',
         position: 'Right Arm',
+        mood: 'neutral',
         morale: 0
     });
 
     var marcelId = Actors.insert({
         name: 'Marcel',
         position: 'Left Leg',
+        mood: 'neutral',
         morale: 0
     });
 
     var sassyId = Actors.insert({
         name: 'Giselle',
         position: 'Right Leg',
+        mood: 'neutral',
         morale: 0
     });
 
     // create a convo
     Convos.insert({
         actor: psychoId,
-        greeting: 'Have you seen the sky today?',
+        greeting: 'Hi, {{name}}.',
         choices: [
             {
-                text: 'Hi',
+                text: 'Happy',
+                mood: 'Happy',
                 response: {
-                    text: 'I asked you a question.',
+                    text: 'I\'m happy you said that.',
                     choices: [
                         {
                             text: 'So?',
@@ -65,17 +70,24 @@ if (Players.find().count() === 0) {
                 }
             },
             {
-                text: 'What?',
+                text: 'Sad',
+                mood: 'Sad',
                 response: {
-                    text: 'Did you not hear me? Or are you simply stupid?',
-                    choices: [
-                        {
-                            text: 'I don\'t know',
-                            response: {
-                                text: 'Then I do. Simpleton.'
-                            }
-                        }
-                    ]
+                    text: 'I\'m sad you said that.'
+                }
+            },
+            {
+                text: 'Angry',
+                mood: 'Angry',
+                response: {
+                    text: 'I\'m angry you said that.'
+                }
+            },
+            {
+                text: 'Surprised',
+                mood: 'Surprised',
+                response: {
+                    text: 'I\'m surprised you said that.'
                 }
             }
         ]

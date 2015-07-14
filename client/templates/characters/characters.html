@@ -1,14 +1,19 @@
 <template name="characters">
     {{> logo}}
+
     <div class="container">
-        <h1>The Team</h1>
-        {{#each characters}}
-            <div class="character">
+        <div class="display-list">
+            <h1>The Team</h1>
+            {{#each characters}}
+                <div class="display-list__item">
                     <strong>{{position}}:</strong> {{name}}
+                </div>
+            {{/each}}
+            <div class="display-list__item">
+                <label for="name">Head:</label>
+                <input class="input" name="name" id="name" type="text" placeholder="What is your name?" data-hook="name" />
             </div>
-        {{/each}}
-        <label for="name">Head:</label>
-        <input class="input" name="name" id="name" type="text" placeholder="What is your name?" data-hook="name" />
-        <a class="button" href="{{pathFor 'stage'}}" data-hook="name-input">Start</a>
+            <a class="button float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
+        </div>
     </div>
 </template>
