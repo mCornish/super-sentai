@@ -10,8 +10,8 @@ Meteor.publish('singleActor', function(id) {
 
 
 //publish single Convo
-Meteor.publish('singleConvo', function(actorId) {
-    return Convos.find({actor: actorId});
+Meteor.publish('singleConvo', function(actorId, turn) {
+    return Convos.find({actor: actorId}, {turn: turn});
 });
 
 
