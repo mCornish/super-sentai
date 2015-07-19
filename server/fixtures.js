@@ -43,6 +43,7 @@ if (Players.find().count() === 0) {
         morale: 0
     });
 
+
     // ----------------------
     // TURN ONE CONVERSATIONS
     // ----------------------
