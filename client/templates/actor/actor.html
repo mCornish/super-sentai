@@ -1,5 +1,5 @@
 <template name="actor">
-    <a class="actor actor--{{name}} is{{actorMood}}" href="{{pathFor 'dialogue'}}" data-hook="actor">
+    <a class="actor actor--{{name}} is{{actorMood}}" href="/talk/{{_id}}/{{turn}}" data-hook="actor">
         <div class="actor__name">{{name}}</div>
     </a>
 </template>

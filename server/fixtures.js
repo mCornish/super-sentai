@@ -43,10 +43,13 @@ if (Players.find().count() === 0) {
         morale: 0
     });
 
-    // create a convo
+    // ----------------------
+    // TURN ONE CONVERSATIONS
+    // ----------------------
     Convos.insert({
         actor: dimitriId,
-        greeting: 'Hi, {{name}}.',
+        turn: 1,
+        greeting: 'Hi, {{name}}. It\'s turn one.',
         choices: [
             {
                 text: 'Happy',
@@ -95,7 +98,8 @@ if (Players.find().count() === 0) {
 
     Convos.insert({
         actor: giselleId,
-        greeting: 'Hi, {{name}}.',
+        turn: 1,
+        greeting: 'Hi, {{name}}. It\'s turn one.',
         choices: [
             {
                 text: 'Happy',
@@ -144,7 +148,8 @@ if (Players.find().count() === 0) {
 
     Convos.insert({
         actor: marcelId,
-        greeting: 'Hi, {{name}}.',
+        turn: 1,
+        greeting: 'Hi, {{name}}. It\'s turn one.',
         choices: [
             {
                 text: 'Happy',
@@ -193,7 +198,8 @@ if (Players.find().count() === 0) {
 
     Convos.insert({
         actor: kaiId,
-        greeting: 'Hi, {{name}}.',
+        turn: 1,
+        greeting: 'Hi, {{name}}. It\'s turn one.',
         choices: [
             {
                 text: 'Happy',
@@ -240,7 +246,208 @@ if (Players.find().count() === 0) {
         ]
     });
 
-    for (var i = 0; i < 30; i++) {
 
-    }
+    // ----------------------
+    // TURN TWO CONVERSATIONS
+    // ----------------------
+    Convos.insert({
+        actor: dimitriId,
+        turn: 2,
+        greeting: 'Hi, {{name}}. It\'s turn two.',
+        choices: [
+            {
+                text: 'Happy',
+                mood: 'Happy',
+                response: {
+                    text: 'I\'m happy you said that.',
+                    choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                text: 'Sad',
+                mood: 'Sad',
+                response: {
+                    text: 'I\'m sad you said that.'
+                }
+            },
+            {
+                text: 'Angry',
+                mood: 'Angry',
+                response: {
+                    text: 'I\'m angry you said that.'
+                }
+            },
+            {
+                text: 'Surprised',
+                mood: 'Surprised',
+                response: {
+                    text: 'I\'m surprised you said that.'
+                }
+            }
+        ]
+    });
+
+    Convos.insert({
+        actor: giselleId,
+        turn: 2,
+        greeting: 'Hi, {{name}}. It\'s turn two.',
+        choices: [
+            {
+                text: 'Happy',
+                mood: 'Happy',
+                response: {
+                    text: 'I\'m happy you said that.',
+                    choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                text: 'Sad',
+                mood: 'Sad',
+                response: {
+                    text: 'I\'m sad you said that.'
+                }
+            },
+            {
+                text: 'Angry',
+                mood: 'Angry',
+                response: {
+                    text: 'I\'m angry you said that.'
+                }
+            },
+            {
+                text: 'Surprised',
+                mood: 'Surprised',
+                response: {
+                    text: 'I\'m surprised you said that.'
+                }
+            }
+        ]
+    });
+
+    Convos.insert({
+        actor: marcelId,
+        turn: 2,
+        greeting: 'Hi, {{name}}. It\'s turn two.',
+        choices: [
+            {
+                text: 'Happy',
+                mood: 'Happy',
+                response: {
+                    text: 'I\'m happy you said that.',
+                    choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                text: 'Sad',
+                mood: 'Sad',
+                response: {
+                    text: 'I\'m sad you said that.'
+                }
+            },
+            {
+                text: 'Angry',
+                mood: 'Angry',
+                response: {
+                    text: 'I\'m angry you said that.'
+                }
+            },
+            {
+                text: 'Surprised',
+                mood: 'Surprised',
+                response: {
+                    text: 'I\'m surprised you said that.'
+                }
+            }
+        ]
+    });
+
+    Convos.insert({
+        actor: kaiId,
+        turn: 2,
+        greeting: 'Hi, {{name}}. It\'s turn two.',
+        choices: [
+            {
+                text: 'Happy',
+                mood: 'Happy',
+                response: {
+                    text: 'I\'m happy you said that.',
+                    choices: [
+                        {
+                            text: 'So?',
+                            response: {
+                                text: 'Fine.'
+                            }
+                        },
+                        {
+                            text: 'Sorry.',
+                            response: {
+                                text: 'You are forgiven.'
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                text: 'Sad',
+                mood: 'Sad',
+                response: {
+                    text: 'I\'m sad you said that.'
+                }
+            },
+            {
+                text: 'Angry',
+                mood: 'Angry',
+                response: {
+                    text: 'I\'m angry you said that.'
+                }
+            },
+            {
+                text: 'Surprised',
+                mood: 'Surprised',
+                response: {
+                    text: 'I\'m surprised you said that.'
+                }
+            }
+        ]
+    });
+
 }
