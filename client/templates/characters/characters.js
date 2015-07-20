@@ -1,6 +1,12 @@
 Template.characters.onRendered( function() {
-    Session.set('playerName', null);
+    Session.setDefault('playerName', null);
     Session.set('showHud', false);
+});
+
+Template.characters.helpers({
+   playerName: function() {
+       return Session.get('playerName');
+   }
 });
 
 Template.characters.events({

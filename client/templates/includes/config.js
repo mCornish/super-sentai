@@ -1,8 +1,9 @@
-Template.stage.onRendered( function() {
-    Session.setDefault('turns', 10);
-    Session.setDefault('score', 0);
-    Session.setDefault('kaiMood', 'Neutral');
-    Session.setDefault('dimitriMood', 'Neutral');
-    Session.setDefault('marcelMood', 'Neutral');
-    Session.setDefault('giselleMood', 'Neutral');
+Template.home.onRendered( function() {
+    Session.set('turns', 10);
+    Session.set('score', 0);
+    Session.set('kaiMood', 'Neutral');
+    Session.set('dimitriMood', 'Neutral');
+    Session.set('marcelMood', 'Neutral');
+    Session.set('giselleMood', 'Neutral');
+    Session.set('win', false);
 });

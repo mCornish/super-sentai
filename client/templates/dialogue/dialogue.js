@@ -8,6 +8,7 @@ Template.dialogue.onRendered( function() {
     Session.set('showBack', false);
     Session.set('actorName', actor.name);
     Session.set('actorMood', actor.mood);
+    Session.setDefault('win', false);
 });
 
 Template.dialogue.helpers({

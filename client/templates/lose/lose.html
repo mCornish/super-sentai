@@ -1,7 +1,7 @@
-<template name="win">
+<template name="lose">
     {{#if showOutro}}
         <div class="cutscene">
-            <h1 class="cutscene__placeholder">THIS IS A VICTORY OUTRO PLACEHOLDER</h1>
+            <h1 class="cutscene__placeholder">THIS IS A LOSS OUTRO PLACEHOLDER</h1>
             <div class="cutscene__skip" data-hook="skip">SKIP</div>
             <video class="cutscene__video" autoplay data-hook="outro-video">
                 <source src="videos/glass-stock.mp4" type="video/mp4">
@@ -10,6 +10,6 @@
         </div>
     {{/if}}
     <h1 class="score">
-        Ultimate victory! <a href="{{pathFor 'home'}}">Play again?</a>
+        You lose. <a href="{{pathFor 'home'}}">Try again?</a>
     </h1>
 </template>

@@ -11,7 +11,7 @@
             {{/each}}
             <div class="display-list__item">
                 <label for="name">Head:</label>
-                <input class="input" name="name" id="name" type="text" placeholder="What is your name?" data-hook="name" />
+                <input class="input" name="name" id="name" type="text" placeholder="What is your name?" value="{{playerName}}" data-hook="name" />
             </div>
             <a class="button float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
         </div>

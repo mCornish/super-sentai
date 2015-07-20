@@ -1,9 +1,9 @@
-Template.win.onRendered( function() {
+Template.lose.onRendered( function() {
     Session.set('showOutro', true);
     Session.set('showHud', false);
 });
 
-Template.win.helpers({
+Template.lose.helpers({
     showOutro: function() {
         return Session.get('showOutro');
     },
@@ -12,7 +12,7 @@ Template.win.helpers({
     }
 });
 
-Template.win.events({
+Template.lose.events({
     'ended [data-hook="outro-video"]': function(e) {
         e.preventDefault();
         Session.set('showOutro', false);

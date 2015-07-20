@@ -1,5 +1,6 @@
 Template.home.onRendered( function() {
     Session.set('showHud', false);
+    // Further configuration in includes/config.js
 });
 
 Template.home.helpers({
