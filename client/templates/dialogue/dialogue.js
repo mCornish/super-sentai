@@ -67,7 +67,12 @@ Template.dialogue.events({
 
         if (turns - 1 === 0) {
             e.preventDefault();
-            Router.go('end');
+
+            if (Session.equals('win', true)) {
+                Router.go('win');
+            } else {
+                Router.go('lose');
+            }
         } else {
             Session.set('turns', turns - 1);
         }
