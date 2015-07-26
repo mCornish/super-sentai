@@ -52,8 +52,9 @@ Template.dialogue.helpers({
 
 Template.dialogue.events({
     'click [data-hook="choice"]': function(e) {
+        e.preventDefault();
+
         var text = $(e.target).text();
-        var mood = $(e.target).attr('data-mood');
         var choices = Session.get('choices');
         var choice = $.grep(choices, function(e) {
             return e.text === text;
@@ -66,33 +67,33 @@ Template.dialogue.events({
             Session.set('dArray', choice.dialogue);
             Session.set('dIndex', 0);
             Session.set('text', Session.get('dArray')[0].text.replace('{{name}}', name));
-
-            //// check whether there are more choices
-            //if (Session.get('dArray').choices) {
-            //    Session.set('choices', Session.get('dArray').choices);
-            //} else {  // if not, show the back button
-            //    Session.set('hasMore', false);
-            //}
-
+            Session.set('choices', choice.choices);
         }
 
-        if (mood) {
-            //update the session actor
-            var actor = Router.current().data().actor;
-            var actorName = actor.name.toLowerCase();
-            Session.set(actorName + 'Mood', mood);
+        var dArray = Session.get('dArray');
+        var dIndex = Session.get('dIndex');
+        var actor = Router.current().data().actor;
+        var actorName = actor.name.toLowerCase();
+
+        Session.set('dIndex', dIndex + 1);
+        if (dArray[dIndex].mood) {
+            Session.set(actorName + 'Mood', dArray[dIndex].mood);
         }
     },
     'click [data-hook=next]': function(e) {
         e.preventDefault();
 
+        var dArray = Session.get('dArray');
         var dIndex = Session.get('dIndex');
+        var actor = Router.current().data().actor;
+        var actorName = actor.name.toLowerCase();
 
         Session.set('dIndex', dIndex + 1);
+        if (dArray[dIndex].mood) {
+            Session.set(actorName + 'Mood', dArray[dIndex].mood);
+        }
     },
     'click [data-hook=back]': function(e) {
-        e.preventDefault();
-
         var turns = Session.get('turns');
 
         if (turns - 1 === 0) {
