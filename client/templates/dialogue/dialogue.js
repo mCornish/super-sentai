@@ -44,9 +44,12 @@ Template.dialogue.helpers({
         return Session.get('actorName');
     },
     actorMood: function() {
+        var dArray = Session.get('dArray');
+        var dIndex = Session.get('dIndex');
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
-        return Session.get(actorName + 'Mood');
+
+        return dArray[dIndex].mood ? dArray[dIndex].mood : Session.get(actorName + 'Mood', dArray[dIndex].mood);
     }
 });
 
