@@ -1,9 +1,15 @@
 Template.dialogue.onRendered( function() {
     var convo = Router.current().data().convo;
+    console.log(convo);
     var actor = Router.current().data().actor;
     var name = Session.get('playerName');
+    var dIndex = 0;
 
-    Session.set('response', convo.greeting.replace('{{name}}', name));
+    // Dialogue index
+    Session.set('dIndex', dIndex);
+    // Initial text
+    Session.set('text', convo.dialogue[dIndex].text.replace('{{name}}', name));
+    Session.set('speaking', convo.dialogue[dIndex].name);
     Session.set('choices', convo.choices);
     Session.set('showBack', false);
     Session.set('actorName', actor.name);
@@ -13,7 +19,10 @@ Template.dialogue.onRendered( function() {
 
 Template.dialogue.helpers({
     response: function() {
-        return Session.get('response');
+        return Session.get('text');
+    },
+    speaking: function() {
+        return Session.get('speaking');
     },
     choices: function() {
         return Session.get('choices');
@@ -63,7 +72,16 @@ Template.dialogue.events({
             Session.set(actorName + 'Mood', mood);
         }
     },
-    'click [data-hook="back"]': function(e) {
+    'click [data-hook=next]': function(e) {
+        e.preventDefault();
+
+        var dIndex = Session.get('dIndex');
+
+        Session.set('dIndex', dIndex + 1);
+    },
+    'click [data-hook=back]': function(e) {
+        e.preventDefault();
+
         var turns = Session.get('turns');
 
         if (turns - 1 === 0) {

@@ -1,13 +1,18 @@
 <template name="dialogue">
     <div class="actor actor--{{actorName}} actor--large is{{actorMood}}"></div>
     <div class="talk-box">
+        <div class="talk-box__speaking">{{speaking}}</div>
         <div class="talk-box__text">{{response}}</div>
         {{#unless showBack}}
-            <div class="talk-box__choices">
-                {{#each choices}}
-                    <div class="talk-box__choice" data-hook="choice" data-mood="{{mood}}">{{text}}</div>
-                {{/each}}
-            </div>
+            {{#if choices}}
+                <div class="talk-box__choices">
+                    {{#each choices}}
+                        <div class="talk-box__choice" data-hook="choice" data-mood="{{mood}}">{{text}}</div>
+                    {{/each}}
+                </div>
+            {{else}}
+                <a class="talk-box__choice talk-box__choice--back" data-hook="next">Next</a>
+            {{/if}}
         {{else}}
             <a class="talk-box__choice talk-box__choice--back" href="{{pathFor 'stage'}}" data-hook="back">Back</a>
         {{/unless}}

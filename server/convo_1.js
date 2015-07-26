@@ -6,49 +6,109 @@ if (Players.find().count() === 0) {
     Convos.insert({
         actor: dimitriId,
         turn: 1,
-        greeting: 'Hi, {{name}}. It\'s turn one.',
+        dialogue: [
+            {
+                text: "Heyyy, {{name}}. What's going on with you this fine morning?",
+                mood: 'Happy',
+                name: 'Dimitri'
+            },
+            {
+                text: "It's not going to be a fine morning for very long if we don't get out there soon.",
+                name: 'Me'
+            },
+            {
+                text: "Why the rush? It's not every day that the five of us get to hang out like this. We're always rushing off to this mission and that mission instead of enjoying our time together. I like this! Everyone's so happy.",
+                name: 'Dimitri'
+            },
+            {
+                text: "I glance around the room. Everyone other than Dimitri is fuming in their own way. Giselle and Kai refuse to even look in each other's direction."
+            },
+            {
+                text: "As usual, [INTERN] is keeping his distance from [HAPPY PSYCHO]. [HAPPY PSYCHO] must believe in a radically different definition of happy than I do."
+            },
+            {
+                text: "What's with the long face? Don't you like this too?",
+                mood: 'Neutral',
+                name: 'Dimitri'
+            },
+            {
+                text: "I'm trying to figure out what I can do to get everyone to stop fighting.",
+                name: 'Me'
+            },
+            {
+                text: "What's your favorite flavor of ice cream?",
+                mood: 'Happy',
+                name: 'Dimitri'
+            },
+            {
+                text: "Ice cream has nothing to do with anything.",
+                name: 'Me'
+            },
+            {
+                text: "Ice cream has everything to do with everything. Icecream keeps the world going round.",
+                name: 'Dimitri'
+            },
+            {
+                text: "Do you know something I don't know?",
+                name: 'Me'
+            },
+            {
+                text: "Knowledge is power. So help me get a little more powerful by telling me what kind of icecream you like best. Pretty please with a cherry on top?",
+                name: 'Dimitri'
+            }
+        ],
         choices: [
             {
-                text: 'Happy',
-                mood: 'Happy',
-                response: {
-                    text: 'I\'m happy you said that.',
-                    choices: [
-                        {
-                            text: 'So?',
-                            response: {
-                                text: 'Fine.'
+                text: 'Humor him.',
+                dialogue: [
+                    {
+                        text: "Okay, sure...my favorite flavor is vanilla. It goes good with mostly everything.",
+                        name: 'Dimitri'
+                    }
+                ]
+            },
+            {
+                text: 'Tell him to focus.',
+                dialogue: [
+                    {
+                        text: "Dimitri, I need you to focus. We've talked about your issues with focusing before.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Yeah, we have...",
+                        name: 'Dimitri',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "What do you think I should do about all the fighting?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Give everyone a bowl of ice cream.",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    }
+                ],
+                choices: [
+                    {
+                        text: 'So?',
+                        dialogue: [
+                            {
+                                text: 'Fine.',
+                                name: 'Dimitri'
                             }
-                        },
-                        {
-                            text: 'Sorry.',
-                            response: {
-                                text: 'You are forgiven.'
+                        ]
+                    },
+                    {
+                        text: 'Sorry',
+                        dialogue: [
+                            {
+                                text: 'You are forgiven.',
+                                name: 'Dimitri'
                             }
-                        }
-                    ]
-                }
-            },
-            {
-                text: 'Sad',
-                mood: 'Sad',
-                response: {
-                    text: 'I\'m sad you said that.'
-                }
-            },
-            {
-                text: 'Angry',
-                mood: 'Angry',
-                response: {
-                    text: 'I\'m angry you said that.'
-                }
-            },
-            {
-                text: 'Surprised',
-                mood: 'Surprised',
-                response: {
-                    text: 'I\'m surprised you said that.'
-                }
+                        ]
+                    }
+                ]
             }
         ]
     });
