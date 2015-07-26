@@ -4,12 +4,15 @@ Template.dialogue.onRendered( function() {
     var actor = Router.current().data().actor;
     var name = Session.get('playerName');
     var dIndex = 0;
+    var dArray = convo.dialogue;
 
+    // Dialogue array
+    Session.set('dArray', dArray);
     // Dialogue index
     Session.set('dIndex', dIndex);
     // Initial text
-    Session.set('text', convo.dialogue[dIndex].text.replace('{{name}}', name));
-    Session.set('speaking', convo.dialogue[dIndex].name);
+    Session.set('text', dArray[dIndex].text.replace('{{name}}', name));
+    Session.set('speaking', dArray[dIndex].name);
     Session.set('choices', convo.choices);
     Session.set('showBack', false);
     Session.set('actorName', actor.name);
@@ -19,10 +22,17 @@ Template.dialogue.onRendered( function() {
 
 Template.dialogue.helpers({
     response: function() {
-        return Session.get('text');
+        var dArray = Session.get('dArray');
+        var dIndex = Session.get('dIndex');
+        return dArray[dIndex].text.replace('{{name}}', name);
     },
     speaking: function() {
         return Session.get('speaking');
+    },
+    hasMore: function() {
+        var dArray = Session.get('dArray');
+        var dIndex = Session.get('dIndex');
+        return dIndex < dArray.length;
     },
     choices: function() {
         return Session.get('choices');
@@ -49,20 +59,21 @@ Template.dialogue.events({
             return e.text === text;
         })[0];
 
+
+
         //check whether a choice exists
         if (choice) {
-            var response = choice.response;
+            Session.set('dArray', choice.dialogue);
+            Session.set('dIndex', 0);
+            Session.set('text', Session.get('dArray')[0].text.replace('{{name}}', name));
 
-            if (response) {
-                Session.set('response', response.text.replace('{{name}}', name));
+            //// check whether there are more choices
+            //if (Session.get('dArray').choices) {
+            //    Session.set('choices', Session.get('dArray').choices);
+            //} else {  // if not, show the back button
+            //    Session.set('hasMore', false);
+            //}
 
-                // check whether there are more choices
-                if (response.choices) {
-                    Session.set('choices', response.choices);
-                } else {  // if not, show the back button
-                    Session.set('showBack', true);
-                }
-            }
         }
 
         if (mood) {
