@@ -120,49 +120,52 @@ if (Players.find().count() === 0) {
     Convos.insert({
         actor: giselleId,
         turn: 1,
-        greeting: 'Hi, {{name}}. It\'s turn one.',
+        dialogue: [
+            {
+                text: "Hi, {{name}}. It's turn one.",
+                name: 'Giselle'
+            }
+        ],
         choices: [
             {
                 text: 'Happy',
-                mood: 'Happy',
-                response: {
-                    text: 'I\'m happy you said that.',
-                    choices: [
-                        {
-                            text: 'So?',
-                            response: {
-                                text: 'Fine.'
-                            }
-                        },
-                        {
-                            text: 'Sorry.',
-                            response: {
-                                text: 'You are forgiven.'
-                            }
-                        }
-                    ]
-                }
+                dialogue: [
+                    {
+                        text: "I'm happy you said that.",
+                        mood: 'Happy',
+                        name: 'Giselle'
+                    }
+                ]
             },
             {
                 text: 'Sad',
-                mood: 'Sad',
-                response: {
-                    text: 'I\'m sad you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm sad you said that.",
+                        mood: 'Sad',
+                        name: 'Giselle'
+                    }
+                ]
             },
             {
                 text: 'Angry',
-                mood: 'Angry',
-                response: {
-                    text: 'I\'m angry you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm angry you said that.",
+                        mood: 'Angry',
+                        name: 'Giselle'
+                    }
+                ]
             },
             {
                 text: 'Surprised',
-                mood: 'Surprised',
-                response: {
-                    text: 'I\'m surprised you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm surprised you said that.",
+                        mood: 'Surprised',
+                        name: 'Giselle'
+                    }
+                ]
             }
         ]
     });
@@ -174,49 +177,52 @@ if (Players.find().count() === 0) {
     Convos.insert({
         actor: marcelId,
         turn: 1,
-        greeting: 'Hi, {{name}}. It\'s turn one.',
+        dialogue: [
+            {
+                text: "Hi, {{name}}. It's turn one.",
+                name: 'Marcel'
+            }
+        ],
         choices: [
             {
                 text: 'Happy',
-                mood: 'Happy',
-                response: {
-                    text: 'I\'m happy you said that.',
-                    choices: [
-                        {
-                            text: 'So?',
-                            response: {
-                                text: 'Fine.'
-                            }
-                        },
-                        {
-                            text: 'Sorry.',
-                            response: {
-                                text: 'You are forgiven.'
-                            }
-                        }
-                    ]
-                }
+                dialogue: [
+                    {
+                        text: "I'm happy you said that.",
+                        mood: 'Happy',
+                        name: 'Giselle'
+                    }
+                ]
             },
             {
                 text: 'Sad',
-                mood: 'Sad',
-                response: {
-                    text: 'I\'m sad you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm sad you said that.",
+                        mood: 'Sad',
+                        name: 'Marcel'
+                    }
+                ]
             },
             {
                 text: 'Angry',
-                mood: 'Angry',
-                response: {
-                    text: 'I\'m angry you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm angry you said that.",
+                        mood: 'Angry',
+                        name: 'Marcel'
+                    }
+                ]
             },
             {
                 text: 'Surprised',
-                mood: 'Surprised',
-                response: {
-                    text: 'I\'m surprised you said that.'
-                }
+                dialogue: [
+                    {
+                        text: "I'm surprised you said that.",
+                        mood: 'Surprised',
+                        name: 'Marcel'
+                    }
+                ]
             }
         ]
     });

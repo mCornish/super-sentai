@@ -1,5 +1,5 @@
 Template.home.onRendered( function() {
-    Session.set('turns', 10);
+    Session.set('turns', 6);
     Session.set('score', 0);
     Session.set('kaiMood', 'Neutral');
     Session.set('dimitriMood', 'Neutral');

@@ -1,6 +1,5 @@
-Template.dialogue.onRendered( function() {
+Template.dialogue.onCreated( function() {
     var convo = Router.current().data().convo;
-    console.log(convo);
     var actor = Router.current().data().actor;
     var name = Session.get('playerName');
     var dIndex = 0;
@@ -12,7 +11,6 @@ Template.dialogue.onRendered( function() {
     Session.set('dIndex', dIndex);
     // Initial text
     Session.set('text', dArray[dIndex].text.replace('{{name}}', name));
-    Session.set('speaking', dArray[dIndex].name);
     Session.set('choices', convo.choices);
     Session.set('showBack', false);
     Session.set('actorName', actor.name);
@@ -24,10 +22,16 @@ Template.dialogue.helpers({
     response: function() {
         var dArray = Session.get('dArray');
         var dIndex = Session.get('dIndex');
-        return dArray[dIndex].text.replace('{{name}}', name);
+        if (dArray.length > dIndex) {
+            return dArray[dIndex].text.replace('{{name}}', Session.get('playerName'));
+        }
     },
     speaking: function() {
-        return Session.get('speaking');
+        var dArray = Session.get('dArray');
+        var dIndex = Session.get('dIndex');
+        if (dArray.length > dIndex) {
+            return dArray[dIndex].name;
+        }
     },
     hasMore: function() {
         var dArray = Session.get('dArray');
@@ -44,12 +48,9 @@ Template.dialogue.helpers({
         return Session.get('actorName');
     },
     actorMood: function() {
-        var dArray = Session.get('dArray');
-        var dIndex = Session.get('dIndex');
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
-
-        return dArray[dIndex].mood ? dArray[dIndex].mood : Session.get(actorName + 'Mood', dArray[dIndex].mood);
+        return Session.get(actorName + 'Mood');
     }
 });
 

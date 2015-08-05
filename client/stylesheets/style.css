@@ -174,12 +174,80 @@ a:hover, a:focus {
     height: 281px;
     background-position: -543px 0;
 }
+.actor--Giselle.actor--large {
+    width: 401px;
+    background-position-x: -2157px;
+}
+.actor--Giselle.isAngry {
+    background-position-x: -1050px;
+}
+.actor--Giselle.actor--large.isAngry {
+    background-position-x: -4171px;
+}
+.actor--Giselle.isSurprised {
+    background-position-x: -746px;
+}
+.actor--Giselle.actor--large.isSurprised {
+    background-position-x: -2962px;
+}
+.actor--Giselle.isSad {
+    background-position-x: -847px;
+}
+.actor--Giselle.actor--large.isSad {
+    background-position-x: -3365px;
+}
+.actor--Giselle.isHappy {
+    background-position-x: -948px;
+}
+.actor--Giselle.actor--large.isHappy {
+    background-position-x: -3768px;
+}
+.actor--Giselle.isConfused {
+    background-position-x: -644px;
+}
+.actor--Giselle.actor--large.isConfused {
+    background-position-x: -2559px;
+}
 .actor--Marcel {
     left: 70%;
     top: 70%;
     width: 92px;
     height: 287px;
     background-position: -1151px 0;
+}
+.actor--Marcel.actor--large {
+    width: 401px;
+    background-position-x: -2157px;
+}
+.actor--Marcel.isAngry {
+    background-position-x: -1050px;
+}
+.actor--Marcel.actor--large.isAngry {
+    background-position-x: -4171px;
+}
+.actor--Marcel.isSurprised {
+    background-position-x: -746px;
+}
+.actor--Marcel.actor--large.isSurprised {
+    background-position-x: -2962px;
+}
+.actor--Marcel.isSad {
+    background-position-x: -847px;
+}
+.actor--Marcel.actor--large.isSad {
+    background-position-x: -3365px;
+}
+.actor--Marcel.isHappy {
+    background-position-x: -948px;
+}
+.actor--Marcel.actor--large.isHappy {
+    background-position-x: -3768px;
+}
+.actor--Marcel.isConfused {
+    background-position-x: -644px;
+}
+.actor--Marcel.actor--large.isConfused {
+    background-position-x: -2559px;
 }
 
 
