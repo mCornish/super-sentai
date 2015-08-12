@@ -5,9 +5,14 @@ html {
 body {
     background: rgb(250,250,250);
     font-size: 1em;
+    overflow: hidden;
 }
 
-h1, h2, h2, a, p {
+h1, h2 {
+    font-family: 'Audiowide', sans-serif;
+}
+
+p, a, div {
     font-family: 'Lato', sans-serif;
 }
 
@@ -28,7 +33,7 @@ a {
     color: rgb(100,100,100);
 }
 a:hover, a:focus {
-    color: rgb(150,150,150);
+    color: rgb(100,100,100);
     text-decoration: none;
 }
 
@@ -112,8 +117,6 @@ a:hover, a:focus {
 .actor.actor--large {
     left: 60vw;
     top: 10vh;
-    /*height: 900px;*/
-    /*background-size: 6755px;*/
     transform: scale(4);
     transform-origin: top left;
     cursor: default;
@@ -294,12 +297,14 @@ a:hover, a:focus {
 }
 .menu__button {
     display: block;
-    font-size: 2em;
+    font-size: 3em;
     border: 3px solid rgb(30,30,30);
     border-radius: .3em;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     cursor: pointer;
+    font-weight: bold;
+    padding: .5em;
 }
 .menu__button:hover {
     background-color: rgb(200,200,200);
