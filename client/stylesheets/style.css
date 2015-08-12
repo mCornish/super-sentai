@@ -97,8 +97,11 @@ a:hover, a:focus {
     display: block;
     position: absolute;
     cursor: pointer;
-    background-size: 1700px;
+    background-size: 2340px;
     background-image: url('images/sprites.png');
+
+    /* USE THIS TO SCALE IF NECESSARY */
+    /*transform: scale(.5);*/
 }
 .actor__name {
     position: relative;
@@ -106,30 +109,26 @@ a:hover, a:focus {
     text-align: center;
     top: -2em;
 }
-.actor.isHappy {
-    /*background-color: yellow;*/
-}
-.actor.isSad {
-    /*background-color: cornflowerblue;*/
-}
-.actor.isAngry {
-    /*background-color: red;*/
-}
-.actor.isSurprised {
-    /*background-color: green;*/
-}
 .actor.actor--large {
     left: 60vw;
     top: 10vh;
-    height: 900px;
-    background-size: 6755px;
+    /*height: 900px;*/
+    /*background-size: 6755px;*/
+    transform: scale(4);
+    transform-origin: top left;
     cursor: default;
 }
+
+/* --- KAI */
 .actor--Kai {
     left: 20%;
     top: 50%;
-    background-color: rgb(100,100,100);
+    width: 106px;
+    height: 348px;
+    background-position: -1700px 0;
 }
+
+/* --- DIMITRI */
 .actor--Dimitri {
     left: 60%;
     top: 30%;
@@ -138,7 +137,7 @@ a:hover, a:focus {
     background-position: 0 0;
 }
 .actor--Dimitri.actor--large {
-    width: 360px;
+    /*width: 360px;*/
 }
 .actor--Dimitri.isAngry {
     background-position-x: -91px;
@@ -168,6 +167,7 @@ a:hover, a:focus {
     background-position-x: -450px;
 }
 
+/* --- GISELLE */
 .actor--Giselle {
     left: 50%;
     top: 20%;
@@ -176,8 +176,8 @@ a:hover, a:focus {
     background-position: -543px 0;
 }
 .actor--Giselle.actor--large {
-    width: 401px;
-    background-position-x: -2157px;
+    /*width: 401px;*/
+    /*background-position-x: -2157px;*/
 }
 .actor--Giselle.isConfused {
     background-position-x: -644px;
@@ -210,6 +210,7 @@ a:hover, a:focus {
     background-position-x: -4171px;
 }
 
+/* --- MARCEL */
 .actor--Marcel {
     left: 70%;
     top: 70%;
@@ -218,8 +219,8 @@ a:hover, a:focus {
     background-position-x: -1151px;
 }
 .actor--Marcel.actor--large {
-    width: 364px;
-    background-position-x: -4574px;
+    /*width: 364px;*/
+    /*background-position-x: -4574px;*/
 }
 .actor--Marcel.isConfused {
     background-position-x: -1242px;
