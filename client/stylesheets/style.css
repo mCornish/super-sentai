@@ -119,15 +119,6 @@ a:hover, a:focus {
     cursor: default;
 }
 
-/* --- KAI */
-.actor--Kai {
-    left: 20%;
-    top: 50%;
-    width: 106px;
-    height: 348px;
-    background-position: -1700px 0;
-}
-
 /* --- DIMITRI */
 .actor--Dimitri {
     left: 60%;
@@ -140,31 +131,19 @@ a:hover, a:focus {
     /*width: 360px;*/
 }
 .actor--Dimitri.isAngry {
-    background-position-x: -91px;
-}
-.actor--Dimitri.actor--large.isAngry {
-    background-position-x: -359px;
+    background-position-x: -450px;
 }
 .actor--Dimitri.isSurprised {
     background-position-x: -181px;
 }
-.actor--Dimitri.actor--large.isSurprised {
-    background-position-x: -819px;
-}
 .actor--Dimitri.isSad {
     background-position-x: -272px;
-}
-.actor--Dimitri.actor--large.isSad {
-    background-position-x: -1078px;
 }
 .actor--Dimitri.isHappy {
     background-position-x: -362px;
 }
-.actor--Dimitri.actor--large.isHappy {
-    background-position-x: -1437px;
-}
 .actor--Dimitri.isConfused {
-    background-position-x: -450px;
+    background-position-x: -91px;
 }
 
 /* --- GISELLE */
@@ -175,39 +154,44 @@ a:hover, a:focus {
     height: 281px;
     background-position: -543px 0;
 }
-.actor--Giselle.actor--large {
-    /*width: 401px;*/
-    /*background-position-x: -2157px;*/
-}
 .actor--Giselle.isConfused {
     background-position-x: -644px;
-}
-.actor--Giselle.actor--large.isConfused {
-    background-position-x: -2559px;
 }
 .actor--Giselle.isSurprised {
     background-position-x: -746px;
 }
-.actor--Giselle.actor--large.isSurprised {
-    background-position-x: -2962px;
-}
 .actor--Giselle.isSad {
     background-position-x: -847px;
-}
-.actor--Giselle.actor--large.isSad {
-    background-position-x: -3365px;
 }
 .actor--Giselle.isHappy {
     background-position-x: -948px;
 }
-.actor--Giselle.actor--large.isHappy {
-    background-position-x: -3768px;
-}
 .actor--Giselle.isAngry {
     background-position-x: -1050px;
 }
-.actor--Giselle.actor--large.isAngry {
-    background-position-x: -4171px;
+
+/* --- KAI */
+.actor--Kai {
+    left: 20%;
+    top: 50%;
+    width: 107px;
+    height: 348px;
+    background-position: -1699px 0;
+}
+.actor--Kai.isAngry {
+    background-position-x: -2233px;
+}
+.actor--Kai.isSurprised {
+    background-position-x: -1913px;
+}
+.actor--Kai.isSad {
+    background-position-x: -2020px;
+}
+.actor--Kai.isHappy {
+    background-position-x: -2127px;
+}
+.actor--Kai.isConfused {
+    background-position-x: -1806px;
 }
 
 /* --- MARCEL */
@@ -218,40 +202,22 @@ a:hover, a:focus {
     height: 287px;
     background-position-x: -1151px;
 }
-.actor--Marcel.actor--large {
-    /*width: 364px;*/
-    /*background-position-x: -4574px;*/
-}
 .actor--Marcel.isConfused {
     background-position-x: -1242px;
-}
-.actor--Marcel.actor--large.isConfused {
-    background-position-x: -4938px;
 }
 .actor--Marcel.isSurprised {
     background-position-x: -1334px;
 }
-.actor--Marcel.actor--large.isSurprised {
-    background-position-x: -5301px;
-}
 .actor--Marcel.isSad {
     background-position-x: -1425px;
-}
-.actor--Marcel.actor--large.isSad {
-    background-position-x: -5665px;
 }
 .actor--Marcel.isHappy {
     background-position-x: -1517px;
 }
-.actor--Marcel.actor--large.isHappy {
-    background-position-x: -6028px;
-}
 .actor--Marcel.isAngry {
     background-position-x: -1608px;
 }
-.actor--Marcel.actor--large.isAngry {
-    background-position-x: -6392px;
-}
+
 
 
 /* -------------------- */
