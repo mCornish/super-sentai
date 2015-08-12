@@ -248,15 +248,36 @@ a:hover, a:focus {
 /* -------------------- */
 .display-list {
     width: 50%;
-    margin: 0 auto;
+    margin: 5em auto;
+}
+.display-list .display-list__image {
+    display: inline-block;
+    width: 2.3em;
+    height: 1.5em;
+    background-image: url('images/sprites.png');
+    background-size: 2340px;
+}
+.display-list .player-image {
+    background-image: none;
+    text-align: center;
+    color: rgb(100,100,100);
+    width: 1.15em;
+    font-size: 2em;
+    font-weight: bold;
 }
 .display-list__item {
-    font-size: 1.5em;
+    font-size: 2em;
     background-color: rgb(230,230,230);
     padding: 1em;
 }
 .display-list__item + .display-list__item {
     margin-top: 1em;
+}
+
+.player-input {
+    width: 40%;
+    font-size: .7em;
+    padding: .5em;
 }
 
 
