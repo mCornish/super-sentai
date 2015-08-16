@@ -2,30 +2,22 @@ if (Players.find().count() === 0) {
 
     kaiId = Actors.insert({
         name: 'Kai',
-        position: 'Left Leg',
-        mood: 'Neutral',
-        morale: 0
+        position: 'Left Leg'
     });
 
     dimitriId = Actors.insert({
         name: 'Dimitri',
-        position: 'Right Arm',
-        mood: 'Neutral',
-        morale: 0
+        position: 'Right Arm'
     });
 
     marcelId = Actors.insert({
         name: 'Marcel',
-        position: 'Left Arm',
-        mood: 'Neutral',
-        morale: 0
+        position: 'Left Arm'
     });
 
     giselleId = Actors.insert({
         name: 'Giselle',
-        position: 'Right Leg',
-        mood: 'Neutral',
-        morale: 0
+        position: 'Right Leg'
     });
 
 }

@@ -103,7 +103,7 @@ a:hover, a:focus {
     position: absolute;
     cursor: pointer;
     background-size: 2340px;
-    background-image: url('images/sprites.png');
+    background-image: url('images/sprites.gif');
 
     /* USE THIS TO SCALE IF NECESSARY */
     /*transform: scale(.5);*/

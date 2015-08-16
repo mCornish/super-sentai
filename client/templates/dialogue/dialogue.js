@@ -18,6 +18,25 @@ Template.dialogue.onCreated( function() {
     Session.setDefault('win', false);
 });
 
+Template.dialogue.onRendered( function() {
+    $('body').on('keyup', function(e) {
+        if (e.keyCode === 13) {
+            // Same as NEXT button
+            e.preventDefault();
+
+            var dArray = Session.get('dArray');
+            var dIndex = Session.get('dIndex');
+            var actor = Router.current().data().actor;
+            var actorName = actor.name.toLowerCase();
+
+            Session.set('dIndex', dIndex + 1);
+            if (dArray[dIndex].mood) {
+                Session.set(actorName + 'Mood', dArray[dIndex].mood);
+            }
+        }
+    });
+});
+
 Template.dialogue.helpers({
     response: function() {
         var dArray = Session.get('dArray');
@@ -63,8 +82,6 @@ Template.dialogue.events({
         var choice = $.grep(choices, function(e) {
             return e.text === text;
         })[0];
-
-
 
         //check whether a choice exists
         if (choice) {
@@ -112,4 +129,8 @@ Template.dialogue.events({
             Session.set('turns', turns - 1);
         }
     }
+});
+
+Template.dialogue.onDestroyed( function() {
+    $('body').off('keyup');
 });
