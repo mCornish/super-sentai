@@ -5,56 +5,69 @@ if (Players.find().count() === 0) {
     // ----------------------
     Convos.insert({
         actor: dimitriId,
-        turn: 1,
+        turn: 3,
+        // have talked to Dimitri
+        haveTalked: {
+            dialogue: [
+                {
+                    text: "Back to talk more about ice cream?",
+                    mood: 'Happy',
+                    name: 'Dimitri'
+                },
+                {
+                    text: "I'd like to talk about more relevant issues.",
+                    name: 'Me'
+                },
+                {
+                    text: "Good! Ice cream is a melted conversation topic now. Who have you talked to? I wasn't paying attention.",
+                    name: 'Dimitri'
+                },
+                {
+                    text: "Kai.",
+                    name: "Me"
+                },
+                {
+                    text: "Oh? Did she say anything interesting?",
+                    name: 'Dimitri'
+                }
+            ],
+            // have talked to Kai
+            kaiConvo: [
+
+            ]
+        },
+        // haven't talked to Dimitri
         dialogue: [
             {
-                text: "Heyyy, {{name}}. What's going on with you this fine morning?",
+                text: "Hello, Cap'n {{name}}! Lovely day to see you.",
                 mood: 'Happy',
                 name: 'Dimitri'
             },
             {
-                text: "It's not going to be a fine morning for very long if we don't get out there soon.",
+                text: "It won't be lovely for long if we don't all get in the robot.",
                 name: 'Me'
             },
             {
-                text: "Why the rush? It's not every day that the five of us get to hang out like this. We're always rushing off to this mission and that mission instead of enjoying our time together. I like this! Everyone's so happy.",
+                text: "I'm sure we'll get in EVE in due time. Whether or not we can defeat that monster together—that's up for debate.",
                 name: 'Dimitri'
             },
             {
-                text: "I glance around the room. Everyone other than Dimitri is fuming in their own way. Giselle and Kai refuse to even look in each other's direction."
+                text: "I wanted to talk to you about what's going on between you and Marcel.",
+                name: "Me"
             },
             {
-                text: "As usual, [INTERN] is keeping his distance from [HAPPY PSYCHO]. [HAPPY PSYCHO] must believe in a radically different definition of happy than I do."
+                text: "When I talked to him, he mentioned that he's having a hard time working with us since he has to watch his back so much.",
+                name: 'Me',
+                check: 'haveTalkedMarcel'
             },
             {
-                text: "What's with the long face? Don't you like this too?",
-                mood: 'Neutral',
-                name: 'Dimitri'
+                text: "Whenever I see him near you, he kind of cowers.",
+                name: 'Me',
+                check: '!haveTalkedMarcel'
             },
             {
-                text: "I'm trying to figure out what I can do to get everyone to stop fighting.",
+                text: "Do you know why that is?",
                 name: 'Me'
-            },
-            {
-                text: "What's your favorite flavor of ice cream?",
-                mood: 'Happy',
-                name: 'Dimitri'
-            },
-            {
-                text: "Ice cream has nothing to do with anything.",
-                name: 'Me'
-            },
-            {
-                text: "Ice cream has everything to do with everything. Icecream keeps the world going round.",
-                name: 'Dimitri'
-            },
-            {
-                text: "Do you know something I don't know?",
-                name: 'Me'
-            },
-            {
-                text: "Knowledge is power. So help me get a little more powerful by telling me what kind of icecream you like best. Pretty please with a cherry on top?",
-                name: 'Dimitri'
             }
         ],
         choices: [

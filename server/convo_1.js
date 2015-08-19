@@ -60,6 +60,7 @@ if (Players.find().count() === 0) {
         choices: [
             {
                 text: 'Humor him',
+                points: '1',
                 dialogue: [
                     {
                         text: "Okay, sure...my favorite flavor is vanilla. It goes good with mostly everything.",

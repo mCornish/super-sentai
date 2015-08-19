@@ -86,14 +86,20 @@ Template.dialogue.events({
         //check whether a choice exists
         if (choice) {
             var dArray = choice.dialogue;
+            var points = choice.points;
+            var actor = Router.current().data().actor;
+            var actorName = actor.name.toLowerCase();
 
             Session.set('dArray', dArray);
             Session.set('dIndex', 0);
             Session.set('text', dArray[0].text.replace('{{name}}', name));
             Session.set('choices', choice.choices);
 
-            var actor = Router.current().data().actor;
-            var actorName = actor.name.toLowerCase();
+            if (points) {
+                morale = Session.get(actorName + 'Morale') + parseInt(points);
+                Session.set(actorName + 'Morale', morale);
+                console.log(Session.get(actorName + 'Morale'));
+            }
 
             // Check whether the next piece of dialogue has a mood
             if (dArray[1].mood) {
@@ -109,6 +115,27 @@ Template.dialogue.events({
         var dIndex = Session.get('dIndex');
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
+        var check = dArray[dIndex + 1].check;
+
+        if (check) {
+            // Check whether it is a negation
+            if (check.indexOf('!') > 0) {
+                check.replace('!', '');
+                // If it is true...
+                if (Session.get(check)) {
+                    // Skip to the next piece of dialogue
+                    Session.set('dIndex', dIndex + 1);
+                    dIndex++;
+                }
+            } else {
+                // If it is false...
+                if (!Session.get(check)) {
+                    // Skip to the next piece of dialogue
+                    Session.set('dIndex', dIndex + 1);
+                    dIndex++;
+                }
+            }
+        }
 
         // Check whether the next piece of dialogue has a mood
         Session.set('dIndex', dIndex + 1);

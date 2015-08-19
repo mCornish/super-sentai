@@ -5,7 +5,7 @@ if (Players.find().count() === 0) {
     // ----------------------
     Convos.insert({
         actor: dimitriId,
-        turn: 1,
+        turn: 2,
         dialogue: [
             {
                 text: "Heyyy, Cap'n {{name}}. What's going on with you this fine morning?",
