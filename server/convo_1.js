@@ -103,13 +103,85 @@ if (Players.find().count() === 0) {
                 choices: [
                     {
                         text: 'Nothing goes with them',
+                        points: '-1',
                         dialogue: [
                             {
-                                text: 'Those flavors stand fine on their oown. Moose tracks is that peanut butter and chocolate blend, right?',
-                                name: 'Dimitri'
+                                text: "Those flavors stand fine on their own. Moose tracks is that peanut butter and chocolate blend, right? It's a stand-alone flavor.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Because it'll clash with anything else?",
+                                name: "Dimitri",
+                                mood: 'Sad'
+                            },
+                            {
+                                text: "Yeah, the flavors are too strong. The peanut butter's too dominant. Sorry for asking this again, but what exactly does ice cream have to do with this situation?",
+                                name: "Me"
+                            },
+                            {
+                                text: "It has a ton to do with it.",
+                                name: "Dimitri",
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "Ice cream is relevant to any situation! But you've got more folks to talk to, don'chya? You should go on and do that before they get antsy.",
+                                name: "Dimitri"
+                            },
+                            {
+                                text: "Thanks.",
+                                name: "Me"
                             }
                         ]
                     },
+                    {
+                        text: 'Any topping',
+                        dialogue: [
+                            {
+                                text: 'Theoretically, you could apply any topping to any flavor of ice cream. No one\'s stopping you from putting blueberry syrup on Moose Tracks if you really want to.',
+                                name: 'Me'
+                            },
+                            {
+                                text: "It'd be...unique, seeing how it'd be chocolate, peanut butter, and blueberry. If that's what you're into, though, then more power to you.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "Good point!",
+                                name: 'Dimitri',
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "What does this have to do with the situation at hand, though?",
+                                name: 'Me'
+                            },
+                            {
+                                text: "Ice cream has everything to do with it.",
+                                name: 'Dimitri'
+                            },
+                            {
+                                text: "If you've got ice cream that can't go with any of the other toppings, then that's a big problem. There's no use fighting to put toppings on an ice cream that won't blend with anything else.",
+                                name: 'Dimitri',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Think about it, Cap'n!",
+                                name: 'Dimitri',
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "Now, you should get to talking to some of the other fine folks lounging around here. I don't want to take up all of your time.",
+                                name: 'Dimitri',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Thanks.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "...I think?",
+                                name: 'Me'
+                            }
+                        ]
+                    }
                 ]
             },
             {
