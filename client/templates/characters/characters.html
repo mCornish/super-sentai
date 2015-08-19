@@ -7,15 +7,15 @@
             {{#each characters}}
                 <div class="display-list__item">
                     <div class="display-list__image actor--{{name}}"></div>
-                    <strong>{{position}}:</strong> {{name}}
+                    <strong>{{position}}:</strong> &nbsp;&nbsp;{{name}}
                 </div>
             {{/each}}
             <div class="display-list__item">
                 <div class="display-list__image player-image">?</div>
                 <label for="name">The Head:</label>
                 <input class="input player-input" name="name" id="name" type="text" placeholder="Your Name" value="{{playerName}}" data-hook="name" />
+                <a class="button float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
             </div>
-            <a class="button float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
         </div>
     </div>
 </template>

@@ -1,6 +1,24 @@
-html {
-    font-size: 18px;
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 14px;
+    }
 }
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+}
+
 
 body {
     background: rgb(250,250,250);
@@ -55,6 +73,7 @@ a:hover, a:focus {
     color: rgb(80,80,80);
     display: block;
     cursor: default;
+    z-index: 1;
 }
 .logo:hover,
 .logo:focus {
@@ -238,17 +257,14 @@ a:hover, a:focus {
     background-color: rgb(180,180,180);
     color: rgb(245,245,245);
 }
-* + .button {
-    margin-top: 1em;
-}
 
 
 /* -------------------- */
 /* --- DISPLAY LIST */
 /* -------------------- */
 .display-list {
-    width: 50%;
-    margin: 5em auto;
+    width: 30em;
+    margin: 3em auto;
 }
 .display-list .display-list__image {
     display: inline-block;
@@ -262,16 +278,16 @@ a:hover, a:focus {
     text-align: center;
     color: rgb(100,100,100);
     width: 1.15em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 .display-list__item {
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: rgb(230,230,230);
     padding: 1em;
 }
 .display-list__item + .display-list__item {
-    margin-top: 1em;
+    margin-top: .5em;
 }
 
 .player-input {
@@ -284,11 +300,29 @@ a:hover, a:focus {
 /* -------------------- */
 /* --- HOME */
 /* -------------------- */
+.home {
+
+}
+.home__background {
+    -webkit-animation: background-blare 1s infinite ease;
+    animation: background-blare 1s infinite ease;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.home__menu {
+    position: relative;
+    z-index: 2;
+}
 .eve {
     position: absolute;
     right: -15vw;
     top: 20vh;
-    z-index: -1;
+    z-index: 0;
 }
 .eve__image {
     background-image: url('/images/eve.gif');
@@ -299,12 +333,47 @@ a:hover, a:focus {
 }
 .eve__siren {
     background: -webkit-radial-gradient(rgba(255,0,0,1), rgba(255,255,255,0), rgba(255,255,255,0));
+    background: radial-gradient(rgba(255,0,0,1), rgba(255,255,255,0), rgba(255,255,255,0));
+    -webkit-animation: blare 1s infinite ease;
+    animation: blare 1s infinite ease;
     width: 10em;
     height: 10em;
     border-radius: 100%;
     position: absolute;
     top: -4em;
     left: 12em;
+    z-index: 0;
+}
+
+@-webkit-keyframes blare {
+    0% {
+        opacity: .5;
+        transform: scaleX(.5) scaleY(.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(3) scaleY(3);
+    }
+
+    100% {
+        opacity: .5;
+        transform: scaleX(.5) scaleY(.5);
+    }
+}
+
+@-webkit-keyframes background-blare {
+    0% {
+        background-color: rgb(250,250,250);
+    }
+
+    50% {
+        background-color: rgb(255,245,245);
+    }
+
+    100% {
+        background-color: rgb(250,250,250);
+    }
 }
 
 

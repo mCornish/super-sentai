@@ -1,11 +1,14 @@
 <template name="home">
-    {{> logo}}
-    <div class="menu">
-        <a class="menu__button" href="{{pathFor 'characters'}}" data-hook="start">Start Game</a>
-        <a class="menu__button" href="{{pathFor 'options'}}">Options</a>
-    </div>
-    <div class="eve">
-        <div class="eve__image"></div>
-        <div class="eve__siren"></div>
+    <div class="home">
+        <div class="home__background"></div>
+        {{> logo}}
+        <div class="home__menu menu">
+            <a class="menu__button" href="{{pathFor 'characters'}}" data-hook="start">Start Game</a>
+            <a class="menu__button" href="{{pathFor 'options'}}">Options</a>
+        </div>
+        <div class="eve">
+            <div class="eve__image"></div>
+            <div class="eve__siren"></div>
+        </div>
     </div>
 </template>
