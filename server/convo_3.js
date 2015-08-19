@@ -68,7 +68,68 @@ if (Players.find().count() === 0) {
             {
                 text: "Do you know why that is?",
                 name: 'Me'
-            }
+            },
+            {
+                text: "Incompatible ice cream?",
+                name: 'Dimitri',
+                mood: 'Confused'
+            },
+            {
+                text: "The fate of Rocky Road and birch beer.",
+                name: 'Dimitri',
+                mood: 'Sad'
+            },
+            {
+                text: "The plight of lemon and milk!",
+                name: 'Dimitri',
+                mood: 'Angry'
+            },
+            {
+                text: "More like orange juice and milk.",
+                name: 'Dimitri',
+                mood: 'Sad'
+            },
+            {
+                text: "I'm sorry, Dimitri, but I'm going to have to stop you right there. What in the world are you talking about?",
+                name: "Me"
+            },
+            {
+                text: "I want us to be less like orange juice and milk and more like whatever goes with milk.",
+                name: 'Dimitri'
+            },
+            {
+                text: "How do I do that?",
+                name: "Me"
+            },
+            {
+                text: "I've come up with all sorts of games to play with him. I thought he liked the games since he hasn't run away like the rest of the interns have!",
+                name: 'Dimitri'
+            },
+            {
+                text: "What games do you play with him? Twister? Monopoly?",
+                name: "Me"
+            },
+            {
+                text: "More like twist-yer-hands-around-his-neck and monopolize-his-airways. Usually, that game drives people away, but not Marcel! He must be a fan!",
+                name: 'Dimitri'
+            },
+            {
+                text: "I think that's more of a testament to his resilience than how much he likes your games. Um, you're not actually choking any of the interns, are you?",
+                name: "Me"
+            },
+            {
+                text: "Nah, I'm all about the menacing stalking and evil eye stares. I don't touch them with my bare hands. Usually.",
+                name: 'Dimitri'
+            },
+            {
+                text: "Knife-throwing, on the other hand...I definitely do that! Marcel's pretty good at dodging knives. It's a surprise since he usually run EVE's left arm so sluggishly.",
+                name: 'Dimitri'
+            },
+            {
+                text: "You really think he's still here because he's resilient, not because he's a fan of my game? What do you think I should do about that? I want him to like my games. I'd hate to think that he's bored of them.",
+                name: 'Dimitri',
+                mood: 'Sad'
+            },
         ],
         choices: [
             {
