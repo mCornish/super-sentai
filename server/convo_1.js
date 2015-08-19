@@ -8,7 +8,7 @@ if (Players.find().count() === 0) {
         turn: 1,
         dialogue: [
             {
-                text: "Heyyy, {{name}}. What's going on with you this fine morning?",
+                text: "Heyyy, Cap'n {{name}}. What's going on with you this fine morning?",
                 mood: 'Happy',
                 name: 'Dimitri'
             },
@@ -24,7 +24,7 @@ if (Players.find().count() === 0) {
                 text: "I glance around the room. Everyone other than Dimitri is fuming in their own way. Giselle and Kai refuse to even look in each other's direction."
             },
             {
-                text: "As usual, [INTERN] is keeping his distance from [HAPPY PSYCHO]. [HAPPY PSYCHO] must believe in a radically different definition of happy than I do."
+                text: "As usual, Marcel is keeping his distance from Dimitri. Dimitri must believe in a radically different definition of happy than I do."
             },
             {
                 text: "What's with the long face? Don't you like this too?",
@@ -45,7 +45,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Ice cream has everything to do with everything. Icecream keeps the world going round.",
+                text: "Ice cream has everything to do with everything. Ice cream keeps the world going round.",
                 name: 'Dimitri'
             },
             {
@@ -53,22 +53,67 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Knowledge is power. So help me get a little more powerful by telling me what kind of icecream you like best. Pretty please with a cherry on top?",
+                text: "Knowledge is power. So help me get a little more powerful by telling me what kind of ice cream you like best. Pretty please with a cherry on top?",
                 name: 'Dimitri'
             }
         ],
         choices: [
             {
-                text: 'Humor him.',
+                text: 'Humor him',
                 dialogue: [
                     {
                         text: "Okay, sure...my favorite flavor is vanilla. It goes good with mostly everything.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "And what kind of toppings do you like?.",
                         name: 'Dimitri'
+                    },
+                    {
+                        text: "Sprinkles are fine. What does this have to do with anything, though? I love ice cream as much as the next person, but we've kind of got a monstrous problem on our hands at the moment.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "I thought you of all people would understand the importance of ice cream.",
+                        name: 'Dimitri',
+                        mood: 'Sad'
+                    },
+                    {
+                        text: "I can't understand it if you won't explain it to me. We don't have a whole lot of time here.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "No one has time for Dimitri.",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "You know that's not true.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Everyone's off doing their own thing, and then there's me. Me, all alone.",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "You're right. Vanilla ice cream does go good with everything. What about moose tracks or rocky road? What toppings go with those?",
+                        name: 'Dimitri',
+                        mood: 'Neutral'
                     }
+                ],
+                choices: [
+                    {
+                        text: 'Nothing goes with them',
+                        dialogue: [
+                            {
+                                text: 'Those flavors stand fine on their oown. Moose tracks is that peanut butter and chocolate blend, right?',
+                                name: 'Dimitri'
+                            }
+                        ]
+                    },
                 ]
             },
             {
-                text: 'Tell him to focus.',
+                text: 'Tell him to focus',
                 dialogue: [
                     {
                         text: "Dimitri, I need you to focus. We've talked about your issues with focusing before.",
