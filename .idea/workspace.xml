@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e354be-eeb0-4d81-a7dd-4dd03f90cf81" name="Default" comment="Added description, recipient, and occasion to submit">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/convo_1.js" afterPath="$PROJECT_DIR$/server/convo_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/convo_2.js" afterPath="$PROJECT_DIR$/server/convo_2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" afterPath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ygmyg.iws" />
@@ -45,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialogue.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dialogue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/dialogue/dialogue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.41836736">
+              <caret line="99" column="55" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -59,16 +58,16 @@
         <entry file="file://$PROJECT_DIR$/server/convo_1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="246" selection-end-column="9" />
+              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="convo_2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="convo_2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/convo_2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41836736">
+            <state vertical-scroll-proportion="0.0">
               <caret line="212" column="71" selection-start-line="212" selection-start-column="71" selection-end-line="212" selection-end-column="71" />
               <folding />
             </state>
@@ -163,11 +162,11 @@
         <option value="$PROJECT_DIR$/client/templates/characters/characters.html" />
         <option value="$PROJECT_DIR$/server/init.js" />
         <option value="$PROJECT_DIR$/client/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
         <option value="$PROJECT_DIR$/server/characters.js" />
         <option value="$PROJECT_DIR$/client/templates/includes/config.js" />
         <option value="$PROJECT_DIR$/server/convo_1.js" />
         <option value="$PROJECT_DIR$/server/convo_2.js" />
+        <option value="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
       </list>
     </option>
   </component>
@@ -1410,14 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/dialogue/dialogue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/characters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29022405">
@@ -1442,18 +1433,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/convo_1.js">
+    <entry file="file://$PROJECT_DIR$/server/convo_2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="246" selection-end-column="9" />
+          <caret line="212" column="71" selection-start-line="212" selection-start-column="71" selection-end-line="212" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/convo_2.js">
+    <entry file="file://$PROJECT_DIR$/server/convo_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/dialogue/dialogue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41836736">
-          <caret line="212" column="71" selection-start-line="212" selection-start-column="71" selection-end-line="212" selection-end-column="71" />
+          <caret line="99" column="55" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
           <folding />
         </state>
       </provider>

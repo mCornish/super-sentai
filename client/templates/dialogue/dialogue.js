@@ -85,21 +85,22 @@ Template.dialogue.events({
 
         //check whether a choice exists
         if (choice) {
-            Session.set('dArray', choice.dialogue);
+            var dArray = choice.dialogue;
+
+            Session.set('dArray', dArray);
             Session.set('dIndex', 0);
-            Session.set('text', Session.get('dArray')[0].text.replace('{{name}}', name));
+            Session.set('text', dArray[0].text.replace('{{name}}', name));
             Session.set('choices', choice.choices);
+
+            var actor = Router.current().data().actor;
+            var actorName = actor.name.toLowerCase();
+
+            // Check whether the next piece of dialogue has a mood
+            if (dArray[1].mood) {
+                Session.set(actorName + 'Mood', dArray[1].mood);
+            }
         }
 
-        var dArray = Session.get('dArray');
-        var dIndex = Session.get('dIndex');
-        var actor = Router.current().data().actor;
-        var actorName = actor.name.toLowerCase();
-
-        Session.set('dIndex', dIndex + 1);
-        if (dArray[dIndex].mood) {
-            Session.set(actorName + 'Mood', dArray[dIndex].mood);
-        }
     },
     'click [data-hook=next]': function(e) {
         e.preventDefault();
@@ -109,9 +110,10 @@ Template.dialogue.events({
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
 
+        // Check whether the next piece of dialogue has a mood
         Session.set('dIndex', dIndex + 1);
-        if (dArray[dIndex].mood) {
-            Session.set(actorName + 'Mood', dArray[dIndex].mood);
+        if (dArray[dIndex + 1].mood) {
+            Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
         }
     },
     'click [data-hook=back]': function(e) {
