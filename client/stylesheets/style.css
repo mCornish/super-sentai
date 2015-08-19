@@ -282,6 +282,33 @@ a:hover, a:focus {
 
 
 /* -------------------- */
+/* --- HOME */
+/* -------------------- */
+.eve {
+    position: absolute;
+    right: -15vw;
+    top: 20vh;
+    z-index: -1;
+}
+.eve__image {
+    background-image: url('/images/eve.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 35em;
+    height: 50em;
+}
+.eve__siren {
+    background: -webkit-radial-gradient(rgba(255,0,0,1), rgba(255,255,255,0), rgba(255,255,255,0));
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    position: absolute;
+    top: -4em;
+    left: 12em;
+}
+
+
+/* -------------------- */
 /* --- HUD */
 /* -------------------- */
 .hud {
