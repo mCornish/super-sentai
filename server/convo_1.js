@@ -204,31 +204,51 @@ if (Players.find().count() === 0) {
                         text: "Give everyone a bowl of ice cream.",
                         name: 'Dimitri',
                         mood: 'Happy'
-                    }
-                ],
-                choices: [
-                    {
-                        text: 'So?',
-                        dialogue: [
-                            {
-                                text: 'Fine.',
-                                name: 'Dimitri'
-                            }
-                        ]
                     },
                     {
-                        text: 'Sorry',
-                        dialogue: [
-                            {
-                                text: 'You are forgiven.',
-                                name: 'Dimitri'
-                            }
-                        ]
+                        text: "So people can just eat it angrily? I don't think ice cream is a cure-all for the issue we're having.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Maybe talking to Dimitri first was a mistake. Time is too precious to waste talking about ice cream."
+                    },
+                    {
+                        text: "It's not like we have time for an ice cream party, either.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "But will we live long enough to have one after that monster gets to us?",
+                        name: 'Dimitri',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "The monster may have an ice cream part of his own with our squishy remains. Delicious!",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    },
+                    {
+                        text: "Delicious for the monster, sure. For us? Not so much.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You should run along now and start chatting up the others. You've got a bunch of stuff to handle, don'chya?",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "I don't envy you one bit. Good luck, Cap'n {{name}}!",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "Thanks.",
+                        name: 'Me'
                     }
                 ]
             }
         ]
     });
+
+
+
 
 
     // ----------------------
