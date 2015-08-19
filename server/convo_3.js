@@ -21,14 +21,6 @@ if (Players.find().count() === 0) {
                 {
                     text: "Good! Ice cream is a melted conversation topic now. Who have you talked to? I wasn't paying attention.",
                     name: 'Dimitri'
-                },
-                {
-                    text: "Kai.",
-                    name: "Me"
-                },
-                {
-                    text: "Oh? Did she say anything interesting?",
-                    name: 'Dimitri'
                 }
             ],
             // have talked to Kai
@@ -129,58 +121,112 @@ if (Players.find().count() === 0) {
                 text: "You really think he's still here because he's resilient, not because he's a fan of my game? What do you think I should do about that? I want him to like my games. I'd hate to think that he's bored of them.",
                 name: 'Dimitri',
                 mood: 'Sad'
-            },
+            }
         ],
         choices: [
             {
-                text: 'Humor him.',
+                text: "Tell him to make his games worse",
                 dialogue: [
                     {
-                        text: "Okay, sure...my favorite flavor is vanilla. It goes good with mostly everything.",
+                        text: "You should make your games worse to get his attention.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You think I should invite Mr. Machete to play?",
+                        name: 'Dimitri',
+                        mood: 'Confused'
+                    },
+                    {
+                        text: "Is Mr. Machete—",
+                        name: 'Me'
+                    },
+                    {
+                        text: "My most trusted machete, yes!",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    },
+                    {
+                        text: "Yeah, that should definitely get Marcel's attention.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Thank you for the advice. I'm sure Marcel will love this.",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "I'm going to go check on the others now.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Toodles, Cap'n {{name}}! Good luck with rallying the troops!",
                         name: 'Dimitri'
                     }
                 ]
             },
             {
-                text: 'Tell him to focus.',
+                text: "Tell him to make his games less violent",
+                points: '1',
                 dialogue: [
                     {
-                        text: "Dimitri, I need you to focus. We've talked about your issues with focusing before.",
+                        text: "You should try making your games less violent. Or, better yet, see if Marcel has any ideas on how to make the game better.",
                         name: 'Me'
                     },
                     {
-                        text: "Yeah, we have...",
+                        text: "But I'm creative enough on my own.",
+                        name: 'Dimitri',
+                        mood: 'Confused'
+                    },
+                    {
+                        text: "I think it would help improve your friendship if you sit down with Marcel and try to work on the game with him. That way, you can both agree on the rules and there won't be any misunderstandings.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "But shouldn't he have already read the waiver? If he read it in detail, he would've already known all the rules.",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "The waiver is over 200 pages long.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Yeah, that's the one!",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    },
+                    {
+                        text: "Not even I read that in its entirety.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You're slackin', Cap'n. Don't let anyone else hear you say that.",
                         name: 'Dimitri',
                         mood: 'Neutral'
                     },
                     {
-                        text: "What do you think I should do about all the fighting?",
+                        text: "Good idea. Sorry.",
                         name: 'Me'
                     },
                     {
-                        text: "Give everyone a bowl of ice cream.",
-                        name: 'Dimitri',
-                        mood: 'Happy'
-                    }
-                ],
-                choices: [
-                    {
-                        text: 'So?',
-                        dialogue: [
-                            {
-                                text: 'Fine.',
-                                name: 'Dimitri'
-                            }
-                        ]
+                        text: "S'alright with me. Not so alright with all those interns we've lost.",
+                        name: 'Dimitri'
+
                     },
                     {
-                        text: 'Sorry',
-                        dialogue: [
-                            {
-                                text: 'You are forgiven.',
-                                name: 'Dimitri'
-                            }
-                        ]
+                        text: "By lost, you mean that they simply left, right? Not that they were lost in any other way?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Of course, Cap'n! Of course.",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    },
+                    {
+                        text: "I'm going to go talk to the others now.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Great! Keep doing what you're doing. Toodles, Cap'n {{name}}! Good luck with rallying the troops!",
+                        name: 'Dimitri'
                     }
                 ]
             }
