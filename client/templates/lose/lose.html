@@ -1,15 +1,20 @@
 <template name="lose">
     {{#if showOutro}}
         <div class="cutscene">
-            <h1 class="cutscene__placeholder">THIS IS A LOSS OUTRO PLACEHOLDER</h1>
             <div class="cutscene__skip" data-hook="skip">SKIP</div>
             <video class="cutscene__video" autoplay data-hook="outro-video">
-                <source src="videos/lose.mov" type="video/mov">
+                <source src="videos/lose.mp4" type="video/mp4">
                 Your browser does not support this video.
             </video>
         </div>
     {{/if}}
+    <video class="loop-video" autoplay loop>
+        <source src="videos/lose_loop.mp4" type="video/mp4">
+        Your browser does not support this video.
+    </video>
     <h1 class="score">
-        You lose. <a href="{{pathFor 'home'}}">Try again?</a>
+        You lose.
+        <br>
+        <a href="{{pathFor 'home'}}">Try again?</a>
     </h1>
 </template>
