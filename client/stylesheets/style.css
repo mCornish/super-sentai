@@ -301,7 +301,11 @@ a:hover, a:focus {
 /* --- HOME */
 /* -------------------- */
 .home {
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 .home__background {
     -webkit-animation: background-blare 1s infinite ease;
@@ -438,6 +442,7 @@ a:hover, a:focus {
     position: relative;
     top: 40vh;
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -489,6 +494,15 @@ a:hover, a:focus {
 /* -------------------- */
 /* --- CUTSCENE */
 /* -------------------- */
+.cutscene {
+    display: block;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw !important;
+    height: auto !important;
+}
+
 .cutscene__placeholder {
     position: absolute;
     width: 100%;
@@ -503,23 +517,39 @@ a:hover, a:focus {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100vw !important;
+    height: auto !important;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     z-index: 1;
 }
 .cutscene__skip {
     position: absolute;
-    right: 1em;
-    top: 80vh;
+    right: 1.5em;
+    bottom: 1em;
     z-index: 2;
-    color: white;
+    color: black;
     font-size: 2em;
     cursor: pointer;
 }
 .cutscene__skip:hover {
     color: rgb(200,200,200);
+}
+
+/* -------------------- */
+/* --- LOOP VIDEO */
+/* -------------------- */
+.loop-video {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw !important;
+    height: auto !important;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
 }
 
 
