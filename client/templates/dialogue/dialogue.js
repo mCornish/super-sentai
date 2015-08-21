@@ -3,7 +3,16 @@ Template.dialogue.onCreated( function() {
     var actor = Router.current().data().actor;
     var name = Session.get('playerName');
     var dIndex = 0;
-    var dArray = convo.dialogue;
+    var dArray = [];
+
+    // check whether the dialogue should be haveTalked dialogue
+    if(convo.haveTalked && Session.get('haveTalked' + actor.name)) {
+        dArray = convo.haveTalked.dialogue;
+        Session.set('convo', convo.haveTalked);
+    } else {
+        dArray = convo.dialogue;
+        Session.set('convo', convo);
+    }
 
     // Dialogue array
     Session.set('dArray', dArray);
@@ -117,6 +126,7 @@ Template.dialogue.events({
         var actorName = actor.name.toLowerCase();
         var check = dArray[dIndex + 1].check;
 
+        // check for optional dialogue
         if (check) {
             // Check whether it is a negation
             if (check.indexOf('!') > 0) {
@@ -137,8 +147,30 @@ Template.dialogue.events({
             }
         }
 
+        if (dIndex + 1 <= dArray.size) {
+            // advance conversation
+            Session.set('dIndex', dIndex + 1);
+        } else {
+            // check for character dialogue and switch arrays if appropriate
+            var convo = Session.get('convo');
+            if (convo.kaiConvo && Session.get('haveTalkedKai')) {
+                // switch to Kai convo
+                Session.set('dArray', convo.kaiConvo.dialogue);
+            } else if (convo.giselleConvo && Session.get('haveTalkedGiselle')) {
+                // switch to Giselle convo
+                Session.set('dArray', convo.giselleConvo.dialogue);
+            } else if (convo.dimitriConvo && Session.get('haveTalkedDimitri')) {
+                // switch to Dimitri convo
+                Session.set('dArray', convo.dimitriConvo.dialogue);
+            } else if (convo.marcelConvo && Session.get('haveTalkedMarcel')) {
+                // switch to Dimitri convo
+                Session.set('dArray', convo.marcelConvo.dialogue);
+            }
+                Session.set('dIndex', 0);
+        }
+
+
         // Check whether the next piece of dialogue has a mood
-        Session.set('dIndex', dIndex + 1);
         if (dArray[dIndex + 1].mood) {
             Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
         }
