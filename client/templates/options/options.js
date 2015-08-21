@@ -1,14 +1,18 @@
 Template.options.onRendered(function() {
-    Session.setDefault('soundOn', true);
-    Session.setDefault('musicOn', true);
+    Session.setDefault('hasSound', true);
+    Session.setDefault('hasMusic', true);
+
+    // initialize audio on/off
+    var hasMusic = Session.get('hasMusic');
+    $('[data-hook=music]').prop('muted', !hasMusic);
 });
 
 Template.options.helpers({
     soundToggle: function() {
-        return Session.get('soundOn') ? 'On' : 'Off';
+        return Session.get('hasSound') ? 'On' : 'Off';
     },
     musicToggle: function() {
-        return Session.get('musicOn') ? 'On' : 'Off';
+        return Session.get('hasMusic') ? 'On' : 'Off';
     }
 });
 
@@ -21,6 +25,10 @@ Template.options.events({
     'click [data-hook=music]': function(e) {
         e.preventDefault();
 
-        Session.set('musicOn', !Session.get('musicOn'));
+        var hasMusic = Session.get('hasMusic');
+        Session.set('hasMusic', !hasMusic);
+
+        // toggle muted status
+       $('[data-hook=music]').prop('muted', hasMusic);
     }
 });

@@ -28,6 +28,7 @@ Template.dialogue.onCreated( function() {
 });
 
 Template.dialogue.onRendered( function() {
+    // bind next button functionality to ENTER key
     $('body').on('keyup', function(e) {
         if (e.keyCode === 13) {
             // Same as NEXT button
@@ -44,6 +45,13 @@ Template.dialogue.onRendered( function() {
             }
         }
     });
+
+    // update actor haveTalked Session variable
+    var actorName = Session.get('actorName');
+    // if haven't talked to actor
+    if (!Session.get('haveTalked' + actorName)) {
+        Session.set('haveTalked' + actorName, true);
+    }
 });
 
 Template.dialogue.helpers({
