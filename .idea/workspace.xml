@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e354be-eeb0-4d81-a7dd-4dd03f90cf81" name="Default" comment="Added description, recipient, and occasion to submit">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/includes/config.js" afterPath="$PROJECT_DIR$/client/templates/includes/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/convo_1.js" afterPath="$PROJECT_DIR$/server/convo_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" afterPath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/home/home.html" afterPath="$PROJECT_DIR$/client/templates/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/home/home.js" afterPath="$PROJECT_DIR$/client/templates/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/application/layout.js" afterPath="$PROJECT_DIR$/client/templates/application/layout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/options/options.js" afterPath="$PROJECT_DIR$/client/templates/options/options.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ygmyg.iws" />
@@ -64,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/server/convo_1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.49592668">
-              <caret line="455" column="28" selection-start-line="455" selection-start-column="28" selection-end-line="455" selection-end-column="28" />
+              <caret line="531" column="46" selection-start-line="531" selection-start-column="46" selection-end-line="531" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -1431,7 +1425,7 @@
     <entry file="file://$PROJECT_DIR$/server/convo_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49592668">
-          <caret line="455" column="28" selection-start-line="455" selection-start-column="28" selection-end-line="455" selection-end-column="28" />
+          <caret line="531" column="46" selection-start-line="531" selection-start-column="46" selection-end-line="531" selection-end-column="46" />
           <folding />
         </state>
       </provider>

@@ -446,20 +446,115 @@ if (Players.find().count() === 0) {
                     },
                     {
                         text: "It didn't. Like I said, Kai is difficult. She blew up bigger than a volcano. Why? You have a better idea?",
-                        name: 'Giselle'
+                        name: 'Giselle',
+                        mood: 'Neutral'
                     }
                 ],
                 choices: [
                     {
                         text: 'Calmly explain yourself',
                         dialogue: [
-
+                            {
+                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, she'll understand.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "So you want me to keep trying to talk to Kai?",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "Yes, even if you have to count to ten in your head to get through the conversation. Put yourself in your happy place.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "A throne in a palace on my own private island. That'd be nice.",
+                                name: 'Giselle',
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "Until monsters start coming up from the ocean.",
+                                name: 'Giselle',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Just give it a try. I think it'll work.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "I hope you're right.",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "Are you going to be alright to fight that monster?",
+                                name: 'Me'
+                            },
+                            {
+                                text: "I'll be fine. I'm me after all.",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "Alright, see you on the battlefield",
+                                name: 'Me'
+                            },
+                            {
+                                text: "See you, Captain.",
+                                name: 'Giselle'
+                            }
                         ]
                     },
                     {
                         text: 'Loudly explain yourself',
                         dialogue: [
-
+                            {
+                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at her.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "You really think that's going to work?",
+                                name: 'Giselle',
+                                mood: 'Confused'
+                            },
+                            {
+                                text: "It's called fighting fire with fire.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "Someone is going to get burned.",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "And if you're loud enough, it won't be you.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "If you say so, {{name}. I'll trust your advice.",
+                                name: 'Giselle',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Just give it a try. I think it'll work.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "I hope you're right.",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "Are you going to be alright to fight that monster?",
+                                name: 'Me'
+                            },
+                            {
+                                text: "I'll be fine. I'm me after all.",
+                                name: 'Giselle'
+                            },
+                            {
+                                text: "Alright, see you on the battlefield",
+                                name: 'Me'
+                            },
+                            {
+                                text: "See you, Captain.",
+                                name: 'Giselle'
+                            }
                         ]
                     }
                 ]
