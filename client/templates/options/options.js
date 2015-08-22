@@ -1,10 +1,5 @@
 Template.options.onRendered(function() {
-    Session.setDefault('hasSound', true);
-    Session.setDefault('hasMusic', true);
 
-    // initialize audio on/off
-    var hasMusic = Session.get('hasMusic');
-    $('[data-hook=music]').prop('muted', !hasMusic);
 });
 
 Template.options.helpers({

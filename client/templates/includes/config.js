@@ -1,22 +1,24 @@
-Template.home.onRendered( function() {
-    Session.set('turns', 6);
-    Session.set('score', 0);
-    Session.set('win', false);
+Template.layout.onRendered( function() {
+    Session.setDefault('turns', 4);
+    Session.setDefault('score', 0);
+    Session.setDefault('win', false);
 
-    Session.set('dimitriMood', 'Neutral');
-    Session.set('dimitriMorale', 0);
-    Session.set('haveTalkedDimitri', false);
+    Session.setDefault('dimitriMood', 'Neutral');
+    Session.setDefault('dimitriMorale', 0);
+    Session.setDefault('haveTalkedDimitri', false);
 
-    Session.set('giselleMood', 'Neutral');
-    Session.set('giselleMorale', 0);
-    Session.set('haveTalkedGiselle', false);
+    Session.setDefault('giselleMood', 'Neutral');
+    Session.setDefault('giselleMorale', 0);
+    Session.setDefault('haveTalkedGiselle', false);
 
-    Session.set('kaiMood', 'Neutral');
-    Session.set('kaiMorale', 0);
-    Session.set('haveTalkedKai', false);
+    Session.setDefault('kaiMood', 'Neutral');
+    Session.setDefault('kaiMorale', 0);
+    Session.setDefault('haveTalkedKai', false);
 
+    Session.setDefault('marcelMood', 'Neutral');
+    Session.setDefault('marcelMorale', 0);
+    Session.setDefault('haveTalkedMarcel', false);
 
-    Session.set('marcelMood', 'Neutral');
-    Session.set('marcelMorale', 0);
-    Session.set('haveTalkedMarcel', false);
+    Session.setDefault('playing', false);
+    Session.setDefault('hasMusic', true);
 });

@@ -119,7 +119,7 @@ Template.dialogue.events({
             }
 
             // Check whether the next piece of dialogue has a mood
-            if (dArray[1].mood) {
+            if (dArray.size > 1 && dArray[1].mood) {
                 Session.set(actorName + 'Mood', dArray[1].mood);
             }
         }
@@ -132,32 +132,35 @@ Template.dialogue.events({
         var dIndex = Session.get('dIndex');
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
-        var check = dArray[dIndex + 1].check;
 
-        // check for optional dialogue
-        if (check) {
-            // Check whether it is a negation
-            if (check.indexOf('!') > 0) {
-                check.replace('!', '');
-                // If it is true...
-                if (Session.get(check)) {
-                    // Skip to the next piece of dialogue
-                    Session.set('dIndex', dIndex + 1);
-                    dIndex++;
-                }
-            } else {
-                // If it is false...
-                if (!Session.get(check)) {
-                    // Skip to the next piece of dialogue
-                    Session.set('dIndex', dIndex + 1);
-                    dIndex++;
+        // check whether there is another piece of dialogue
+        if (dIndex + 1 < dArray.size - 1) {
+            // check for optional dialogue
+            if (dArray[dIndex + 1].hasOwnProperty('check')) {
+                var check = dArray[dIndex + 1].check;
+                // Check whether it is a negation
+                if (check.indexOf('!') > 0) {
+                    check.replace('!', '');
+                    // If it is true...
+                    if (Session.get(check)) {
+                        // Skip to the next piece of dialogue
+                        Session.set('dIndex', dIndex + 1);
+                        dIndex++;
+                    }
+                } else {
+                    // If it is false...
+                    if (!Session.get(check)) {
+                        // Skip to the next piece of dialogue
+                        Session.set('dIndex', dIndex + 1);
+                        dIndex++;
+                    }
                 }
             }
-        }
 
-        if (dIndex + 1 <= dArray.size) {
-            // advance conversation
-            Session.set('dIndex', dIndex + 1);
+            // check whether the next piece of dialogue has a mood
+            if (dArray[dIndex + 1].mood) {
+                Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
+            }
         } else {
             // check for character dialogue and switch arrays if appropriate
             var convo = Session.get('convo');
@@ -177,11 +180,8 @@ Template.dialogue.events({
                 Session.set('dIndex', 0);
         }
 
-
-        // Check whether the next piece of dialogue has a mood
-        if (dArray[dIndex + 1].mood) {
-            Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
-        }
+        // advance conversation
+        Session.set('dIndex', dIndex + 1);
     },
     'click [data-hook=back]': function(e) {
         var turns = Session.get('turns');
