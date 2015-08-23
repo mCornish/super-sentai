@@ -1492,49 +1492,281 @@ if (Players.find().count() === 0) {
     Convos.insert({
         actor: kaiId,
         turn: 2,
-        greeting: 'Hi, {{name}}. It\'s turn two.',
+        dialogue: [
+            {
+                text: "Let me guess: You're here to convince me to hold hands with everyone and sing Kumbaya. That's not my style!",
+                name: 'Kai',
+                mood: 'Angry'
+            },
+            {
+                text: "I pretty much figured that out after you punch a hole in the wall.",
+                name: 'Me'
+            },
+            {
+                text: "I get a little mad sometimes. So what?",
+                name: 'Kai'
+            },
+            {
+                text: "\"A little\" mad doesn't lower property value.",
+                name: 'Me'
+            },
+            {
+                text: "So I get angry. Big deal. You here to lecture me? Cause that would be a waste of time for both of us.",
+                name: 'Kai'
+            },
+            {
+                text: "I'm not the one that needs the lecutre, anyway. You should be lecturing those other dummies...especially Giselle. She's the one who started this whole mess.",
+                name: 'Kai',
+                mood: 'Neutral'
+            },
+            {
+                text: "What did she do?",
+                name: 'Me'
+            },
+            {
+                text: "By the time I finish explaining, that monster will have digested us and will have a monster family on the new monster-Earth.",
+                name: 'Kai',
+                mood: 'Angry'
+            },
+            {
+                text: "Just tell me what happened.",
+                name: 'Me'
+            },
+            {
+                text: "Is that an order?",
+                name: 'Kai'
+            },
+            {
+                text: "Look, I'm not trying to be bossy. I'm just trying to save our city, same as always.",
+                name: 'Me'
+            },
+            {
+                text: "No, you're being bossy. You're always bossy!",
+                name: 'Kai'
+            },
+            {
+                text: "Like when?",
+                name: 'Me'
+            },
+            {
+                text: "Remember how none of us wanted to accept a villain on our team? None of us accept you! Now we all have to watch our backs whenever Dimitri is around. You FORCED us to take him in!",
+                name: 'Kai'
+            },
+            {
+                text: "Dimitri is a good guy. I'm sorry if I was a bit of a jerk, but there was a spot that had to be filled and he was a good fit.",
+                name: 'Me'
+            },
+            {
+                text: "How is a villain a good fit for a super hero team?",
+                name: 'Kai'
+            },
+            {
+                text: "Let's get back to the heart of the issue. What's going on with you and Giselle? I thought you two were best friends.",
+                name: 'Me'
+            },
+            {
+                text: "...",
+                name: 'Kai',
+                mood: 'Neutral'
+            },
+            {
+                text: "Me too.",
+                name: 'Kai',
+                mood: 'Sad'
+            },
+            {
+                text: "But now she's just a jerk! All she cares about is partying and having a good time. We're super heroes. We have responsibilities. Did you know she was club hopping until 4am this morning?",
+                name: 'Kai',
+                mood: 'Angry'
+            },
+            {
+                text: "How are we supposed to rely on someone like that?",
+                name: 'Kai',
+                mood: 'Neutral'
+            }
+        ],
         choices: [
             {
-                text: 'Happy',
-                mood: 'Happy',
-                response: {
-                    text: 'I\'m happy you said that.',
-                    choices: [
-                        {
-                            text: 'So?',
-                            response: {
-                                text: 'Fine.'
+                text: "You're exaggerating",
+                points: 0,
+                dialogue: [
+                    {
+                        text: "This doesn't sound like that big of a deal. You're making a mountain out of a mole hill.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "It's way more than a mountain. I've been putting up with her for too long.",
+                        name: 'Kai',
+                        mood: 'Angry'
+                    },
+                    {
+                        text: "A giant monster is about to kill us all. Doesn't that seem like a bigger issue?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "I don't expect you to understand. Why don't you take your \"let's all get along\" crap somewhere else? I'm done listening to it.",
+                        name: 'Kai'
+                    }
+                ],
+                choices: [
+                    {
+                        text: "Put your drama aside",
+                        points: -1,
+                        dialogue: [
+                            {
+                                text: "I'm sure you can pretend to like Giselle for thirty minutes. After the monster is dead, you can get right back to it. Who knows, maybe beating something up will make you feel better.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Save it. I don't want to hear another word from you. Talk to someone who cares.",
+                                name: 'Kai'
+                            },
+                        ]
+                    },
+                    {
+                        text: "Grow up",
+                        points: -1,
+                        dialogue: [
+                            {
+                                text: "Stop being such a big baby.",
+                                name: "Me"
+                            },
+                            {
+                                text: "You did NOT just say that! Get out of my face!",
+                                name: "Kai"
                             }
-                        },
-                        {
-                            text: 'Sorry.',
-                            response: {
-                                text: 'You are forgiven.'
+                        ]
+                    }
+                ]
+            },
+            {
+                text: "It doesn't bother me",
+                points: 0,
+                dialogue: [
+                    {
+                        text: "What Giselle does in her free time doesn't matter as long as she's still doing her job.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "That's the thing, though. All of this partying is having a bad effect on her.",
+                        name: 'Kai'
+                    },
+                    {
+                        text: "Since we share EVE's legs, I always end up following her lead. I notice all of her mistakes.",
+                        name: 'Kai'
+                    },
+                    {
+                        text: "It pisses me off.",
+                        name: 'Kai',
+                        mood: 'Angry'
+                    },
+                    {
+                        text: "I can see that. Was there anything specific that she did to make you so angry?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "...",
+                        name: 'Kai',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "...",
+                        name: 'Kai'
+                    },
+                    {
+                        text: "SHE STOLE THE LAST DONUT!",
+                        name: 'Kai',
+                        mood: 'Angry'
+                    },
+                    {
+                        text: "Excuse me?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "I bought a box of donuts and she took the last one without asking or even saying anything! Whoever buys th box has the right to the last donut. Everyone knows that!",
+                        name: 'Kai',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "How can I possibly trust Giselle after such a betrayal? She an irresponsible thief!",
+                        name: 'Kai'
+                    }
+                ],
+                choices: [
+                    {
+                        text: "You're being ridiculous",
+                        points: -1,
+                        dialogue: [
+                            {
+                                text: "I'm sorry, but you're being ridiculous. You're refusing to save lives because of a donut?",
+                                name: "Me"
+                            },
+                            {
+                                text: "It's not just because of the donut! Did the rest of this conversation just get sucked out of your little brain? The damn donut was just the last straw!",
+                                name: "Kai",
+                                mood: 'Angry'
+                            },
+                            {
+                                text: "You know what, Captain? Do me a favor and get out of my face.",
+                                name: "Kai"
+                            },
+                            {
+                                text: "You have to admit you're being silly.",
+                                name: "Me"
+                            },
+                            {
+                                text: "La la la, I'm not listening.",
+                                name: "Kai",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Alright, I get the point.",
+                                name: "Me"
+                            },
+                            {
+                                text: "LA LA LA!",
+                                name: "Kai",
+                                mood: 'Angry'
+                            },
+                            {
+                                text: "Fine.",
+                                name: "Me"
                             }
-                        }
-                    ]
-                }
-            },
-            {
-                text: 'Sad',
-                mood: 'Sad',
-                response: {
-                    text: 'I\'m sad you said that.'
-                }
-            },
-            {
-                text: 'Angry',
-                mood: 'Angry',
-                response: {
-                    text: 'I\'m angry you said that.'
-                }
-            },
-            {
-                text: 'Surprised',
-                mood: 'Surprised',
-                response: {
-                    text: 'I\'m surprised you said that.'
-                }
+                        ]
+                    },
+                    {
+                        text: "Maybe it was a mistake",
+                        points: 1,
+                        dialogue: [
+                            {
+                                text: "Maybe Giselle didn't know about the donut rule. It could've been an honest mistake.",
+                                name: "Me"
+                            },
+                            {
+                                text: "I don't know. Giselle has seemed pretty malicious lately. Who steals a donut like that?. That's villainous behavior.",
+                                name: "Kai",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "I'll try talking to her about the donut. There might be a reasonable explanation for all of this.",
+                                name: "Me"
+                            },
+                            {
+                                text: "She'll just make up a stupid excuse.",
+                                name: "Kai",
+                                mood: 'Angry'
+                            },
+                            {
+                                text: "Better to talk to her than to make assumptions.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Fine. Good luck with that. Just know she's not above lying to you too.",
+                                name: "Kai"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     });
