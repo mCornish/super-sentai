@@ -600,58 +600,696 @@ if (Players.find().count() === 0) {
     });
 
 
+
+
+
     // ----------------------
     // MARCEL
     // ----------------------
     Convos.insert({
         actor: marcelId,
         turn: 4,
-        greeting: 'Hi, {{name}}. It\'s turn four.',
+        dialogue: [
+            {
+                text: "Ah, it's you.",
+                name: 'Marcel'
+            },
+            {
+                text: "Happy to see you, too, Marcel.",
+                name: 'Me'
+            },
+            {
+                text: "Why would you be happy? This city's about to be decimated.",
+                name: 'Marcel'
+            },
+            {
+                text: "You really think this city's about to be destroyed?.",
+                name: 'Me'
+            },
+            {
+                text: "I'm facing the facts. This team is a mess and I highly doubt you've successfully rounded up all the troops. I'm just being realistic.",
+                name: 'Marcel'
+            },
+            {
+                text: "Sounds more like pessimism to me.",
+                name: 'Me'
+            },
+            {
+                text: "Is there a difference?",
+                name: 'Marcel',
+                mood: 'Confused'
+            },
+            {
+                text: "Of course there is. The glass isn't always half empty.",
+                name: 'Me'
+            },
+            {
+                text: "The glass is 50 percent, that's all. And it looks like the monster is going to hit this building at any second.",
+                name: 'Marcel',
+                mood: 'Neutral'
+            },
+            {
+                text: "In that case, we should cut straight to the point.",
+                name: 'Me'
+            },
+            {
+                text: "Let me guess: You're going to try and force a problem out of me and then try to solve it.",
+                name: 'Marcel'
+            },
+            {
+                text: "Yeah, that's the point of all of this.",
+                name: 'Me'
+            },
+            {
+                text: "My only problems in life right now are writing college papers and choosing the easiest professors.",
+                name: 'Marcel'
+            },
+            {
+                text: "Not the monster out there?",
+                name: 'Me'
+            },
+            {
+                text: "I'll get to that once I figure out what to write my paper on.",
+                name: 'Marcel'
+            },
+            {
+                text: "What's the topic?.",
+                name: 'Me'
+            },
+            {
+                text: "I thought you wanted to cut straight to the point?",
+                name: 'Marcel',
+                mood: 'Happy'
+            },
+            {
+                text: "Fine. We'll get back to that later.",
+                name: 'Me'
+            },
+            {
+                text: "What have you been talking about with all of the others?",
+                name: 'Marcel',
+                mood: 'Neutral'
+            },
+            {
+                text: "Just trying to work through some issues.",
+                name: 'Me'
+            },
+            {
+                text: "Heh, I doubt that's been working out for you. You can't talk to someone like Dimitri. And Giselle and Kai? They're both so full of themselves.",
+                name: 'Marcel'
+            }
+        ],
         choices: [
             {
-                text: 'Happy',
-                mood: 'Happy',
-                response: {
-                    text: 'I\'m happy you said that.',
-                    choices: [
-                        {
-                            text: 'So?',
-                            response: {
-                                text: 'Fine.'
+                text: "And you aren't?",
+                points: 1,
+                dialogue: [
+                    {
+                        text: "And you aren't?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Excuse me?",
+                        name: 'Marcel',
+                        mood: 'Angry'
+                    },
+                    {
+                        text: "You've been uppity with me from the moment I walked over here. You're more similar to the rest of us than you think.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "If you remember that, you might have an easier time getting along with us. It's not a you versus us situation. It's an us versus giant monsters situation.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You can think whatever you want about me.",
+                        name: 'Marcel',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "Think about what I said. I like you, Marcel. I wouldn't have hired you if I didn't.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Whatever",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "I'm glad you're so diligent about your studies. What keeps you from being as dedicated to this team?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "I'm not getting paid.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        name: 'Me'
+                    },
+                    {
+                        text: "And I'm doing all I can to stay with you guys, including not being killed by Dimitri. It's a wonder that I'm even standing here in front of you. You've got to do something about him. Not just for my sake, but for the sake of all the interns that might join you after me.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        name: 'Me'
+                    },
+                    {
+                        text: "If I accept the offer, that is.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "You wouldn't?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Probably not, considering Dimitri's behavior.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "What's he doing?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You haven't noticed? He's been trying to kill me since the day I got here.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        name: 'Me',
+                        check: 'haveTalkedDimitri'
+                    },
+                    {
+                        text: "I wouldn't say that he's trying to kill you so much that he doesn't know what your limits are. Dimitri's not the best with murky boundaries.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Running away screaming is a murky boundary?",
+                        name: 'Marcel',
+                        mood: 'Confused'
+                    },
+                    {
+                        text: "Dimitri is...different.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "He's been playing dangerous \"games\" like this since he was a child.",
+                        name: 'Me',
+                        mood: 'haveTalkedDimitri'
+                    },
+                    {
+                        text: "This is why we have that waiver.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Right, and all of that money at the end of the internship.",
+                        name: 'Marcel',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "Since you insist on being so helpful, what do you want me to do about him? When he's trying to play a game like \"dodge the knife\" or \"run from the taser,\" what am I supposed to do?",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "Hm, he could take your screaming as a sign that you're interested in what he's playing. On the other hand, he could want you to step up and challenge him back.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Which one should I do?.",
+                        name: 'Me'
+                    }
+                ],
+                choices: [
+                    {
+                        text: "Show no interest",
+                        points: 1,
+                        dialogue: [
+                            {
+                                text: "You should act like you're bored.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Won't that just make him worse?",
+                                name: "Marcel",
+                                mood: 'Confused'
+                            },
+                            {
+                                text: "So far, he gets worse the more scared the interns seem. What if you try doing the opposite? Then, you could redirect his attention; get him to play something nicer like backgammon.",
+                                name: "Me"
+                            },
+                            {
+                                text: "I don't play backgammon.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                name: "Me"
+                            },
+                            {
+                                text: "It's not every day that you work alongside a reformed villain. We're one of the few super hero teams that has one.",
+                                name: "Me"
+                            },
+                            {
+                                text: "And our image suffers for it.",
+                                name: "Marcel",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "We can handle it.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Have you checked our Twitter feed?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "No. I think you're the only one of us who looks at that.",
+                                name: "Me"
+                            },
+                            {
+                                text: "That's because I manage it. I'd recommend taking our public image a little more seriously.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                name: "Me",
+                                check: 'haveTalkedGiselle'
+                            },
+                            {
+                                text: "I might do that.",
+                                name: "Marcel",
+                                check: 'haveTalkedGiselle'
+                            },
+                            {
+                                text: "I guess it couldn't hurt to try acting bored.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Then again, it could hurt quite a bit.",
+                                name: "Marcel",
+                                mood: 'Sad'
+                            },
+                            {
+                                text: "I'll act as a mediator until we're sure he won't react...strangely.",
+                                name: "Me"
+                            },
+                            {
+                                text: "He always reacts strangely.",
+                                name: "Marcel",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "I meant that I'll make sure he doesn't kill you. I was trying to be subtle.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Gee, thanks.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Do you think you're ready to fight that monster?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Do I have a choice?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Not really.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Then I guess we'll find out.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Alright. Guess I'll see you on the battlefield, then.",
+                                name: "Me"
+                            },
+                            {
+                                text: "You shall.",
+                                name: "Marcel"
                             }
-                        },
-                        {
-                            text: 'Sorry.',
-                            response: {
-                                text: 'You are forgiven.'
+                        ]
+                    },
+                    {
+                        text: "Attack him back",
+                        points: -1,
+                        dialogue: [
+                            {
+                                text: "You should attack him back.",
+                                name: "Me"
+                            },
+                            {
+                                text: "That doesn't sound safe.",
+                                name: "Marcel",
+                                mood: 'Confused'
+                            },
+                            {
+                                text: "It'll confuse him so much that he'll back off. And when I say attack, by the way, I don't mean actually hurt him. He hasn't ever hurt you, right?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Only mentally.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                name: "Me"
+                            },
+                            {
+                                text: "I guess it's worth a shot.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Do you think you're ready to fight that monster?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Do I have a choice?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Not really.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Then I guess we'll find out.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Alright. Guess I'll see you on the battlefield, then.",
+                                name: "Me"
+                            },
+                            {
+                                text: "You shall.",
+                                name: "Marcel"
                             }
-                        }
-                    ]
-                }
+                        ]
+                    }
+                ]
             },
             {
-                text: 'Sad',
-                mood: 'Sad',
-                response: {
-                    text: 'I\'m sad you said that.'
-                }
-            },
-            {
-                text: 'Angry',
-                mood: 'Angry',
-                response: {
-                    text: 'I\'m angry you said that.'
-                }
-            },
-            {
-                text: 'Surprised',
-                mood: 'Surprised',
-                response: {
-                    text: 'I\'m surprised you said that.'
-                }
+                text: "I can still try",
+                points: 0,
+                dialogue: [
+                    {
+                        text: "Nothing will stop me from trying.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Forever the optimist, I see.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "I feel like I don't have much choice. If I stood around acting as glum as the rest of you, then Neo Loch Rock City would've been obliterated a long time ago.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Good luck getting through to them. Giselle's going to be too busy checking her nails. Kai's going to be ready to punch you. Remember what they did to the wall?",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "And Dimitri, well, you know exactly how Dimitri is.",
+                        name: 'Marcel',
+                        mood: 'Angry'
+                    },
+                    {
+                        text: "Happy and lovable?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Dangerous.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "I'm glad you're so diligent about your studies. What keeps you from being as dedicated to this team?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "I'm not getting paid.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        name: 'Me'
+                    },
+                    {
+                        text: "And I'm doing all I can to stay with you guys, including not being killed by Dimitri. It's a wonder that I'm even standing here in front of you. You've got to do something about him. Not just for my sake, but for the sake of all the interns that might join you after me.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        name: 'Me'
+                    },
+                    {
+                        text: "If I accept the offer, that is.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "You wouldn't?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Probably not, considering Dimitri's behavior.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "What's he doing?",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You haven't noticed? He's been trying to kill me since the day I got here.",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        name: 'Me',
+                        check: 'haveTalkedDimitri'
+                    },
+                    {
+                        text: "I wouldn't say that he's trying to kill you so much that he doesn't know what your limits are. Dimitri's not the best with murky boundaries.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Running away screaming is a murky boundary?",
+                        name: 'Marcel',
+                        mood: 'Confused'
+                    },
+                    {
+                        text: "Dimitri is...different.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "He's been playing dangerous \"games\" like this since he was a child.",
+                        name: 'Me',
+                        mood: 'haveTalkedDimitri'
+                    },
+                    {
+                        text: "This is why we have that waiver.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Right, and all of that money at the end of the internship.",
+                        name: 'Marcel',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "Since you insist on being so helpful, what do you want me to do about him? When he's trying to play a game like \"dodge the knife\" or \"run from the taser,\" what am I supposed to do?",
+                        name: 'Marcel'
+                    },
+                    {
+                        text: "Hm, he could take your screaming as a sign that you're interested in what he's playing. On the other hand, he could want you to step up and challenge him back.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Which one should I do?.",
+                        name: 'Me'
+                    }
+                ],
+                choices: [
+                    {
+                        text: "Show no interest",
+                        points: 1,
+                        dialogue: [
+                            {
+                                text: "You should act like you're bored.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Won't that just make him worse?",
+                                name: "Marcel",
+                                mood: 'Confused'
+                            },
+                            {
+                                text: "So far, he gets worse the more scared the interns seem. What if you try doing the opposite? Then, you could redirect his attention; get him to play something nicer like backgammon.",
+                                name: "Me"
+                            },
+                            {
+                                text: "I don't play backgammon.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                name: "Me"
+                            },
+                            {
+                                text: "It's not every day that you work alongside a reformed villain. We're one of the few super hero teams that has one.",
+                                name: "Me"
+                            },
+                            {
+                                text: "And our image suffers for it.",
+                                name: "Marcel",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "We can handle it.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Have you checked our Twitter feed?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "No. I think you're the only one of us who looks at that.",
+                                name: "Me"
+                            },
+                            {
+                                text: "That's because I manage it. I'd recommend taking our public image a little more seriously.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                name: "Me",
+                                check: 'haveTalkedGiselle'
+                            },
+                            {
+                                text: "I might do that.",
+                                name: "Marcel",
+                                check: 'haveTalkedGiselle'
+                            },
+                            {
+                                text: "I guess it couldn't hurt to try acting bored.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Then again, it could hurt quite a bit.",
+                                name: "Marcel",
+                                mood: 'Sad'
+                            },
+                            {
+                                text: "I'll act as a mediator until we're sure he won't react...strangely.",
+                                name: "Me"
+                            },
+                            {
+                                text: "He always reacts strangely.",
+                                name: "Marcel",
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "I meant that I'll make sure he doesn't kill you. I was trying to be subtle.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Gee, thanks.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Do you think you're ready to fight that monster?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Do I have a choice?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Not really.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Then I guess we'll find out.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Alright. Guess I'll see you on the battlefield, then.",
+                                name: "Me"
+                            },
+                            {
+                                text: "You shall.",
+                                name: "Marcel"
+                            }
+                        ]
+                    },
+                    {
+                        text: "Attack him back",
+                        points: -1,
+                        dialogue: [
+                            {
+                                text: "You should attack him back.",
+                                name: "Me"
+                            },
+                            {
+                                text: "That doesn't sound safe.",
+                                name: "Marcel",
+                                mood: 'Confused'
+                            },
+                            {
+                                text: "It'll confuse him so much that he'll back off. And when I say attack, by the way, I don't mean actually hurt him. He hasn't ever hurt you, right?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Only mentally.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                name: "Me"
+                            },
+                            {
+                                text: "I guess it's worth a shot.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Do you think you're ready to fight that monster?",
+                                name: "Me"
+                            },
+                            {
+                                text: "Do I have a choice?",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Not really.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Then I guess we'll find out.",
+                                name: "Marcel"
+                            },
+                            {
+                                text: "Alright. Guess I'll see you on the battlefield, then.",
+                                name: "Me"
+                            },
+                            {
+                                text: "You shall.",
+                                name: "Marcel"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     });
+
+
+
 
 
     // ----------------------
