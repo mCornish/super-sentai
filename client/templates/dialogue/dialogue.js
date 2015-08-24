@@ -34,15 +34,7 @@ Template.dialogue.onRendered( function() {
             // Same as NEXT button
             e.preventDefault();
 
-            var dArray = Session.get('dArray');
-            var dIndex = Session.get('dIndex');
-            var actor = Router.current().data().actor;
-            var actorName = actor.name.toLowerCase();
-
-            Session.set('dIndex', dIndex + 1);
-            if (dArray[dIndex].mood) {
-                Session.set(actorName + 'Mood', dArray[dIndex].mood);
-            }
+            advanceConvo();
         }
     });
 
@@ -72,7 +64,7 @@ Template.dialogue.helpers({
     hasMore: function() {
         var dArray = Session.get('dArray');
         var dIndex = Session.get('dIndex');
-        return dIndex < dArray.length;
+        return dIndex + 1 < dArray.length;
     },
     choices: function() {
         return Session.get('choices');
@@ -129,89 +121,103 @@ Template.dialogue.events({
     },
     'click [data-hook=next]': function(e) {
         e.preventDefault();
-
-        var dArray = Session.get('dArray');
-        var dIndex = Session.get('dIndex');
-        var actor = Router.current().data().actor;
-        var actorName = actor.name.toLowerCase();
-
-        // If there is another piece of dialogue
-        if (dIndex + 1 < dArray.size - 1) {
-
-            // If there is optional dialogue
-            if (dArray[dIndex + 1].hasOwnProperty('check')) {
-
-                var check = dArray[dIndex + 1].check;
-
-                // If the check is a negation
-                if (check.indexOf('!') > 0) {
-
-                    check.replace('!', '');
-
-                    // If it is true...
-                    if (Session.get(check)) {
-                        // ...skip to the next piece of dialogue
-                        Session.set('dIndex', dIndex + 1);
-                        dIndex++;
-                    }
-                } else {
-                    // If it is false...
-                    if (!Session.get(check)) {
-                        // ...skip to the next piece of dialogue
-                        Session.set('dIndex', dIndex + 1);
-                        dIndex++;
-                    }
-                }
-            }
-
-            // check whether the next piece of dialogue has a mood
-            if (dArray[dIndex + 1].mood) {
-                Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
-            }
-        } else {
-            // check for character dialogue and switch arrays if appropriate
-            var convo = Session.get('convo');
-            if (convo.kaiConvo && Session.get('haveTalkedKai')) {
-                // switch to Kai convo
-                Session.set('dArray', convo.kaiConvo.dialogue);
-            } else if (convo.giselleConvo && Session.get('haveTalkedGiselle')) {
-                // switch to Giselle convo
-                Session.set('dArray', convo.giselleConvo.dialogue);
-            } else if (convo.dimitriConvo && Session.get('haveTalkedDimitri')) {
-                // switch to Dimitri convo
-                Session.set('dArray', convo.dimitriConvo.dialogue);
-            } else if (convo.marcelConvo && Session.get('haveTalkedMarcel')) {
-                // switch to Dimitri convo
-                Session.set('dArray', convo.marcelConvo.dialogue);
-            }
-                Session.set('dIndex', 0);
-        }
-
-        // advance conversation
-        Session.set('dIndex', dIndex + 1);
+        advanceConvo();
     },
     'click [data-hook=back]': function(e) {
-        var turns = Session.get('turns');
-
-        // If the player has enough points to win
-        if (Session.get('score') >= 4) {
-            Session.set('win', true);
-        }
-
-        if (turns - 1 === 0) {
-            e.preventDefault();
-
-            if (Session.equals('win', true)) {
-                Router.go('win');
-            } else {
-                Router.go('lose');
-            }
-        } else {
-            Session.set('turns', turns - 1);
-        }
+        e.preventDefault();
+        goBack();
     }
 });
 
 Template.dialogue.onDestroyed( function() {
     $('body').off('keyup');
 });
+
+
+advanceConvo = function() {
+    var dArray = Session.get('dArray');
+    var dIndex = Session.get('dIndex');
+    var actor = Router.current().data().actor;
+    var actorName = actor.name.toLowerCase();
+
+    // If there is another piece of dialogue
+    if (dIndex + 1 < dArray.length) {
+
+        // If there is optional dialogue
+        if (dArray[dIndex + 1].hasOwnProperty('check')) {
+
+            var check = dArray[dIndex + 1].check;
+
+            // If the check is a negation
+            if (check.indexOf('!') > 0) {
+
+                check.replace('!', '');
+
+                // If it is true...
+                if (Session.get(check)) {
+                    // ...skip to the next piece of dialogue
+                    Session.set('dIndex', dIndex + 1);
+                    dIndex++;
+                }
+            } else {
+                // If it is false...
+                if (!Session.get(check)) {
+                    // ...skip to the next piece of dialogue
+                    Session.set('dIndex', dIndex + 1);
+                    dIndex++;
+                }
+            }
+        }
+
+        // check whether the next piece of dialogue has a mood
+        if (dArray[dIndex + 1].mood) {
+            Session.set(actorName + 'Mood', dArray[dIndex + 1].mood);
+        }
+
+        // advance conversation
+        Session.set('dIndex', dIndex + 1);
+
+    } else {
+        // check for character dialogue and switch arrays if appropriate
+        var convo = Session.get('convo');
+        if (convo.kaiConvo && Session.get('haveTalkedKai')) {
+            // switch to Kai convo
+            Session.set('dArray', convo.kaiConvo.dialogue);
+        } else if (convo.giselleConvo && Session.get('haveTalkedGiselle')) {
+            // switch to Giselle convo
+            Session.set('dArray', convo.giselleConvo.dialogue);
+        } else if (convo.dimitriConvo && Session.get('haveTalkedDimitri')) {
+            // switch to Dimitri convo
+            Session.set('dArray', convo.dimitriConvo.dialogue);
+        } else if (convo.marcelConvo && Session.get('haveTalkedMarcel')) {
+            // switch to Dimitri convo
+            Session.set('dArray', convo.marcelConvo.dialogue);
+        } else {
+            goBack();
+        }
+        Session.set('dIndex', 0);
+    }
+};
+
+
+goBack = function() {
+    var turns = Session.get('turns');
+
+    // If the player has enough points to win
+    if (Session.get('score') >= 4) {
+        Session.set('win', true);
+    }
+
+    if (turns - 1 === 0) {
+        e.preventDefault();
+
+        if (Session.equals('win', true)) {
+            Router.go('win');
+        } else {
+            Router.go('lose');
+        }
+    } else {
+        Session.set('turns', turns - 1);
+        Router.go('stage');
+    }
+};
