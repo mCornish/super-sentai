@@ -113,9 +113,11 @@ Template.dialogue.events({
             Session.set('choices', choice.choices);
 
             if (points) {
-                morale = Session.get(actorName + 'Morale') + parseInt(points);
+                var morale = Session.get(actorName + 'Morale') + parseInt(points);
                 Session.set(actorName + 'Morale', morale);
-                console.log(Session.get(actorName + 'Morale'));
+
+                var score = Session.get('score');
+                Session.set('score', score + parseInt(points));
             }
 
             // Check whether the next piece of dialogue has a mood
@@ -133,24 +135,29 @@ Template.dialogue.events({
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
 
-        // check whether there is another piece of dialogue
+        // If there is another piece of dialogue
         if (dIndex + 1 < dArray.size - 1) {
-            // check for optional dialogue
+
+            // If there is optional dialogue
             if (dArray[dIndex + 1].hasOwnProperty('check')) {
+
                 var check = dArray[dIndex + 1].check;
-                // Check whether it is a negation
+
+                // If the check is a negation
                 if (check.indexOf('!') > 0) {
+
                     check.replace('!', '');
+
                     // If it is true...
                     if (Session.get(check)) {
-                        // Skip to the next piece of dialogue
+                        // ...skip to the next piece of dialogue
                         Session.set('dIndex', dIndex + 1);
                         dIndex++;
                     }
                 } else {
                     // If it is false...
                     if (!Session.get(check)) {
-                        // Skip to the next piece of dialogue
+                        // ...skip to the next piece of dialogue
                         Session.set('dIndex', dIndex + 1);
                         dIndex++;
                     }
@@ -185,6 +192,11 @@ Template.dialogue.events({
     },
     'click [data-hook=back]': function(e) {
         var turns = Session.get('turns');
+
+        // If the player has enough points to win
+        if (Session.get('score') >= 4) {
+            Session.set('win', true);
+        }
 
         if (turns - 1 === 0) {
             e.preventDefault();
