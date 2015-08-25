@@ -14,8 +14,9 @@
                 <div class="display-list__image player-image">?</div>
                 <label for="name">The Head:</label>
                 <input class="input player-input" name="name" id="name" type="text" placeholder="Your Name" value="{{playerName}}" data-hook="name" />
-                <a class="button float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
             </div>
+            <a class="link-button" href="{{pathFor home}}">Back</a>
+            <a class="button button--submit float-right" href="{{pathFor 'stage'}}" data-hook="name-input">Go!</a>
         </div>
     </div>
 </template>

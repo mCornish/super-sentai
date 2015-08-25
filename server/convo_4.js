@@ -62,7 +62,7 @@ if (Players.find().count() === 0) {
     // ----------------------
     Convos.insert({
         actor: giselleId,
-        turn: 1,
+        turn: 4,
         dialogue: [
             {
                 text: "Hi there, {{name}}.",

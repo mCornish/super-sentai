@@ -258,19 +258,43 @@ a:hover, a:focus {
     color: rgb(245,245,245);
 }
 
+.button--submit {
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
 
 /* -------------------- */
 /* --- DISPLAY LIST */
 /* -------------------- */
 .display-list {
-    width: 30em;
     margin: 3em auto;
+}
+@media screen and (min-width: 320px) {
+    .display-list {
+        width: 100%
+    }
+}
+@media screen and (min-width: 800px) {
+    .display-list {
+        width: 80%
+    }
+}
+@media screen and (min-width: 1024px) {
+    .display-list {
+        width: 50%
+    }
+}
+@media screen and (min-width: 1440px) {
+    .display-list {
+        width: 50%
+    }
 }
 .display-list .display-list__image {
     display: inline-block;
-    width: 2.3em;
-    height: 1.5em;
-    background-image: url('images/sprites.png');
+    width: 3.5em;
+    height: 2em;
+    background-image: url('images/sprites.gif');
     background-size: 2340px;
 }
 .display-list .player-image {
@@ -280,20 +304,22 @@ a:hover, a:focus {
     width: 1.15em;
     font-size: 1.5em;
     font-weight: bold;
+    padding: 0 1em;
 }
 .display-list__item {
     font-size: 1.5em;
     background-color: rgb(230,230,230);
-    padding: 1em;
+    padding: 1em 1em 1em .5em;
 }
 .display-list__item + .display-list__item {
     margin-top: .5em;
 }
 
 .player-input {
-    width: 40%;
+    width: 50%;
     font-size: .7em;
     padding: .5em;
+    margin-left: 1em;
 }
 
 
@@ -343,6 +369,13 @@ a:hover, a:focus {
 @media screen and (min-width: 1000px) {
     .eve {
         right: -15vw;
+        transform: none;
+        top: 20vh;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .eve {
+        right: -5vw;
         transform: none;
         top: 20vh;
     }
@@ -425,6 +458,25 @@ a:hover, a:focus {
 /* -------------------- */
 .input {
 
+}
+
+
+/* -------------------- */
+/* --- LINK BUTTON */
+/* -------------------- */
+.link-button {
+    display: inline-block;
+    font-size: 2em;
+    margin: 1em 0;
+}
+.link-button::before {
+    content: '< ';
+    position: relative;
+    left: 0;
+    transition: left .2s ease-in;
+}
+.link-button:hover::before {
+    left: -.5em;
 }
 
 
