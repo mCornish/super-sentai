@@ -11,7 +11,7 @@
     {{/if}}
     <div class="stage">
         {{#each actors}}
-            <div class="stage__actor actor--{{name}}">
+            <div class="stage__actor actor--{{name}} {{disabledClass name}}" data-hook="actor">
                 {{> actor}}
             </div>
         {{/each}}

@@ -102,7 +102,11 @@ Template.dialogue.events({
             Session.set('dArray', dArray);
             Session.set('dIndex', 0);
             Session.set('text', dArray[0].text.replace('{{name}}', name));
-            Session.set('choices', choice.choices);
+            if (choice.choices) {
+                Session.set('choices', choice.choices);
+            } else {
+                Session.set('choices', null);
+            }
 
             if (points) {
                 var morale = Session.get(actorName + 'Morale') + parseInt(points);
@@ -175,6 +179,7 @@ advanceConvo = function() {
         }
 
         // advance conversation
+        if (dIndex < dArray.length)
         Session.set('dIndex', dIndex + 1);
 
     } else {
@@ -183,19 +188,25 @@ advanceConvo = function() {
         if (convo.kaiConvo && Session.get('haveTalkedKai')) {
             // switch to Kai convo
             Session.set('dArray', convo.kaiConvo.dialogue);
+            Session.set('dIndex', 0);
         } else if (convo.giselleConvo && Session.get('haveTalkedGiselle')) {
             // switch to Giselle convo
             Session.set('dArray', convo.giselleConvo.dialogue);
+            Session.set('dIndex', 0);
         } else if (convo.dimitriConvo && Session.get('haveTalkedDimitri')) {
             // switch to Dimitri convo
             Session.set('dArray', convo.dimitriConvo.dialogue);
+            Session.set('dIndex', 0);
         } else if (convo.marcelConvo && Session.get('haveTalkedMarcel')) {
             // switch to Dimitri convo
             Session.set('dArray', convo.marcelConvo.dialogue);
+            Session.set('dIndex', 0);
         } else {
-            goBack();
+            // if there are no choices, go back
+            if (!Session.get('choices')) {
+                goBack();
+            }
         }
-        Session.set('dIndex', 0);
     }
 };
 

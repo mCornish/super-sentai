@@ -6,15 +6,18 @@ Template.stage.onRendered( function() {
 Template.stage.helpers({
     showIntro: function() {
         return Session.get('showIntro');
+    },
+    disabledClass: function(name) {
+        return Session.get('haveTalked' + name) ? 'isDisabled' : '';
     }
 });
 
 Template.stage.events({
-    'ended [data-hook="intro-video"]': function(e) {
+    'ended [data-hook=intro-video]': function(e) {
         e.preventDefault();
         Session.set('showIntro', false);
     },
-    'click [data-hook="skip"]': function(e) {
+    'click [data-hook=skip]': function(e) {
         e.preventDefault();
         Session.set('showIntro', false);
     }
