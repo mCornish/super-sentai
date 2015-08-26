@@ -279,6 +279,7 @@ a:hover, a:focus {
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+    z-index: -1;
 }
 .window-1 {
     background-image: url('images/window1.png');
@@ -295,6 +296,50 @@ a:hover, a:focus {
     position: absolute;
     left: 0;
     top: 0;
+}
+.monster {
+    background-image: url('images/monster.png');
+    width: 239px;
+    height: 351px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.monster.is-turn1 {
+    transform: translateX(-50%) scale(.3);
+    -webkit-transform: translateX(-50%) scale(.3);
+    -moz-transform: translateX(-50%) scale(.3);
+    -o-transform: translateX(-50%) scale(.3);
+}
+.monster.is-turn2 {
+    transform: translateX(-50%) scale(.6);
+    -webkit-transform: translateX(-50%) scale(.6);
+    -moz-transform: translateX(-50%) scale(.6);
+    -o-transform: translateX(-50%) scale(.6);
+}
+.monster.is-turn3 {
+    top: 5em;
+    transform: translateX(-50%) scale(1.2);
+    -webkit-transform: translateX(-50%) scale(1.2);
+    -moz-transform: translateX(-50%) scale(1.2);
+    -o-transform: translateX(-50%) scale(1.2);
+}
+.monster.is-turn4 {
+    top: 15em;
+    transform: translateX(-50%) scale(2);
+    -webkit-transform: translateX(-50%) scale(2);
+    -moz-transform: translateX(-50%) scale(2);
+    -o-transform: translateX(-50%) scale(2);
+}
+
+.white-wall { /* Ensures that monster does not clip through window */
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: calc(10em + 328px);
+    background-color: white;
 }
 
 
@@ -553,9 +598,17 @@ a:hover, a:focus {
 /* -------------------- */
 .score {
     position: relative;
+    background-color: rgb(240,100,100);
+    background-color: rgba(240,100,100,.7);
+    color: rgb(250,250,250);
+    padding: 1em;
     top: 40vh;
     text-align: center;
     z-index: 1;
+}
+.score a {
+    color: rgb(250,250,250);
+    font-style: italic;
 }
 
 
@@ -608,6 +661,16 @@ a:hover, a:focus {
 .stage__actor.isDisabled .actor {
     opacity: .5;
     cursor: default;
+}
+
+.intro-text {
+    position: relative;
+    color: rgb(240,240,240);
+    width: 100%;
+    text-align: center;
+    top: 5em;
+    z-index: 3;
+    font-size: 5em;
 }
 
 

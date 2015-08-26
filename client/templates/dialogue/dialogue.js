@@ -79,6 +79,11 @@ Template.dialogue.helpers({
         var actor = Router.current().data().actor;
         var actorName = actor.name.toLowerCase();
         return Session.get(actorName + 'Mood');
+    },
+    monsterClass: function() {
+        var turnsLeft = parseInt(Session.get('turns'));
+        var turnNum = -turnsLeft + 5;
+        return 'is-turn' + turnNum;
     }
 });
 
