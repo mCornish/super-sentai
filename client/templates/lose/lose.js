@@ -2,6 +2,8 @@ Template.lose.onRendered( function() {
     Session.set('showOutro', true);
     Session.set('showHud', false);
     Session.set('playFire', false);
+
+    $('[data-hook=music]').pause();
 });
 
 Template.lose.helpers({
@@ -21,6 +23,7 @@ Template.lose.events({
         e.preventDefault();
         Session.set('showOutro', false);
         var fire = new Audio('audio/fire.mp3');
+        fire.volume = .2;
         fire.play();
         Session.set('playFire', true);
     },
@@ -35,5 +38,8 @@ Template.lose.events({
     'click [data-hook=try-again]': function(e) {
         fire.pause();
         fire.currentTime = 0;
+        var music = $('[data-hook=lose-music]');
+        music.pause();
+        music.currentTime = 0;
     }
 });

@@ -1,4 +1,7 @@
 <template name="lose">
+    <audio autoplay loop data-hook="lose-music">
+        <source src="audio/lose_music.mp3" type="audio/mp3">
+    </audio>
     {{#if showOutro}}
         <div class="cutscene">
             <div class="cutscene__skip" data-hook="skip">SKIP</div>
