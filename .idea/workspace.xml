@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e354be-eeb0-4d81-a7dd-4dd03f90cf81" name="Default" comment="Added description, recipient, and occasion to submit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/videos/intro.mp4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/monster.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/characters/characters.js" afterPath="$PROJECT_DIR$/client/templates/characters/characters.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/dialogue/dialogue.html" afterPath="$PROJECT_DIR$/client/templates/dialogue/dialogue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" afterPath="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/lose/lose.html" afterPath="$PROJECT_DIR$/client/templates/lose/lose.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/lose/lose.js" afterPath="$PROJECT_DIR$/client/templates/lose/lose.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/stage/stage.html" afterPath="$PROJECT_DIR$/client/templates/stage/stage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/sprites.png" afterPath="$PROJECT_DIR$/public/images/sprites.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheets/style.css" afterPath="$PROJECT_DIR$/client/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/win/win.js" afterPath="$PROJECT_DIR$/client/templates/win/win.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ygmyg.iws" />
@@ -53,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.407408">
-              <caret line="331" column="32" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.590766">
+              <caret line="382" column="18" selection-start-line="382" selection-start-column="18" selection-end-line="382" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -73,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="characters.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="characters.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15306123">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -161,8 +153,8 @@
         <option value="$PROJECT_DIR$/client/templates/win/win.js" />
         <option value="$PROJECT_DIR$/client/templates/dialogue/dialogue.html" />
         <option value="$PROJECT_DIR$/client/templates/dialogue/dialogue.js" />
-        <option value="$PROJECT_DIR$/client/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/client/templates/characters/characters.js" />
+        <option value="$PROJECT_DIR$/client/stylesheets/style.css" />
       </list>
     </option>
   </component>
@@ -1352,14 +1344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.407408">
-          <caret line="331" column="32" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625">
@@ -1370,8 +1354,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/characters/characters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15306123">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.590766">
+          <caret line="382" column="18" selection-start-line="382" selection-start-column="18" selection-end-line="382" selection-end-column="18" />
           <folding />
         </state>
       </provider>

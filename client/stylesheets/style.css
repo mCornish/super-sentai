@@ -372,7 +372,7 @@ a:hover, a:focus {
 .display-list .display-list__image {
     display: inline-block;
     width: 3.5em;
-    height: 2em;
+    height: 2.5em;
     background-image: url('images/sprites.gif');
     background-size: 2340px;
 }
