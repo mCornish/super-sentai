@@ -41,7 +41,7 @@ if (Players.find().count() === 0) {
                 name: 'Dimitri'
             },
             {
-                text: "Ice cream has nothing to do with anything.",
+                text: "That sure was abrupt... Ice cream has nothing to do with anything.",
                 name: 'Me'
             },
             {
@@ -63,7 +63,7 @@ if (Players.find().count() === 0) {
                 points: '1',
                 dialogue: [
                     {
-                        text: "Okay, sure...my favorite flavor is vanilla. It goes good with mostly everything.",
+                        text: "Okay, sure...my favorite flavor is vanilla. It goes well with mostly everything.",
                         name: 'Me'
                     },
                     {
@@ -71,7 +71,7 @@ if (Players.find().count() === 0) {
                         name: 'Dimitri'
                     },
                     {
-                        text: "Sprinkles are fine. What does this have to do with anything, though? I love ice cream as much as the next person, but we've kind of got a monstrous problem on our hands at the moment.",
+                        text: "Sprinkles are fine. Seriously, though, what does this have to do with anything? I love ice cream as much as the next person, but we've kind of got a monstrous problem on our hands at the moment.",
                         name: 'Me'
                     },
                     {
@@ -96,7 +96,7 @@ if (Players.find().count() === 0) {
                         name: 'Dimitri'
                     },
                     {
-                        text: "You're right. Vanilla ice cream does go good with everything. What about moose tracks or rocky road? What toppings go with those?",
+                        text: "Okay, back to the ice cream talk. Vanilla ice cream does go good with everything. How about Moose Tracks or Rocky Road? What toppings go with those?",
                         name: 'Dimitri',
                         mood: 'Neutral'
                     }
@@ -107,7 +107,7 @@ if (Players.find().count() === 0) {
                         points: '-1',
                         dialogue: [
                             {
-                                text: "Those flavors stand fine on their own. Moose tracks is that peanut butter and chocolate blend, right? It's a stand-alone flavor.",
+                                text: "Those flavors stand fine on their own. Moose Tracks is that peanut butter and chocolate blend, right? It's a stand-alone flavor.",
                                 name: "Me"
                             },
                             {
@@ -116,7 +116,7 @@ if (Players.find().count() === 0) {
                                 mood: 'Sad'
                             },
                             {
-                                text: "Yeah, the flavors are too strong. The peanut butter's too dominant. Sorry for asking this again, but what exactly does ice cream have to do with this situation?",
+                                text: "Yeah, the flavors are too strong. The peanut butter's too dominant. Sorry for asking this for the one hundredth, but what exactly does ice cream have to do with this situation?",
                                 name: "Me"
                             },
                             {
@@ -138,7 +138,7 @@ if (Players.find().count() === 0) {
                         text: 'Any topping',
                         dialogue: [
                             {
-                                text: 'Theoretically, you could apply any topping to any flavor of ice cream. No one\'s stopping you from putting blueberry syrup on Moose Tracks if you really want to.',
+                                text: "Theoretically, you could apply any topping to any flavor of ice cream. No one\'s stopping you from putting blueberry syrup on Moose Tracks if you really want to.",
                                 name: 'Me'
                             },
                             {
@@ -146,7 +146,7 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "Good point!",
+                                text: "Good point! The most unique of all!",
                                 name: 'Dimitri',
                                 mood: 'Happy'
                             },
@@ -207,7 +207,7 @@ if (Players.find().count() === 0) {
                         mood: 'Happy'
                     },
                     {
-                        text: "So people can just eat it angrily? I don't think ice cream is a cure-all for the issue we're having.",
+                        text: "So people can just eat it angrily? I don't think ice cream is a cure-all for the issues we're having.",
                         name: 'Me'
                     },
                     {
@@ -223,7 +223,7 @@ if (Players.find().count() === 0) {
                         mood: 'Neutral'
                     },
                     {
-                        text: "The monster may have an ice cream part of his own with our squishy remains. Delicious!",
+                        text: "The monster may have an ice cream party of his own with our squishy remains. Delicious!",
                         name: 'Dimitri',
                         mood: 'Happy'
                     },
@@ -272,7 +272,7 @@ if (Players.find().count() === 0) {
                 name: 'Giselle'
             },
             {
-                text: "Not, that's not true.",
+                text: "Not. That's not true at all.",
                 name: 'Giselle',
                 mood: 'Sad'
             },
@@ -286,7 +286,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "\"Tough\" is an understatement an understatement.",
+                text: "\"Tough\" is the Understatement of the Year.",
                 name: 'Giselle'
             },
             {
@@ -295,15 +295,15 @@ if (Players.find().count() === 0) {
                 mood: 'Neutral'
             },
             {
-                text: "You're not a monster at all. When people are hurt, they say things they don't mean.",
+                text: "You're not a monster. When people are hurt, they say things they don't mean.",
                 name: 'Me'
             },
             {
-                text: "And have you talked to Kai to know that she doesn't mean it?",
+                text: "And have you talked to Kai to know that they don't mean it?",
                 name: 'Giselle'
             },
             {
-                text: "No, I haven't...but I know Kai, and I know she's your best friend.",
+                text: "No, I haven't...but I know Kai, and I know they're your best friend.",
                 name: 'Me',
                 check: "!haveTalkedKai"
             },
@@ -332,7 +332,7 @@ if (Players.find().count() === 0) {
                         mood: 'Surprised'
                     },
                     {
-                        text: "Yep. Kai will be so thrown off by your aggression that she'll have to listen to you.",
+                        text: "Yep. Kai will be so thrown off by your aggression that they'll have to listen to you.",
                         name: 'Me'
                     },
                     {
@@ -382,12 +382,12 @@ if (Players.find().count() === 0) {
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "Or you were sleep deprived",
+                        text: "Or you were sleep deprived.",
                         name: 'Me',
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "...maybe.",
+                        text: "...Maybe.",
                         name: 'Giselle',
                         check: '!haveTalkedKai',
                         mood: 'Neutral'
@@ -397,7 +397,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometime, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
+                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometimes, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
                         name: 'Giselle'
                     },
                     {
@@ -424,20 +424,20 @@ if (Players.find().count() === 0) {
                         mood: 'Happy'
                     },
                     {
-                        text: "Have you tried telling that to Kai? Maybe if she knew the important work you were doing, she wouldn't think that you're partying all the time.",
+                        text: "Have you tried telling that to Kai? Maybe if they knew the important work you were doing, they wouldn't think that you're partying all the time.",
                         name: 'Me'
                     },
                     {
-                        text: "I've tried to explain it to her a million times. Kai is...difficult.",
+                        text: "I've tried to explain it to them a million times. Kai is...difficult.",
                         name: 'Giselle',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How did you explain it? What did you tell her?",
+                        text: "How did you explain it? What did you tell them?",
                         name: 'Me'
                     },
                     {
-                        text: "The truth: That it isn't any of her business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
+                        text: "The truth: that it isn't any of their business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
                         name: 'Giselle',
                         mood: 'Smile'
                     },
@@ -446,7 +446,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "It didn't. Like I said, Kai is difficult. She blew up bigger than a volcano. Why? You have a better idea?",
+                        text: "It didn't. Like I said, Kai is difficult. They blew up bigger than a volcano. Why? Do you have a better idea?",
                         name: 'Giselle',
                         mood: 'Neutral'
                     }
@@ -457,7 +457,7 @@ if (Players.find().count() === 0) {
                         points: -1,
                         dialogue: [
                             {
-                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, she'll understand.",
+                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, they'll understand.",
                                 name: 'Me'
                             },
                             {
@@ -469,12 +469,12 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "A throne in a palace on my own private island. That'd be nice.",
+                                text: "A throne in a palace on my own private island. It'd be the happiest place ever, ruled by the lovely, darling Queen Giselle.",
                                 name: 'Giselle',
                                 mood: 'Happy'
                             },
                             {
-                                text: "Until monsters start coming up from the ocean.",
+                                text: "Until monsters start coming up from the ocean. Then it'd suck.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -509,7 +509,7 @@ if (Players.find().count() === 0) {
                         points: 1,
                         dialogue: [
                             {
-                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at her.",
+                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at them.",
                                 name: 'Me'
                             },
                             {
@@ -530,12 +530,12 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "If you say so, {{name}. I'll trust your advice.",
+                                text: "If you say so, {{name}}. I'll trust your advice.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
                             {
-                                text: "Just give it a try. I think it'll work.",
+                                text: "Do more than trust my advice. Do it. I think it'll work.",
                                 name: 'Me'
                             },
                             {
@@ -567,7 +567,7 @@ if (Players.find().count() === 0) {
                 points: -1,
                 dialogue: [
                     {
-                        text: "Be gentle with her. If Kai starts yelling, resist the urge to yell back. It's better to not get into an all-out screaming match. No one wins in that case."
+                        text: "Be gentle with them. If Kai starts yelling, resist the urge to yell back. It's better to not get into an all-out screaming match. No one wins in that case."
                     },
                     {
                         text: "Hm...",
@@ -616,7 +616,7 @@ if (Players.find().count() === 0) {
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "...maybe.",
+                        text: "...Maybe.",
                         name: 'Giselle',
                         check: '!haveTalkedKai',
                         mood: 'Neutral'
@@ -626,7 +626,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometime, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
+                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometimes, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
                         name: 'Giselle'
                     },
                     {
@@ -653,20 +653,20 @@ if (Players.find().count() === 0) {
                         mood: 'Happy'
                     },
                     {
-                        text: "Have you tried telling that to Kai? Maybe if she knew the important work you were doing, she wouldn't think that you're partying all the time.",
+                        text: "Have you tried telling that to Kai? Maybe if they knew the important work you were doing, they wouldn't think that you're partying all the time.",
                         name: 'Me'
                     },
                     {
-                        text: "I've tried to explain it to her a million times. Kai is...difficult.",
+                        text: "I've tried to explain it to them a million times. Kai is...difficult.",
                         name: 'Giselle',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How did you explain it? What did you tell her?",
+                        text: "How did you explain it? What did you tell them?",
                         name: 'Me'
                     },
                     {
-                        text: "The truth: That it isn't any of her business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
+                        text: "The truth: that it isn't any of their business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
                         name: 'Giselle',
                         mood: 'Smile'
                     },
@@ -675,7 +675,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "It didn't. Like I said, Kai is difficult. She blew up bigger than a volcano. Why? You have a better idea?",
+                        text: "It didn't. Like I said, Kai is difficult. They blew up bigger than a volcano. Why? Do you have a better idea?",
                         name: 'Giselle',
                         mood: 'Neutral'
                     }
@@ -686,7 +686,7 @@ if (Players.find().count() === 0) {
                         points: -1,
                         dialogue: [
                             {
-                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, she'll understand.",
+                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, they'll understand.",
                                 name: 'Me'
                             },
                             {
@@ -703,7 +703,7 @@ if (Players.find().count() === 0) {
                                 mood: 'Happy'
                             },
                             {
-                                text: "Until monsters start coming up from the ocean.",
+                                text: "...Until monsters start coming up from the ocean.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -738,7 +738,7 @@ if (Players.find().count() === 0) {
                         points: 1,
                         dialogue: [
                             {
-                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at her.",
+                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at them.",
                                 name: 'Me'
                             },
                             {
@@ -759,7 +759,7 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "If you say so, {{name}. I'll trust your advice.",
+                                text: "If you say so, {{name}}. I'll trust your advice.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -822,7 +822,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "I'm facing the facts. This team is a mess and I highly doubt you've successfully rounded up all the troops. I'm just being realistic.",
+                text: "I'm facing the facts. This team is a mess and I highly doubt you've successfully rounded up all the troops. Someone has to be realistic here.",
                 name: 'Marcel'
             },
             {
@@ -839,7 +839,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "The glass is 50 percent, that's all. And it looks like the monster is going to hit this building at any second.",
+                text: "The glass is at 50 percent capacity, that's all. And it looks like the monster is going to hit this building at any second.",
                 name: 'Marcel',
                 mood: 'Neutral'
             },
@@ -848,7 +848,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Let me guess: You're going to try and force a problem out of me and then try to solve it.",
+                text: "Let me guess: you're here to try and force a problem out of me and then try to solve it.",
                 name: 'Marcel'
             },
             {
@@ -864,7 +864,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "I'll get to that once I figure out what to write my paper on.",
+                text: "I'll get to that once I figure out what to write my paper on. It's due at midnight.",
                 name: 'Marcel'
             },
             {
@@ -922,15 +922,15 @@ if (Players.find().count() === 0) {
                         mood: 'Neutral'
                     },
                     {
-                        text: "Think about what I said. I like you, Marcel. I wouldn't have hired you if I didn't.",
+                        text: "Think about what I said. We're all people on the same team with our own quirks and faults. I like you, Marcel. I wouldn't have hired you if I didn't.",
                         name: 'Me'
                     },
                     {
-                        text: "Whatever",
+                        text: "Whatever.",
                         name: 'Marcel'
                     },
                     {
-                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        text: "There, you got to put in your two cents. Now can you go? I need this time to get started on my essay.",
                         name: 'Marcel'
                     },
                     {
@@ -942,7 +942,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        text: "No, your contract says that you're getting your stipend after you finish working with us.",
                         name: 'Me'
                     },
                     {
@@ -950,7 +950,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        text: "If we offer you a full-time employment, then we won't have any interns after you.",
                         name: 'Me'
                     },
                     {
@@ -974,7 +974,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        text: "Oh, right. We've talked about that. He's got an interesting definition for the word \"game,\" a deadly one.",
                         name: 'Me',
                         check: 'haveTalkedDimitri'
                     },
@@ -992,7 +992,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "He's been playing dangerous \"games\" like this since he was a child.",
+                        text: "He's been playing dangerous \"games\" like \"hot chainsaw\" since he was a child.",
                         name: 'Me',
                         mood: 'haveTalkedDimitri'
                     },
@@ -1014,13 +1014,13 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Which one should I do?.",
+                        text: "Marcel, I think you should...",
                         name: 'Me'
                     }
                 ],
                 choices: [
                     {
-                        text: "Show no interest",
+                        text: "Show no interest.",
                         points: 1,
                         dialogue: [
                             {
@@ -1028,7 +1028,7 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "Won't that just make him worse?",
+                                text: "Won't that make him worse?",
                                 name: "Marcel",
                                 mood: 'Confused'
                             },
@@ -1041,7 +1041,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to its fullest.",
                                 name: "Me"
                             },
                             {
@@ -1070,12 +1070,12 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having. She's our PR person.",
                                 name: "Me",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I might do that.",
+                                text: "As long as she's not in one of her holier-than-thou moods, I'll talk to her about it.",
                                 name: "Marcel",
                                 check: 'haveTalkedGiselle'
                             },
@@ -1093,7 +1093,7 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "He always reacts strangely.",
+                                text: "He always reacts strangely. Strange is in Dimitri's nature.",
                                 name: "Marcel",
                                 mood: 'Neutral'
                             },
@@ -1114,7 +1114,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "Not really. You're an intern, after all.",
                                 name: "Me"
                             },
                             {
@@ -1132,7 +1132,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Attack him back",
+                        text: "Attack him back.",
                         points: -1,
                         dialogue: [
                             {
@@ -1153,7 +1153,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine.",
                                 name: "Me"
                             },
                             {
@@ -1169,7 +1169,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're our intern, so no, you don't.",
                                 name: "Me"
                             },
                             {
@@ -1189,7 +1189,7 @@ if (Players.find().count() === 0) {
                 ]
             },
             {
-                text: "I can still try",
+                text: "I can still try.",
                 points: 0,
                 dialogue: [
                     {
@@ -1218,11 +1218,11 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Dangerous.",
+                        text: "Dangerous and awful.",
                         name: 'Marcel'
                     },
                     {
-                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        text: "Alright, Captain, you got to put in your two cents. Now can you go? I have just enough time to start working on my paper.",
                         name: 'Marcel'
                     },
                     {
@@ -1234,7 +1234,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        text: "No, your contract says that you're getting your stipend after you finish working with us.",
                         name: 'Me'
                     },
                     {
@@ -1242,7 +1242,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        text: "If we offer you a full-time employment, then we won't have any interns after you.",
                         name: 'Me'
                     },
                     {
@@ -1266,7 +1266,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        text: "Oh, right. We've talked about that. He's got an interesting definition for \"game.\"",
                         name: 'Me',
                         check: 'haveTalkedDimitri'
                     },
@@ -1293,7 +1293,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Right, and all of that money at the end of the internship.",
+                        text: "Right, and that huge chunk of change at the end of the internship.",
                         name: 'Marcel',
                         mood: 'Neutral'
                     },
@@ -1306,13 +1306,13 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Which one should I do?.",
+                        text: "Marcel, I think you should try...",
                         name: 'Me'
                     }
                 ],
                 choices: [
                     {
-                        text: "Show no interest",
+                        text: "Showing no interest.",
                         points: 1,
                         dialogue: [
                             {
@@ -1333,7 +1333,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to its fullest.",
                                 name: "Me"
                             },
                             {
@@ -1362,17 +1362,17 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having. She's our PR person.",
                                 name: "Me",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I might do that.",
+                                text: "Only if she's in a tolerable enough mood.",
                                 name: "Marcel",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I guess it couldn't hurt to try acting bored.",
+                                text: "Well, I guess it couldn't hurt to try acting bored.",
                                 name: "Marcel"
                             },
                             {
@@ -1406,7 +1406,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're an intern, so, no, not really.",
                                 name: "Me"
                             },
                             {
@@ -1424,7 +1424,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Attack him back",
+                        text: "Attack him back.",
                         points: -1,
                         dialogue: [
                             {
@@ -1445,7 +1445,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine.",
                                 name: "Me"
                             },
                             {
@@ -1461,7 +1461,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're an intern, so no, not really.",
                                 name: "Me"
                             },
                             {
@@ -1495,12 +1495,12 @@ if (Players.find().count() === 0) {
         turn: 1,
         dialogue: [
             {
-                text: "Let me guess: You're here to convince me to hold hands with everyone and sing Kumbaya. That's not my style!",
+                text: "Let me guess: you're here to convince me to hold hands with everyone and sing Kumbaya. That's not my style!",
                 name: 'Kai',
                 mood: 'Angry'
             },
             {
-                text: "I pretty much figured that out after you punch a hole in the wall.",
+                text: "I pretty much figured that out after you punched that hole in the wall.",
                 name: 'Me'
             },
             {
@@ -1516,7 +1516,7 @@ if (Players.find().count() === 0) {
                 name: 'Kai'
             },
             {
-                text: "I'm not the one that needs the lecutre, anyway. You should be lecturing those other dummies...especially Giselle. She's the one who started this whole mess.",
+                text: "I'm not the one that needs the lecture, anyway. You should be lecturing those other dummies...especially Giselle. She's the one who started this whole mess.",
                 name: 'Kai',
                 mood: 'Neutral'
             },
@@ -1538,7 +1538,7 @@ if (Players.find().count() === 0) {
                 name: 'Kai'
             },
             {
-                text: "Look, I'm not trying to be bossy. I'm just trying to save our city, same as always.",
+                text: "Look, I'm not trying to be bossy. I'm just trying to save Neo Loch Rock City, same as always.",
                 name: 'Me'
             },
             {
@@ -1550,7 +1550,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Remember how none of us wanted to accept a villain on our team? None of us accept you! Now we all have to watch our backs whenever Dimitri is around. You FORCED us to take him in!",
+                text: "Remember how none of us wanted to accept a villain on our team? None of us except for you! Now we all have to watch our backs whenever Dimitri is around. You FORCED us to take him in!",
                 name: 'Kai'
             },
             {
@@ -1571,12 +1571,12 @@ if (Players.find().count() === 0) {
                 mood: 'Neutral'
             },
             {
-                text: "Me too.",
+                text: "Yeaha, me too.",
                 name: 'Kai',
                 mood: 'Sad'
             },
             {
-                text: "But now she's just a jerk! All she cares about is partying and having a good time. We're super heroes. We have responsibilities. Did you know she was club hopping until 4am this morning?",
+                text: "But now she's just a jerk! All she cares about is partying and having a good time. We're super heroes. We have responsibilities. Did you know she was club hopping until 4 AM this morning?",
                 name: 'Kai',
                 mood: 'Angry'
             },
@@ -1588,7 +1588,7 @@ if (Players.find().count() === 0) {
         ],
         choices: [
             {
-                text: "You're exaggerating",
+                text: "You're exaggerating.",
                 points: 0,
                 dialogue: [
                     {
@@ -1601,7 +1601,7 @@ if (Players.find().count() === 0) {
                         mood: 'Angry'
                     },
                     {
-                        text: "A giant monster is about to kill us all. Doesn't that seem like a bigger issue?",
+                        text: "A giant monster is about to kill us all. Doesn't that seem like a bigger issue? We have to get along.",
                         name: 'Me'
                     },
                     {
@@ -1611,21 +1611,21 @@ if (Players.find().count() === 0) {
                 ],
                 choices: [
                     {
-                        text: "Put your drama aside",
+                        text: "Put your drama aside.",
                         points: -1,
                         dialogue: [
                             {
-                                text: "I'm sure you can pretend to like Giselle for thirty minutes. After the monster is dead, you can get right back to it. Who knows, maybe beating something up will make you feel better.",
+                                text: "I'm sure you can pretend to like Giselle for thirty minutes. After the monster is dead, you can get right back to your drama. Who knows, maybe beating something up will make you feel better.",
                                 name: "Me"
                             },
                             {
-                                text: "Save it. I don't want to hear another word from you. Talk to someone who cares.",
+                                text: "Ugh, you don't get it, Captain. Save it. I don't want to hear another word from you. Talk to someone who cares.",
                                 name: 'Kai'
                             },
                         ]
                     },
                     {
-                        text: "Grow up",
+                        text: "Grow up.",
                         points: -1,
                         dialogue: [
                             {
@@ -1641,7 +1641,7 @@ if (Players.find().count() === 0) {
                 ]
             },
             {
-                text: "It doesn't bother me",
+                text: "It doesn't bother me.",
                 points: 0,
                 dialogue: [
                     {
@@ -1653,7 +1653,7 @@ if (Players.find().count() === 0) {
                         name: 'Kai'
                     },
                     {
-                        text: "Since we share EVE's legs, I always end up following her lead. I notice all of her mistakes.",
+                        text: "Since we share EVE's legs, I always end up following her lead. I've got a front row ticket to all of her mistakes.",
                         name: 'Kai'
                     },
                     {
@@ -1662,7 +1662,7 @@ if (Players.find().count() === 0) {
                         mood: 'Angry'
                     },
                     {
-                        text: "I can see that. Was there anything specific that she did to make you so angry?",
+                        text: "Yeah, I can tell that you're pissed off. Was there anything specific that she did to make you so angry?",
                         name: 'Me'
                     },
                     {
@@ -1684,18 +1684,18 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "I bought a box of donuts and she took the last one without asking or even saying anything! Whoever buys th box has the right to the last donut. Everyone knows that!",
+                        text: "I bought a box of donuts and she took the last one without asking or even saying anything! Whoever buys the box has the right to the last donut. Everyone knows that!",
                         name: 'Kai',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How can I possibly trust Giselle after such a betrayal? She an irresponsible thief!",
+                        text: "How can I possibly trust Giselle after such a betrayal? She's an irresponsible thief!",
                         name: 'Kai'
                     }
                 ],
                 choices: [
                     {
-                        text: "You're being ridiculous",
+                        text: "You're being ridiculous.",
                         points: -1,
                         dialogue: [
                             {
@@ -1736,7 +1736,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Maybe it was a mistake",
+                        text: "Maybe it was a mistake.",
                         points: 1,
                         dialogue: [
                             {
@@ -1744,12 +1744,12 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "I don't know. Giselle has seemed pretty malicious lately. Who steals a donut like that?. That's villainous behavior.",
+                                text: "I don't know. Giselle has seemed pretty malicious lately. Who steals a donut like that? That's villainous behavior.",
                                 name: "Kai",
                                 mood: 'Neutral'
                             },
                             {
-                                text: "I'll try talking to her about the donut. There might be a reasonable explanation for all of this.",
+                                text: "I'll try talking to her about the donut after we're through with fighting the monster. There might be a reasonable explanation for all of this.",
                                 name: "Me"
                             },
                             {

@@ -219,15 +219,15 @@ goBack = function() {
         Session.set('win', true);
     }
 
-    if (turns - 1 === 0) {
-        e.preventDefault();
-
+    // If it's the end of the game, check for a win
+    if (turns - 1 <= 0) {
         if (Session.equals('win', true)) {
             Router.go('win');
         } else {
             Router.go('lose');
         }
     } else {
+        // Decrement turns and go back to stage
         Session.set('turns', turns - 1);
         Router.go('stage');
     }

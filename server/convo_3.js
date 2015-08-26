@@ -6,419 +6,242 @@ if (Players.find().count() === 0) {
     Convos.insert({
         actor: dimitriId,
         turn: 3,
-        // have talked to Dimitri
-        haveTalked: {
-            dialogue: [
-                {
-                    text: "Back to talk more about ice cream?",
-                    mood: 'Happy',
-                    name: 'Dimitri'
-                },
-                {
-                    text: "I'd like to talk about more relevant issues.",
-                    name: 'Me'
-                },
-                {
-                    text: "Good! Ice cream is a melted conversation topic now. Who have you talked to? I wasn't paying attention.",
-                    name: 'Dimitri'
-                }
-            ],
-            // have talked to Kai
-            kaiConvo: {
-                dialogue: [
-                    {
-                        text: "Kai.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Oh? Did she say anything interesting?",
-                        name: 'Dimitri',
-                        mood: 'Neutral'
-                    },
-                    {
-                        text: "Kai was Kai.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "What did you say to her?",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "I was trying to solve what's going on between Her and Giselle. I know you and Marcel have your problems too.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "And you think you're just the one to solve them, eh?",
-                        name: 'Dimitri',
-                        mood: 'Happy'
-                    },
-                    {
-                        text: "I don't know if I can solve all of them, but I can try. Let's talk about what's going on with you and Marcel.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Jumping into that already? You haven't even talked with Marcel yet.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "I'm trying to fix thing up with you first",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Fix, fix, fix. Everything and everyong is a thing to be fixed.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "Funny way of looking at life, isn't it? Since you're so into fixing things, what do you suppose I should do about Marcel? He acts like so many of the others, all afraid of me and stuff, just because I like to play games.",
-                        name: 'Dimitri',
-                        mood: 'Neutral'
-                    },
-                    {
-                        text: "Well, what kind of games are you playing with him?",
-                        name: 'Me'
-                    },
-                    {
-                        text: "All the popular ones like press-knife-top-to-throat and wave-toy-gun-in-face. I know the last game would be better with a real gun but I'm not allowed to get one of those since I used to be a villain and all.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "Society can be so cruel",
-                        name: 'Dimitri',
-                        mood: 'Sad'
-                    },
-                    {
-                        text: "Not every villain went through the same reformation program you did, Dimitri. Let's keep that in mind.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "And, um, if those are the games you're playing with Marcel, I think that's part of the problem right there.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "He's the only intern we've had that's been able to last through all of my games! I'm happy to share a torso with him.",
-                        name: 'Dimitri',
-                        mood: 'Happy'
-                    },
-                    {
-                        text: "I can't wait to discover the perfect gmae to crush him with.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "Not literally, right?",
-                        name: 'Me'
-                    },
-                    {
-                        text: "I don't know! Should it be literal? SHould I come up with something to smooth Marel into a pancake? My school teachers always said I was a creative lad. I should use more of that creativity.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "I ought to create a game that'll wow the skin off Marcel. I knew I could count on you to help me out of this dilemma, Cap'n. Good, good, good!",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "Wait. You're getting ahead of yourself. What I mean was...",
-                        name: 'Me'
-                    }
-                ], // end dialogue
-                choices: [
-                    {
-                        text: 'Tell him to change his games',
-                        points: '1',
-                        dialogue: [
-                            {
-                                text: "You should play different games with Marcel. I don't think him tolerating your games is a sign of his enjoyment. It's more a sign of his dedication to getting paid.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "So he doesn't like the games that I play with him?",
-                                name: 'Dimitri',
-                                mood: 'Sad'
-                            },
-                            {
-                                text: "Have you tried asking him more directly about what he's like to play? I think if you tried talking to him more, you'd have better results.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "There's plenty of games out there that are less...er, how should I say it...violent.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "VIOLENT?!",
-                                name: 'Dimitri',
-                                mood: 'Angry'
-                            },
-                            {
-                                text: "There's nothing violent about my games. They're playful. These are all child-friendly games that I played with my friends while growing up. Marcel's an adult. He should be able to handle them.",
-                                name: 'Dimitri'
-                            },
-                            {
-                                text: "...you played these games as a child?",
-                                name: 'Me'
-                            },
-                            {
-                                text: "Yes! I used to love revving up chainsaws and chasing my friends with them. The best part is when you rev it up right by their ear.",
-                                name: 'Dimitri'
-                            },
-                            {
-                                text: "Ah, the memories...",
-                                name: 'Dimitri',
-                                mood: 'Happy'
-                            },
-                            {
-                                text: "We're all from different walks of life. What's child-friendly to you might not necessarily be for anyone else. Trust me, I'm sure if you talk to Marcel more about what he's into, he'll be more welcoming to you.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "You'll have more fun with him when he's a willing participant in your games. As lazy as he is, Marcel is still one of the best interns we've ever had.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "I've never thought about it that it. I need to do some more thinking. Please, go talk to someone else for a while.",
-                                name: 'Dimitri'
-                            }
-                        ]
-                    },
-                    {
-                        text: 'Tell him to make his games more intense',
-                        dialogue: [
-                            {
-                                text: "You should wow more than the skin off of Marcel.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "But if he doesn't have any skin, what else is there to wow off of him?",
-                                name: 'Dimitri'
-                            },
-                            {
-                                text: "Muscles. Tendons. Bones.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "The bones! I could be like a giant and crush his bones into bread.",
-                                name: 'Dimitri'
-                            },
-                            {
-                                text: "Do you think Marcel bread would go over well at dinner?",
-                                name: 'Dimitri',
-                                mood: 'Confused'
-                            },
-                            {
-                                text: "I'm sure it would.",
-                                name: 'Me'
-                            },
-                            {
-                                text: "I'll have to save a slice for whatever's left of Marcel. I'm sure he'd like a bite.",
-                                name: 'Dimitri',
-                                mood: 'Happy'
-                            },
-                            {
-                                text: "I've got a lot of planning to do. I'll talk to you later Cap'n!",
-                                name: 'Dimitri'
-                            }
-                        ]
-                    }
-                ]
-            } // end kaiConvo
-        }, // end haveTalked
-        // haven't talked to Dimitri
         dialogue: [
             {
-                text: "Hello, Cap'n {{name}}! Lovely day to see you.",
+                text: "Heyyy, Cap'n {{name}}. What's going on with you this fine morning?",
                 mood: 'Happy',
                 name: 'Dimitri'
             },
             {
-                text: "It won't be lovely for long if we don't all get in the robot.",
+                text: "It's not going to be a fine morning for very long if we don't get out there soon.",
                 name: 'Me'
             },
             {
-                text: "I'm sure we'll get in EVE in due time. Whether or not we can defeat that monster together—that's up for debate.",
+                text: "Why the rush? It's not every day that the five of us get to hang out like this. We're always rushing off to this mission and that mission instead of enjoying our time together. I like this! Everyone's so happy.",
                 name: 'Dimitri'
             },
             {
-                text: "I wanted to talk to you about what's going on between you and Marcel.",
-                name: "Me"
+                text: "I glance around the room. Everyone other than Dimitri is fuming in their own way. Giselle and Kai refuse to even look in each other's direction."
             },
             {
-                text: "When I talked to him, he mentioned that he's having a hard time working with us since he has to watch his back so much.",
-                name: 'Me',
-                check: 'haveTalkedMarcel'
+                text: "As usual, Marcel is keeping his distance from Dimitri. Dimitri must believe in a radically different definition of happy than I do."
             },
             {
-                text: "Whenever I see him near you, he kind of cowers.",
-                name: 'Me',
-                check: '!haveTalkedMarcel'
+                text: "What's with the long face? Don't you like this too?",
+                mood: 'Neutral',
+                name: 'Dimitri'
             },
             {
-                text: "Do you know why that is?",
+                text: "I'm trying to figure out what I can do to get everyone to stop fighting.",
                 name: 'Me'
             },
             {
-                text: "Incompatible ice cream?",
-                name: 'Dimitri',
-                mood: 'Confused'
-            },
-            {
-                text: "The fate of Rocky Road and birch beer.",
-                name: 'Dimitri',
-                mood: 'Sad'
-            },
-            {
-                text: "The plight of lemon and milk!",
-                name: 'Dimitri',
-                mood: 'Angry'
-            },
-            {
-                text: "More like orange juice and milk.",
-                name: 'Dimitri',
-                mood: 'Sad'
-            },
-            {
-                text: "I'm sorry, Dimitri, but I'm going to have to stop you right there. What in the world are you talking about?",
-                name: "Me"
-            },
-            {
-                text: "I want us to be less like orange juice and milk and more like whatever goes with milk.",
+                text: "What's your favorite flavor of ice cream?",
+                mood: 'Happy',
                 name: 'Dimitri'
             },
             {
-                text: "How do I do that?",
-                name: "Me"
+                text: "That sure was abrupt... Ice cream has nothing to do with anything.",
+                name: 'Me'
             },
             {
-                text: "I've come up with all sorts of games to play with him. I thought he liked the games since he hasn't run away like the rest of the interns have!",
+                text: "Ice cream has everything to do with everything. Ice cream keeps the world going round.",
                 name: 'Dimitri'
             },
             {
-                text: "What games do you play with him? Twister? Monopoly?",
-                name: "Me"
+                text: "Do you know something I don't know?",
+                name: 'Me'
             },
             {
-                text: "More like twist-yer-hands-around-his-neck and monopolize-his-airways. Usually, that game drives people away, but not Marcel! He must be a fan!",
+                text: "Knowledge is power. So help me get a little more powerful by telling me what kind of ice cream you like best. Pretty please with a cherry on top?",
                 name: 'Dimitri'
-            },
-            {
-                text: "I think that's more of a testament to his resilience than how much he likes your games. Um, you're not actually choking any of the interns, are you?",
-                name: "Me"
-            },
-            {
-                text: "Nah, I'm all about the menacing stalking and evil eye stares. I don't touch them with my bare hands. Usually.",
-                name: 'Dimitri'
-            },
-            {
-                text: "Knife-throwing, on the other hand...I definitely do that! Marcel's pretty good at dodging knives. It's a surprise since he usually run EVE's left arm so sluggishly.",
-                name: 'Dimitri'
-            },
-            {
-                text: "You really think he's still here because he's resilient, not because he's a fan of my game? What do you think I should do about that? I want him to like my games. I'd hate to think that he's bored of them.",
-                name: 'Dimitri',
-                mood: 'Sad'
             }
         ],
         choices: [
             {
-                text: "Tell him to make his games worse",
+                text: 'Humor him',
+                points: '1',
                 dialogue: [
                     {
-                        text: "You should make your games worse to get his attention.",
+                        text: "Okay, sure...my favorite flavor is vanilla. It goes well with mostly everything.",
                         name: 'Me'
                     },
                     {
-                        text: "You think I should invite Mr. Machete to play?",
-                        name: 'Dimitri',
-                        mood: 'Confused'
-                    },
-                    {
-                        text: "Is Mr. Machete—",
-                        name: 'Me'
-                    },
-                    {
-                        text: "My most trusted machete, yes!",
-                        name: 'Dimitri',
-                        mood: 'Happy'
-                    },
-                    {
-                        text: "Yeah, that should definitely get Marcel's attention.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Thank you for the advice. I'm sure Marcel will love this.",
+                        text: "And what kind of toppings do you like?.",
                         name: 'Dimitri'
                     },
                     {
-                        text: "I'm going to go check on the others now.",
+                        text: "Sprinkles are fine. Seriously, though, what does this have to do with anything? I love ice cream as much as the next person, but we've kind of got a monstrous problem on our hands at the moment.",
                         name: 'Me'
                     },
                     {
-                        text: "Toodles, Cap'n {{name}}! Good luck with rallying the troops!",
+                        text: "I thought you of all people would understand the importance of ice cream.",
+                        name: 'Dimitri',
+                        mood: 'Sad'
+                    },
+                    {
+                        text: "I can't understand it if you won't explain it to me. We don't have a whole lot of time here.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "No one has time for Dimitri.",
                         name: 'Dimitri'
+                    },
+                    {
+                        text: "You know that's not true.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "Everyone's off doing their own thing, and then there's me. Me, all alone.",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "Okay, back to the ice cream talk. Vanilla ice cream does go good with everything. How about Moose Tracks or Rocky Road? What toppings go with those?",
+                        name: 'Dimitri',
+                        mood: 'Neutral'
+                    }
+                ],
+                choices: [
+                    {
+                        text: 'Nothing goes with them',
+                        points: '-1',
+                        dialogue: [
+                            {
+                                text: "Those flavors stand fine on their own. Moose Tracks is that peanut butter and chocolate blend, right? It's a stand-alone flavor.",
+                                name: "Me"
+                            },
+                            {
+                                text: "Because it'll clash with anything else?",
+                                name: "Dimitri",
+                                mood: 'Sad'
+                            },
+                            {
+                                text: "Yeah, the flavors are too strong. The peanut butter's too dominant. Sorry for asking this for the one hundredth, but what exactly does ice cream have to do with this situation?",
+                                name: "Me"
+                            },
+                            {
+                                text: "It has a ton to do with it.",
+                                name: "Dimitri",
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "Ice cream is relevant to any situation! But you've got more folks to talk to, don'chya? You should go on and do that before they get antsy.",
+                                name: "Dimitri"
+                            },
+                            {
+                                text: "Thanks.",
+                                name: "Me"
+                            }
+                        ]
+                    },
+                    {
+                        text: 'Any topping',
+                        dialogue: [
+                            {
+                                text: "Theoretically, you could apply any topping to any flavor of ice cream. No one\'s stopping you from putting blueberry syrup on Moose Tracks if you really want to.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "It'd be...unique, seeing how it'd be chocolate, peanut butter, and blueberry. If that's what you're into, though, then more power to you.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "Good point! The most unique of all!",
+                                name: 'Dimitri',
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "What does this have to do with the situation at hand, though?",
+                                name: 'Me'
+                            },
+                            {
+                                text: "Ice cream has everything to do with it.",
+                                name: 'Dimitri'
+                            },
+                            {
+                                text: "If you've got ice cream that can't go with any of the other toppings, then that's a big problem. There's no use fighting to put toppings on an ice cream that won't blend with anything else.",
+                                name: 'Dimitri',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Think about it, Cap'n!",
+                                name: 'Dimitri',
+                                mood: 'Happy'
+                            },
+                            {
+                                text: "Now, you should get to talking to some of the other fine folks lounging around here. I don't want to take up all of your time.",
+                                name: 'Dimitri',
+                                mood: 'Neutral'
+                            },
+                            {
+                                text: "Thanks.",
+                                name: 'Me'
+                            },
+                            {
+                                text: "...I think?",
+                                name: 'Me'
+                            }
+                        ]
                     }
                 ]
             },
             {
-                text: "Tell him to make his games less violent",
-                points: '1',
+                text: 'Tell him to focus',
                 dialogue: [
                     {
-                        text: "You should try making your games less violent. Or, better yet, see if Marcel has any ideas on how to make the game better.",
+                        text: "Dimitri, I need you to focus. We've talked about your issues with focusing before.",
                         name: 'Me'
                     },
                     {
-                        text: "But I'm creative enough on my own.",
-                        name: 'Dimitri',
-                        mood: 'Confused'
-                    },
-                    {
-                        text: "I think it would help improve your friendship if you sit down with Marcel and try to work on the game with him. That way, you can both agree on the rules and there won't be any misunderstandings.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "But shouldn't he have already read the waiver? If he read it in detail, he would've already known all the rules.",
-                        name: 'Dimitri'
-                    },
-                    {
-                        text: "The waiver is over 200 pages long.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Yeah, that's the one!",
-                        name: 'Dimitri',
-                        mood: 'Happy'
-                    },
-                    {
-                        text: "Not even I read that in its entirety.",
-                        name: 'Me'
-                    },
-                    {
-                        text: "You're slackin', Cap'n. Don't let anyone else hear you say that.",
+                        text: "Yeah, we have...",
                         name: 'Dimitri',
                         mood: 'Neutral'
                     },
                     {
-                        text: "Good idea. Sorry.",
+                        text: "What do you think I should do about all the fighting?",
                         name: 'Me'
                     },
                     {
-                        text: "S'alright with me. Not so alright with all those interns we've lost.",
-                        name: 'Dimitri'
-
-                    },
-                    {
-                        text: "By lost, you mean that they simply left, right? Not that they were lost in any other way?",
-                        name: 'Me'
-                    },
-                    {
-                        text: "Of course, Cap'n! Of course.",
+                        text: "Give everyone a bowl of ice cream.",
                         name: 'Dimitri',
                         mood: 'Happy'
                     },
                     {
-                        text: "I'm going to go talk to the others now.",
+                        text: "So people can just eat it angrily? I don't think ice cream is a cure-all for the issues we're having.",
                         name: 'Me'
                     },
                     {
-                        text: "Great! Keep doing what you're doing. Toodles, Cap'n {{name}}! Good luck with rallying the troops!",
+                        text: "Maybe talking to Dimitri first was a mistake. Time is too precious to waste talking about ice cream."
+                    },
+                    {
+                        text: "It's not like we have time for an ice cream party, either.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "But will we live long enough to have one after that monster gets to us?",
+                        name: 'Dimitri',
+                        mood: 'Neutral'
+                    },
+                    {
+                        text: "The monster may have an ice cream party of his own with our squishy remains. Delicious!",
+                        name: 'Dimitri',
+                        mood: 'Happy'
+                    },
+                    {
+                        text: "Delicious for the monster, sure. For us? Not so much.",
+                        name: 'Me'
+                    },
+                    {
+                        text: "You should run along now and start chatting up the others. You've got a bunch of stuff to handle, don'chya?",
                         name: 'Dimitri'
+                    },
+                    {
+                        text: "I don't envy you one bit. Good luck, Cap'n {{name}}!",
+                        name: 'Dimitri'
+                    },
+                    {
+                        text: "Thanks.",
+                        name: 'Me'
                     }
                 ]
             }
@@ -449,7 +272,7 @@ if (Players.find().count() === 0) {
                 name: 'Giselle'
             },
             {
-                text: "Not, that's not true.",
+                text: "Not. That's not true at all.",
                 name: 'Giselle',
                 mood: 'Sad'
             },
@@ -463,7 +286,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "\"Tough\" is an understatement an understatement.",
+                text: "\"Tough\" is the Understatement of the Year.",
                 name: 'Giselle'
             },
             {
@@ -472,15 +295,15 @@ if (Players.find().count() === 0) {
                 mood: 'Neutral'
             },
             {
-                text: "You're not a monster at all. When people are hurt, they say things they don't mean.",
+                text: "You're not a monster. When people are hurt, they say things they don't mean.",
                 name: 'Me'
             },
             {
-                text: "And have you talked to Kai to know that she doesn't mean it?",
+                text: "And have you talked to Kai to know that they don't mean it?",
                 name: 'Giselle'
             },
             {
-                text: "No, I haven't...but I know Kai, and I know she's your best friend.",
+                text: "No, I haven't...but I know Kai, and I know they're your best friend.",
                 name: 'Me',
                 check: "!haveTalkedKai"
             },
@@ -509,7 +332,7 @@ if (Players.find().count() === 0) {
                         mood: 'Surprised'
                     },
                     {
-                        text: "Yep. Kai will be so thrown off by your aggression that she'll have to listen to you.",
+                        text: "Yep. Kai will be so thrown off by your aggression that they'll have to listen to you.",
                         name: 'Me'
                     },
                     {
@@ -559,12 +382,12 @@ if (Players.find().count() === 0) {
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "Or you were sleep deprived",
+                        text: "Or you were sleep deprived.",
                         name: 'Me',
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "...maybe.",
+                        text: "...Maybe.",
                         name: 'Giselle',
                         check: '!haveTalkedKai',
                         mood: 'Neutral'
@@ -574,7 +397,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometime, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
+                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometimes, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
                         name: 'Giselle'
                     },
                     {
@@ -601,20 +424,20 @@ if (Players.find().count() === 0) {
                         mood: 'Happy'
                     },
                     {
-                        text: "Have you tried telling that to Kai? Maybe if she knew the important work you were doing, she wouldn't think that you're partying all the time.",
+                        text: "Have you tried telling that to Kai? Maybe if they knew the important work you were doing, they wouldn't think that you're partying all the time.",
                         name: 'Me'
                     },
                     {
-                        text: "I've tried to explain it to her a million times. Kai is...difficult.",
+                        text: "I've tried to explain it to them a million times. Kai is...difficult.",
                         name: 'Giselle',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How did you explain it? What did you tell her?",
+                        text: "How did you explain it? What did you tell them?",
                         name: 'Me'
                     },
                     {
-                        text: "The truth: That it isn't any of her business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
+                        text: "The truth: that it isn't any of their business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
                         name: 'Giselle',
                         mood: 'Smile'
                     },
@@ -623,7 +446,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "It didn't. Like I said, Kai is difficult. She blew up bigger than a volcano. Why? You have a better idea?",
+                        text: "It didn't. Like I said, Kai is difficult. They blew up bigger than a volcano. Why? Do you have a better idea?",
                         name: 'Giselle',
                         mood: 'Neutral'
                     }
@@ -634,7 +457,7 @@ if (Players.find().count() === 0) {
                         points: -1,
                         dialogue: [
                             {
-                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, she'll understand.",
+                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, they'll understand.",
                                 name: 'Me'
                             },
                             {
@@ -646,12 +469,12 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "A throne in a palace on my own private island. That'd be nice.",
+                                text: "A throne in a palace on my own private island. It'd be the happiest place ever, ruled by the lovely, darling Queen Giselle.",
                                 name: 'Giselle',
                                 mood: 'Happy'
                             },
                             {
-                                text: "Until monsters start coming up from the ocean.",
+                                text: "Until monsters start coming up from the ocean. Then it'd suck.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -686,7 +509,7 @@ if (Players.find().count() === 0) {
                         points: 1,
                         dialogue: [
                             {
-                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at her.",
+                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at them.",
                                 name: 'Me'
                             },
                             {
@@ -707,12 +530,12 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "If you say so, {{name}. I'll trust your advice.",
+                                text: "If you say so, {{name}}. I'll trust your advice.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
                             {
-                                text: "Just give it a try. I think it'll work.",
+                                text: "Do more than trust my advice. Do it. I think it'll work.",
                                 name: 'Me'
                             },
                             {
@@ -744,7 +567,7 @@ if (Players.find().count() === 0) {
                 points: -1,
                 dialogue: [
                     {
-                        text: "Be gentle with her. If Kai starts yelling, resist the urge to yell back. It's better to not get into an all-out screaming match. No one wins in that case."
+                        text: "Be gentle with them. If Kai starts yelling, resist the urge to yell back. It's better to not get into an all-out screaming match. No one wins in that case."
                     },
                     {
                         text: "Hm...",
@@ -793,7 +616,7 @@ if (Players.find().count() === 0) {
                         check: '!haveTalkedKai'
                     },
                     {
-                        text: "...maybe.",
+                        text: "...Maybe.",
                         name: 'Giselle',
                         check: '!haveTalkedKai',
                         mood: 'Neutral'
@@ -803,7 +626,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometime, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
+                        text: "Kai thinks I'm spending all of my time partying. And, fine, I go to parties sometimes, but not ALL the time. I also do some important networking for us. Somebody's got to handle our public relations.",
                         name: 'Giselle'
                     },
                     {
@@ -830,20 +653,20 @@ if (Players.find().count() === 0) {
                         mood: 'Happy'
                     },
                     {
-                        text: "Have you tried telling that to Kai? Maybe if she knew the important work you were doing, she wouldn't think that you're partying all the time.",
+                        text: "Have you tried telling that to Kai? Maybe if they knew the important work you were doing, they wouldn't think that you're partying all the time.",
                         name: 'Me'
                     },
                     {
-                        text: "I've tried to explain it to her a million times. Kai is...difficult.",
+                        text: "I've tried to explain it to them a million times. Kai is...difficult.",
                         name: 'Giselle',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How did you explain it? What did you tell her?",
+                        text: "How did you explain it? What did you tell them?",
                         name: 'Me'
                     },
                     {
-                        text: "The truth: That it isn't any of her business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
+                        text: "The truth: that it isn't any of their business. As long as I handle my business on the battlefield, it shouldn't matter what I've been doing the night before.",
                         name: 'Giselle',
                         mood: 'Smile'
                     },
@@ -852,7 +675,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "It didn't. Like I said, Kai is difficult. She blew up bigger than a volcano. Why? You have a better idea?",
+                        text: "It didn't. Like I said, Kai is difficult. They blew up bigger than a volcano. Why? Do you have a better idea?",
                         name: 'Giselle',
                         mood: 'Neutral'
                     }
@@ -863,7 +686,7 @@ if (Players.find().count() === 0) {
                         points: -1,
                         dialogue: [
                             {
-                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, she'll understand.",
+                                text: "You should tell Kai what you're actually doing. If you calmly explain the situation, they'll understand.",
                                 name: 'Me'
                             },
                             {
@@ -880,7 +703,7 @@ if (Players.find().count() === 0) {
                                 mood: 'Happy'
                             },
                             {
-                                text: "Until monsters start coming up from the ocean.",
+                                text: "...Until monsters start coming up from the ocean.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -915,7 +738,7 @@ if (Players.find().count() === 0) {
                         points: 1,
                         dialogue: [
                             {
-                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at her.",
+                                text: "If Kai isn't listening, maybe you should speak up. If Kai blows up, you have to blow up right back at them.",
                                 name: 'Me'
                             },
                             {
@@ -936,7 +759,7 @@ if (Players.find().count() === 0) {
                                 name: 'Me'
                             },
                             {
-                                text: "If you say so, {{name}. I'll trust your advice.",
+                                text: "If you say so, {{name}}. I'll trust your advice.",
                                 name: 'Giselle',
                                 mood: 'Neutral'
                             },
@@ -999,7 +822,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "I'm facing the facts. This team is a mess and I highly doubt you've successfully rounded up all the troops. I'm just being realistic.",
+                text: "I'm facing the facts. This team is a mess and I highly doubt you've successfully rounded up all the troops. Someone has to be realistic here.",
                 name: 'Marcel'
             },
             {
@@ -1016,7 +839,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "The glass is 50 percent, that's all. And it looks like the monster is going to hit this building at any second.",
+                text: "The glass is at 50 percent capacity, that's all. And it looks like the monster is going to hit this building at any second.",
                 name: 'Marcel',
                 mood: 'Neutral'
             },
@@ -1025,7 +848,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Let me guess: You're going to try and force a problem out of me and then try to solve it.",
+                text: "Let me guess: you're here to try and force a problem out of me and then try to solve it.",
                 name: 'Marcel'
             },
             {
@@ -1041,7 +864,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "I'll get to that once I figure out what to write my paper on.",
+                text: "I'll get to that once I figure out what to write my paper on. It's due at midnight.",
                 name: 'Marcel'
             },
             {
@@ -1099,15 +922,15 @@ if (Players.find().count() === 0) {
                         mood: 'Neutral'
                     },
                     {
-                        text: "Think about what I said. I like you, Marcel. I wouldn't have hired you if I didn't.",
+                        text: "Think about what I said. We're all people on the same team with our own quirks and faults. I like you, Marcel. I wouldn't have hired you if I didn't.",
                         name: 'Me'
                     },
                     {
-                        text: "Whatever",
+                        text: "Whatever.",
                         name: 'Marcel'
                     },
                     {
-                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        text: "There, you got to put in your two cents. Now can you go? I need this time to get started on my essay.",
                         name: 'Marcel'
                     },
                     {
@@ -1119,7 +942,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        text: "No, your contract says that you're getting your stipend after you finish working with us.",
                         name: 'Me'
                     },
                     {
@@ -1127,7 +950,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        text: "If we offer you a full-time employment, then we won't have any interns after you.",
                         name: 'Me'
                     },
                     {
@@ -1151,7 +974,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        text: "Oh, right. We've talked about that. He's got an interesting definition for the word \"game,\" a deadly one.",
                         name: 'Me',
                         check: 'haveTalkedDimitri'
                     },
@@ -1169,7 +992,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "He's been playing dangerous \"games\" like this since he was a child.",
+                        text: "He's been playing dangerous \"games\" like \"hot chainsaw\" since he was a child.",
                         name: 'Me',
                         mood: 'haveTalkedDimitri'
                     },
@@ -1191,13 +1014,13 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Which one should I do?.",
+                        text: "Marcel, I think you should...",
                         name: 'Me'
                     }
                 ],
                 choices: [
                     {
-                        text: "Show no interest",
+                        text: "Show no interest.",
                         points: 1,
                         dialogue: [
                             {
@@ -1205,7 +1028,7 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "Won't that just make him worse?",
+                                text: "Won't that make him worse?",
                                 name: "Marcel",
                                 mood: 'Confused'
                             },
@@ -1218,7 +1041,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to its fullest.",
                                 name: "Me"
                             },
                             {
@@ -1247,12 +1070,12 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having. She's our PR person.",
                                 name: "Me",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I might do that.",
+                                text: "As long as she's not in one of her holier-than-thou moods, I'll talk to her about it.",
                                 name: "Marcel",
                                 check: 'haveTalkedGiselle'
                             },
@@ -1270,7 +1093,7 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "He always reacts strangely.",
+                                text: "He always reacts strangely. Strange is in Dimitri's nature.",
                                 name: "Marcel",
                                 mood: 'Neutral'
                             },
@@ -1291,7 +1114,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "Not really. You're an intern, after all.",
                                 name: "Me"
                             },
                             {
@@ -1309,7 +1132,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Attack him back",
+                        text: "Attack him back.",
                         points: -1,
                         dialogue: [
                             {
@@ -1330,7 +1153,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine.",
                                 name: "Me"
                             },
                             {
@@ -1346,7 +1169,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're our intern, so no, you don't.",
                                 name: "Me"
                             },
                             {
@@ -1366,7 +1189,7 @@ if (Players.find().count() === 0) {
                 ]
             },
             {
-                text: "I can still try",
+                text: "I can still try.",
                 points: 0,
                 dialogue: [
                     {
@@ -1395,11 +1218,11 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Dangerous.",
+                        text: "Dangerous and awful.",
                         name: 'Marcel'
                     },
                     {
-                        text: "There, you got to put in your two cents. Now can you go? I have just enough time to finish a paper that's due tomorrow.",
+                        text: "Alright, Captain, you got to put in your two cents. Now can you go? I have just enough time to start working on my paper.",
                         name: 'Marcel'
                     },
                     {
@@ -1411,7 +1234,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "No, your contract says that you're getting your stipend after you finish working with us..",
+                        text: "No, your contract says that you're getting your stipend after you finish working with us.",
                         name: 'Me'
                     },
                     {
@@ -1419,7 +1242,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "If we offer you a fulltime employment, then we won't have any interns after you..",
+                        text: "If we offer you a full-time employment, then we won't have any interns after you.",
                         name: 'Me'
                     },
                     {
@@ -1443,7 +1266,7 @@ if (Players.find().count() === 0) {
                         name: 'Marcel'
                     },
                     {
-                        text: "Oh, right. We talked about that. He's got an interesting definition for \"game\".",
+                        text: "Oh, right. We've talked about that. He's got an interesting definition for \"game.\"",
                         name: 'Me',
                         check: 'haveTalkedDimitri'
                     },
@@ -1470,7 +1293,7 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Right, and all of that money at the end of the internship.",
+                        text: "Right, and that huge chunk of change at the end of the internship.",
                         name: 'Marcel',
                         mood: 'Neutral'
                     },
@@ -1483,13 +1306,13 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "Which one should I do?.",
+                        text: "Marcel, I think you should try...",
                         name: 'Me'
                     }
                 ],
                 choices: [
                     {
-                        text: "Show no interest",
+                        text: "Showing no interest.",
                         points: 1,
                         dialogue: [
                             {
@@ -1510,7 +1333,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to it's fullest.",
+                                text: "Ask him to help you out with one of your papers. Ask him for an interview. Use this internship opportunity to its fullest.",
                                 name: "Me"
                             },
                             {
@@ -1539,17 +1362,17 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having.",
+                                text: "Talk to Giselle about that. She'll take care of whatever social media issues we're having. She's our PR person.",
                                 name: "Me",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I might do that.",
+                                text: "Only if she's in a tolerable enough mood.",
                                 name: "Marcel",
                                 check: 'haveTalkedGiselle'
                             },
                             {
-                                text: "I guess it couldn't hurt to try acting bored.",
+                                text: "Well, I guess it couldn't hurt to try acting bored.",
                                 name: "Marcel"
                             },
                             {
@@ -1583,7 +1406,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're an intern, so, no, not really.",
                                 name: "Me"
                             },
                             {
@@ -1601,7 +1424,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Attack him back",
+                        text: "Attack him back.",
                         points: -1,
                         dialogue: [
                             {
@@ -1622,7 +1445,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine",
+                                text: "Right! So put on a menacing smile and give Dimitri a taste of his own medicine.",
                                 name: "Me"
                             },
                             {
@@ -1638,7 +1461,7 @@ if (Players.find().count() === 0) {
                                 name: "Marcel"
                             },
                             {
-                                text: "Not really.",
+                                text: "You're an intern, so no, not really.",
                                 name: "Me"
                             },
                             {
@@ -1672,12 +1495,12 @@ if (Players.find().count() === 0) {
         turn: 3,
         dialogue: [
             {
-                text: "Let me guess: You're here to convince me to hold hands with everyone and sing Kumbaya. That's not my style!",
+                text: "Let me guess: you're here to convince me to hold hands with everyone and sing Kumbaya. That's not my style!",
                 name: 'Kai',
                 mood: 'Angry'
             },
             {
-                text: "I pretty much figured that out after you punch a hole in the wall.",
+                text: "I pretty much figured that out after you punched that hole in the wall.",
                 name: 'Me'
             },
             {
@@ -1693,7 +1516,7 @@ if (Players.find().count() === 0) {
                 name: 'Kai'
             },
             {
-                text: "I'm not the one that needs the lecutre, anyway. You should be lecturing those other dummies...especially Giselle. She's the one who started this whole mess.",
+                text: "I'm not the one that needs the lecture, anyway. You should be lecturing those other dummies...especially Giselle. She's the one who started this whole mess.",
                 name: 'Kai',
                 mood: 'Neutral'
             },
@@ -1715,7 +1538,7 @@ if (Players.find().count() === 0) {
                 name: 'Kai'
             },
             {
-                text: "Look, I'm not trying to be bossy. I'm just trying to save our city, same as always.",
+                text: "Look, I'm not trying to be bossy. I'm just trying to save Neo Loch Rock City, same as always.",
                 name: 'Me'
             },
             {
@@ -1727,7 +1550,7 @@ if (Players.find().count() === 0) {
                 name: 'Me'
             },
             {
-                text: "Remember how none of us wanted to accept a villain on our team? None of us accept you! Now we all have to watch our backs whenever Dimitri is around. You FORCED us to take him in!",
+                text: "Remember how none of us wanted to accept a villain on our team? None of us except for you! Now we all have to watch our backs whenever Dimitri is around. You FORCED us to take him in!",
                 name: 'Kai'
             },
             {
@@ -1748,12 +1571,12 @@ if (Players.find().count() === 0) {
                 mood: 'Neutral'
             },
             {
-                text: "Me too.",
+                text: "Yeaha, me too.",
                 name: 'Kai',
                 mood: 'Sad'
             },
             {
-                text: "But now she's just a jerk! All she cares about is partying and having a good time. We're super heroes. We have responsibilities. Did you know she was club hopping until 4am this morning?",
+                text: "But now she's just a jerk! All she cares about is partying and having a good time. We're super heroes. We have responsibilities. Did you know she was club hopping until 4 AM this morning?",
                 name: 'Kai',
                 mood: 'Angry'
             },
@@ -1765,7 +1588,7 @@ if (Players.find().count() === 0) {
         ],
         choices: [
             {
-                text: "You're exaggerating",
+                text: "You're exaggerating.",
                 points: 0,
                 dialogue: [
                     {
@@ -1778,7 +1601,7 @@ if (Players.find().count() === 0) {
                         mood: 'Angry'
                     },
                     {
-                        text: "A giant monster is about to kill us all. Doesn't that seem like a bigger issue?",
+                        text: "A giant monster is about to kill us all. Doesn't that seem like a bigger issue? We have to get along.",
                         name: 'Me'
                     },
                     {
@@ -1788,21 +1611,21 @@ if (Players.find().count() === 0) {
                 ],
                 choices: [
                     {
-                        text: "Put your drama aside",
+                        text: "Put your drama aside.",
                         points: -1,
                         dialogue: [
                             {
-                                text: "I'm sure you can pretend to like Giselle for thirty minutes. After the monster is dead, you can get right back to it. Who knows, maybe beating something up will make you feel better.",
+                                text: "I'm sure you can pretend to like Giselle for thirty minutes. After the monster is dead, you can get right back to your drama. Who knows, maybe beating something up will make you feel better.",
                                 name: "Me"
                             },
                             {
-                                text: "Save it. I don't want to hear another word from you. Talk to someone who cares.",
+                                text: "Ugh, you don't get it, Captain. Save it. I don't want to hear another word from you. Talk to someone who cares.",
                                 name: 'Kai'
                             },
                         ]
                     },
                     {
-                        text: "Grow up",
+                        text: "Grow up.",
                         points: -1,
                         dialogue: [
                             {
@@ -1818,7 +1641,7 @@ if (Players.find().count() === 0) {
                 ]
             },
             {
-                text: "It doesn't bother me",
+                text: "It doesn't bother me.",
                 points: 0,
                 dialogue: [
                     {
@@ -1830,7 +1653,7 @@ if (Players.find().count() === 0) {
                         name: 'Kai'
                     },
                     {
-                        text: "Since we share EVE's legs, I always end up following her lead. I notice all of her mistakes.",
+                        text: "Since we share EVE's legs, I always end up following her lead. I've got a front row ticket to all of her mistakes.",
                         name: 'Kai'
                     },
                     {
@@ -1839,7 +1662,7 @@ if (Players.find().count() === 0) {
                         mood: 'Angry'
                     },
                     {
-                        text: "I can see that. Was there anything specific that she did to make you so angry?",
+                        text: "Yeah, I can tell that you're pissed off. Was there anything specific that she did to make you so angry?",
                         name: 'Me'
                     },
                     {
@@ -1861,18 +1684,18 @@ if (Players.find().count() === 0) {
                         name: 'Me'
                     },
                     {
-                        text: "I bought a box of donuts and she took the last one without asking or even saying anything! Whoever buys th box has the right to the last donut. Everyone knows that!",
+                        text: "I bought a box of donuts and she took the last one without asking or even saying anything! Whoever buys the box has the right to the last donut. Everyone knows that!",
                         name: 'Kai',
                         mood: 'Neutral'
                     },
                     {
-                        text: "How can I possibly trust Giselle after such a betrayal? She an irresponsible thief!",
+                        text: "How can I possibly trust Giselle after such a betrayal? She's an irresponsible thief!",
                         name: 'Kai'
                     }
                 ],
                 choices: [
                     {
-                        text: "You're being ridiculous",
+                        text: "You're being ridiculous.",
                         points: -1,
                         dialogue: [
                             {
@@ -1913,7 +1736,7 @@ if (Players.find().count() === 0) {
                         ]
                     },
                     {
-                        text: "Maybe it was a mistake",
+                        text: "Maybe it was a mistake.",
                         points: 1,
                         dialogue: [
                             {
@@ -1921,12 +1744,12 @@ if (Players.find().count() === 0) {
                                 name: "Me"
                             },
                             {
-                                text: "I don't know. Giselle has seemed pretty malicious lately. Who steals a donut like that?. That's villainous behavior.",
+                                text: "I don't know. Giselle has seemed pretty malicious lately. Who steals a donut like that? That's villainous behavior.",
                                 name: "Kai",
                                 mood: 'Neutral'
                             },
                             {
-                                text: "I'll try talking to her about the donut. There might be a reasonable explanation for all of this.",
+                                text: "I'll try talking to her about the donut after we're through with fighting the monster. There might be a reasonable explanation for all of this.",
                                 name: "Me"
                             },
                             {

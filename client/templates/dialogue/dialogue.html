@@ -1,5 +1,15 @@
 <template name="dialogue">
+    <div class="dialogue__back">
+        <div class="back__plant"></div>
+        <div class="back__shelf"></div>
+        <div class="back__window">
+            <div class="window-1"></div>
+            <div class="window-2"></div>
+        </div>
+    </div>
+
     <div class="actor actor--{{actorName}} actor--large is{{actorMood}}"></div>
+
     <div class="talk-box">
         <div class="talk-box__speaking">{{speaking}}</div>
         <div class="talk-box__text">{{response}}</div>
